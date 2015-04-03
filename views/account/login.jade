@@ -11,7 +11,8 @@ block content
         br
         form(method='POST')
           input(type='hidden', name='_csrf', value=_csrf)
-          legend Sign In
+          h1
+              | Sign In
           .form-group
             if config.facebookAuth
               a.btn.btn-block.btn-social.btn-facebook.btn-lg(href='/auth/facebook')
@@ -22,7 +23,7 @@ block content
                 i.fa.fa-fw.fa-twitter
                 | &nbsp;Sign in with Twitter
             if config.githubAuth
-              a.btn.btn-block.btn-social.btn-github.btn-lg(href='/auth/github')
+              a.btn.btn-block.btn-social.btn-github.btn-lg.btn-facebook(href='/auth/github')
                 i.fa.fa-fw.fa-github
                 | &nbsp;Sign in with GitHub
             if config.googleAuth

@@ -3,123 +3,63 @@ extends ../layouts/layout
 block head
   title #{application} &middot; Privacy
 
-block styles
+//block styles
   link(rel='stylesheet', href='/css/page-privacy.min.css')
 
 block content
-
-  .mini-tron
-    .container
-      h1 Your privacy is fundamental to us!
-      table.table.white.privacy
-        tr
-          td
-            i.fa.fa-check
-          td We don&#8217;t ask you for any personal information unless we truly need it.
-        tr
-          td
-            i.fa.fa-check
-          td We don&#8217;t share your personal information with anyone except to comply with the law, develop our products, or protect our rights.
-        tr
-          td
-            i.fa.fa-check
-          td We don&#8217;t store personal information on our servers unless required for the on-going operation of our services.
-      p
-        | By using the #{application} website, you are accepting this policy. This policy does not apply to the practices of third parties that #{application} does not own or control, or to individuals that #{application} does not employ or manage.
-
   .container
     .row
+      .col-sm-2
       .col-sm-8
-        h4 Information Collected by #{application}
-        p We only collect personal information that is relevant to the purpose of our website. This information allows us to provide you with a customized and efficient experience. We collect the following types of information from our #{application} users:
-        p Information You Provide to Us:
-        ol
-          li We receive and store any information you enter on our website or provide to us in any other way. You can choose not to provide us with certain information, but then you may not be able to take advantage of many of our special features.
-          li Registration: In order for you to use #{application} services you must complete a registration form. As part of this registration form, we require only your email address and username.
-          li User Profile: To allow you to express yourself beyond just the information collected during registration, we enable you to provide additional information. As indicated below, in the section titled "Sharing Your Information", you can control how your information is displayed and used.
-        p Automatic Information:
-          ol
-            li We receive and store certain types of information whenever you interact with us. #{application} and its authorized agents automatically receive and record certain "traffic data" on their server logs from your brow top-borderser including your IP address, #{application} cookie information, and the page you requested. #{application} uses this traffic data to help diagnose problems with its servers, analyze trends and administer the website.
-            li #{application} may collect and, on any page, display the total counts that page has been viewed. This includes User Profile pages.
-            li Many companies offer programs that help you to visit websites anonymously. While #{application} will not be able to provide you with a personalized experience if we cannot recognize you, we want you to be aware that these programs are available.
-      .col-sm-4.hidden-xs
-        h4.text-muted Basically,
-        h3 We collect information to make the #{application} website useful for you such as your registration and user profile data.<br><br>Our servers also collect log information used to make the website faster and better.
-    hr.soften
+        header#main_logo.boxCenter
+          img(src='images/logo/Freecycle Logo Emboss 700x265.png', alt='The Freecycle Network', title='The Freecycle Network', height='169')
+          p#tagline
+            | changing the world
+            br
+            | one gift at a time™
+        section#content
+          article.mostWidth.textJustify.boxCenter
 
-    .row
-      .col-sm-8
-        h4 E-mail Communications
-        p #{application} is very concerned about your privacy and we will never provide your email address to a third party without your explicit permission, as detailed in the "Sharing Your Information" section below.
-        p #{application} may send out e-mails with #{application}-related news, products, offers, surveys or promotions. You may also receive notification e-mails from #{application}, which inform you of actions that have been performed on the site.
-        p If you do not want to receive e-mail from us, please visit the Email Preferences section of your User Profile and/or follow the instructions contained in the unwanted e-mail message. However, please note that in all cases you will continue to receive all system e-mails (e.g. those regarding forgotten user passwords) and legal notices (e.g. updates to our policies) from us.
-      .col-sm-4.hidden-xs
-        h4.text-muted Basically,
-        h3 We will send you emails based on your profile settings. From time to time, we may send emails to all our users.
-    hr.soften
-
-    .row
-      .col-sm-8
-        h4 Cookies
-        p Cookies are alphanumeric identifiers that are saved by your Web browser to enable our systems to recognize your browser and tell us how and when pages in our website are visited and by how many people. #{application} cookies do not collect personal information, and we do not combine information collected through cookies with other personal information to tell us who you are or what your screen name or e-mail address is.
-        p The "help" portion of the toolbar on the majority of browsers will direct you on how to prevent your browser from accepting new cookies, how to command the browser to tell you when you receive a new cookie, or how to fully disable cookies. We recommend that you leave the cookies activated because cookies allow you to use some of #{application}'s coolest features. Some of our business partners, like our advertisers, may use cookies on our website. We have no access to, or control over, these cookies.
-      .col-sm-4.hidden-xs
-        h4.text-muted Basically,
-        h3 To remember you, our system will give you a cookie. It's safe.
-    hr.soften
-
-    .row
-      .col-sm-8
-        h4 Sharing Your Information
-        p Rest assured that we neither rent nor sell your personal information to anyone and that we will share your personal information only as described below.
-          ul
-            li #{application} Personnel: #{application} personnel and authorized consultants and/or contractors may have access to user information if necessary in the normal course of #{application} business.
-            li Business Transfers: In some cases, we may choose to buy or sell assets. In these types of transactions, user information is typically one of the business assets that is transferred. Moreover, if #{application}, or substantially all of its assets, were acquired, user information would be one of the assets that is transferred.
-            li Protection of #{application} and Others: We may release personal information when we believe in good faith that release is necessary to comply with a law; to enforce or apply our Terms of Use and other policies; or to protect the rights, property, or safety of #{application}, our employees, our users, or others. This includes exchanging information with other companies and organizations for fraud protection and credit risk reduction.
-            li With Your Consent: Except as noted above, we will contact you when your personal information is shared with third parties or used for a purpose incompatible with the purpose(s) for which it was originally collected, and you will be able to opt out to prevent the sharing of this information.
-      .col-sm-4.hidden-xs
-        h4.text-muted Basically,
-        h3 We do not sell your information to anyone.  We may release other information to authorities where required by law.
-    hr.soften
-
-    .row
-      .col-sm-8
-        h4 Keeping Information Secure
-        ul
-          li Your #{application} account information is protected by a password for your privacy and security. Protect against unauthorized access to your password and to your computer by logging off once you have finished using a shared computer.
-          li Only employees who need personal information to perform a specific job (for example, a customer service representative) are granted access to it. All of our employees are kept up to date on our privacy and security practices.
-      .col-sm-4.hidden-xs
-        h4.text-muted Basically,
-        h3 Your account is protected by a hashed, encrypted password. We do not know what your password is and you must keep it safe.
-    hr.soften
-
-    .row
-      .col-sm-8
-        h4 Control Display and Use of Your Information
-        ul
-          li As stated previously, you can always opt not to disclose information, but then you may be unable to use certain features on our website.
-          li By visiting your User Profile, you can correct, amend, add or delete personal information on our website.
-          li If you do not wish to receive e-mail from us please visit the Settings of your User Profile and/or follow the instructions contained in the unwanted e-mail message.
-          li However, please note that you will continue to receive all system e-mails (e.g. those regarding forgotten user passwords) and legal notices (e.g. updates to our policies) from us.
-      .col-sm-4.hidden-xs
-        h4.text-muted Basically,
-        h3 You can choose not to share information with us, but your experience of the site may be limited.
-        h3 Until your account is deleted, you may still receive system emails.
-    hr.soften
-
-    .row
-      .col-sm-8
-        h4 Children Under 18 Years of Age
-        p You must be 14 years and older to register to use the #{application} website. As a result, #{application} does not specifically collect information about children. If we learn that #{application} has collected information from a child under the age of 13, we will delete that information as quickly as possible. We recommend that minors between the ages of 14 and 18 ask and receive their parents' permission before using #{application} or sending information about themselves or anyone else over the Internet.
-      .col-sm-4.hidden-xs
-        h4.text-muted Basically,
-        h3 Please register only if you are 18 or older.  Otherwise obtain your parents' permission first.
-    hr.soften
-
-    .row
-      .col-sm-8
-        h4 Changes to this Privacy Policy
-        p #{application} may amend this Privacy Policy from time to time, at its sole discretion. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is used. If we make changes to the Privacy Policy, we will notify you by posting an announcement on the #{application} website so you are always aware of what information we collect, how we use it, and under what circumstances if any, it is disclosed.
-      .col-sm-4.hidden-xs
-        h4.text-muted Basically,
-        h3 This policy may change.  If it does we will let you know.
+        header
+          h1
+              | Privacy Policy
+        header
+          h2 Our Commitment to Privacy
+        p
+          | The Freecycle Network respects everyone's right to privacy. This section summarizes what personally identifiable information we may collect, if any, and how we might use this information. This policy also describes other important topics relating to your privacy. The Freecycle Network reserves the right to modify this privacy policy at any time. We will promptly reflect any such modifications in these Web pages.
+        header
+          h2 Use of Cookies
+        p
+          | The Freecycle Network websites may use cookies to verify its visitors' identity to provide services related to the use of Groups. However, it should be noted that some Freecycle groups currently operate in the Yahoo!Groups environment, which means that cookies may be used in accordance with Yahoo's aims. It should be noted that cookies can also be used to further the aims of individual groups, for example, to ensure that each visitor may vote in any online poll only once. Cookies set by and for Yahoo!Groups are outside the control of The Freecycle network and are subject to Yahoo!Group's privacy policy.
+        header
+          h2 Children
+        p
+          | Children may participate only with the permission and supervision of their parents and/or guardians. Freecycle.org does not intend to collect any information from individuals under the age of 13.
+        header
+          h2 Information Collection
+        p
+          | In general, when you visit the Freecycle Web site and access information, you remain anonymous. We do not require you to register or provide personal information to us in order to view our site. There are occasions when we will ask for additional information, such as when you apply to become a member of a Freecycle group or make a donation to Freecycle. In these cases, we will only collect personally identifiable information (such as name, address, telephone number, or e-mail address) that you voluntarily provide through our Web site or via e-mail correspondence.
+        p
+          | We will not sell or exchange your personal information at any time. We will collect general information (such as the type of browser you use, the files you request, and the domain name and country from which you request information) to improve our Web site and better meet your needs.
+        header
+          h2 Use of Information
+        p
+          | Before we collect any personally identifiable information, we will provide an explanation for the possible use of your data. For example, the information you supply might be used by The Freecycle Network to respond to your inquiries or supply you with requested information. It may be necessary, if required by law or if pertinent to judicial or governmental investigations, to release your personally identifiable information. If you have submitted personal information to us electronically and would like it removed or modified, please contact us. We will use every possible reasonable effort to comply with your request.
+        header
+          h2 Links
+        p
+          | While Freecycle is highly selective about which sites we provide links to, we do not control these Web sites, nor do we endorse or otherwise accept responsibility for the content or privacy policies of those sites. We encourage you to review the privacy policies posted on third party sites.
+        header
+          h2 Yahoo!
+        p
+          | Most local Freecycle groups are currently members of Yahoo!Groups and to remain as such must follow Yahoo's privacy policy, which can be found at http://privacy.yahoo.com/privacy/us/
+        header
+          h2 Contact Us
+        p Please contact us by email or in writing at:
+        address
+          a(href='mailto:info@freecycle.org') info@freecycle.org
+          br
+          | 		The Freecycle Network, P.O. Box 294, Tucson, Arizona 85702
+        div(style='margin:80px 0px 0px 0px;')
+        br
+        br

@@ -7,136 +7,168 @@ block styles
   link(rel='stylesheet', href='/lib/animate.css/animate.css')
 
 block content
-  .jumbotron.white
+  // ******************************** HEADER PAGE TITLE AND BREADCRUMBS ********************************
+  //header#page-title
+  // style="background-image:url('..images/demo/parallax_bg.jpg')"
+  //
+    Enable only if bright background image used
+    <span class="overlay"></span>
+  //.span.overlay
+  .container
+    //#{application} &middot; Welcome!
+    ul.breadcrumb
+      li
+        a(href='index.html') Home
+      li.active About
+  // ******************************** /HEADER PAGE TITLE AND BREADCRUMBS END ********************************
+
+  //
+    ###################################################################################################
+    - REVOLUTION SLIDER -
+    ###################################################################################################
+  section.container.text-center
+    h1.text-center
+      strong Welcome
+      |  to The Freecycle Network&trade;
+      // <br>changing the world one gift at a time&trade;</br>
+    p.lead
+      | The Freecycle Network&trade; is made up of&nbsp;
+      b
+        i 8,551,232 members and counting!</>
+      |  Join today. We assign prizes to new members based on the memership number they receive. Will you be member # 8,600,000? 9,000,000?  We assign prizes weekly, so sign up today.
+    p
+      | The Freecycle Network&trade; is a grassroots and entirely nonprofit movement of people who are giving (and getting) stuff for free in their own towns. There are 5,194 local community groups and growing. It's all about reuse and keeping good stuff out of landfills and helping people and the community.
+  .container
+    hr.half-margins
+    // hr line
+  // FEATURED BOXES 3
+  section.container
+    .row
+      .col-md-3
+        .featured-box.nobg.border-only
+          .box-content
+            i.fa.fa-users
+            h4 GET FREE STUFF!
+            p
+              | Sign up and subscribe to local community groups in your area and be notified as new items are listed to be given away.
+      .col-md-3
+        .featured-box.nobg.border-only.left-separator
+          i.fa.fa-book
+          h4 KEEP GOOD STUFF OUT OF LANDFILLS!
+          p
+            | Instead of throwing perfectly good items away, give them to someone that needs them and keep the items out of the landfills.
+      .col-md-3
+        .featured-box.nobg.border-only.left-separator
+          i.fa.fa-trophy
+          h4 MEMBERSHIP IS FREE FOR EVERYONE
+          p
+            | The Freecycle Network� is made up of 5,194 groups with 8,551,232 members around the world and growing. Join now!
+      .col-md-3
+        .featured-box.nobg.border-only.left-separator
+          i.fa.fa-cogs
+          h4 COMMUNITY DRIVEN
+          p Meet other friendly members of your community.
+  // /FEATURED BOXES 3
+  .container
+    hr.no-lines
+    // hr line
+  // CAROUSEL
+  section.container
+    .row
+      .col-md-6
+        h2 People helping people
+        p
+          | The Freecycle Network™ was founded on one simple principle. People helping people. Entire comunities pitching in to help one another. The community benefits, the individuals benefit, and the environment benefits.
+        p
+          | The Freecycle Network is a synergy people giving and receiving resulting in a cycle of goodwill, saved money, keeping great items out of landfills, helping the environment and so much more.
+        p
+          //
+            When you join you'll begin to meet members, give and receive items, help your local community, and be part of our large caring family. If you aren't already a member, sign up and try us out.
+          | Membership is free, so you have nothing to lose. Give the cycle a spin and try us out. A cycle of caring. The Freecycle.
+        // divider
+        .divider.styleColor
+          i.fa.fa-leaf
+        // carousel
+        //
+          <div class="owl-carousel" data-plugin-options='{"items": 3, "singleItem": false, "pagination": false, "autoPlay": true}'>
+          <div>
+          <img class="img-responsive" src="images/demo/brands/1.jpg" alt="">
+          </div>
+          <div>
+          <img class="img-responsive" src="images/demo/brands/2.jpg" alt="">
+          </div>
+          <div>
+          <img class="img-responsive" src="images/demo/brands/3.jpg" alt="">
+          </div>
+          <div>
+          <img class="img-responsive" src="images/demo/brands/4.jpg" alt="">
+          </div>
+          <div>
+          <img class="img-responsive" src="images/demo/brands/6.jpg" alt="">
+          </div>
+          <div>
+          <img class="img-responsive" src="images/demo/brands/7.jpg" alt="">
+          </div>
+          <div>
+          <img class="img-responsive" src="images/demo/brands/8.jpg" alt="">
+          </div>
+          </div>
+      .col-md-6
+        .owl-carousel.controlls-over(data-plugin-options='{"items": 9, "singleItem": true, "pagination": true, "autoPlay": true}')
+          // data-plugin-options='{"items": 9, "singleItem": true, "navigation": true, "authoplay":true, "pagination": true, "transitionStyle":"fadeUp"}'>
+          div
+            img.img-responsive(alt='', src='images/events/1.png')
+          div
+            img.img-responsive(alt='', src='images/events/2.png')
+          div
+            img.img-responsive(alt='', src='images/events/6.jpg')
+          div
+            img.img-responsive(alt='', src='images/events/7.jpg')
+          div
+            img.img-responsive(alt='', src='images/events/8.jpg')
+          div
+            img.img-responsive(alt='', src='images/events/9.jpg')
+          div
+            img.img-responsive(alt='', src='images/events/12.jpg')
+          div
+            img.img-responsive(alt='', src='images/events/13.jpg')
+          div
+            img.img-responsive(alt='', src='images/events/14.jpg')
+  // /CAROUSEL
+  // PARALLAX
+  section.parallax.delayed.margin-footer(data-stellar-background-ratio='0.7', style="background-image: url('images/demo/parallax.jpg');")
+    span.overlay
     .container
-      h1 Complete Boilerplate Site!
       .row
-        .col-md-7.col-md-push-5
-          img.center-block.img-responsive.animated.bounceInLeft(alt='Skeleton App', src='img/Octocat.png', width='400px')
-        .col-md-4.col-md-offset-1.col-md-pull-7
-          ul.fa-ul.visible-md.visible-lg
-            li
-              i.fa.fa-li.fa-users
-              | OAUTH Authentication
-            li
-              i.fa.fa-li.fa-magic
-              | API Examples
-            li
-              i.fa.fa-li.fa-cogs
-              | Admin Dashboard
-            li
-              i.fa.fa-li.fa-magic
-              | Gulp Build System
-
-          br
-          a.btn.btn-white(href='/login', role='button') Sign in Now!
-      .row.hidden-xs
-        .col-md-12
-          h2 Why choose #{application}?
-      .row.hidden-xs
-        .col-md-4
-          h3
-            i.fa.fa-group.fa-lg.green
-            | &nbsp;&nbsp;Built for you
+        // left content
+        .col-md-7.animation_fade_in
+          h2
+            strong A Brief History
+            |  of The Freecycle Network™
+          p.lead
+            | On May 1st, 2003, Deron Beal sent out the first e-mail announcing The Freecycle Network� to about 30 or 40 friends and a handful of nonprofits in Tucson, Arizona. At the time Deron founded The Freecycle Network, he worked with a small nonprofit organization, RISE, which provides recycling services to downtown businesses and transitional employment to Tucsonans in need.
           p
-            | #{application} Is built with standard components such as Bootstrap and FontAwesome and is easy to customize.
-        .col-md-4
-          h3
-            i.fa.fa-bolt.fa-lg.yellow
-            | &nbsp;&nbsp;Lightning fast
-          p
-            | #{application} is optimized to ensure fast loading time. Google page speed index of 93/100 on a nodejitsu micro drone ($9/month).
-        .col-md-4
-          h3
-            i.fa.fa-tablet.fa-lg.fuchsia
-            | &nbsp;&nbsp;On every device
-          p
-            | #{application} is built to look great on every device. Fully responsive for mobile devices to ensure the best user experience.
-      .row
-        .col-md-4.col-md-offset-4
-          //- http://github.hubspot.com/odometer/
-          .github-count
-            span.odometer-label
-              a.white(href='http://github.com/dstroot/skeleton', rel='external')
-                i.fa.fa-github
-                | &nbsp;GitHub ★ :
-            .odometer.bg-purple 0
+            | As the team recycled, rather than watching perfectly good items being thrown away, they found themselves calling or driving around to see if various local nonprofits could use them. Thinking there had to be an easier way, Beal set up that first Freecycle e-mail group in a way that permitted everyone in Tucson to give and to get. Freecycle was off and running.
+          //
+            <p>
+            The Freecycle concept has since spread to over 85 countries, where there are thousands of local groups representing millions of of members -- people helping people and 'changing the world one gift at a time.' As a result, we are currently keeping over 500 tons a day out of landfills! This amounts to five times the height of Mt. Everest in the past year alone, when stacked in garbage trucks!.
+            </p>
+            <p>
+            By giving freely with no strings attached, members of The Freecycle Network help instill a sense of generosity of spirit as they strengthen local community ties and promote environmental sustainability and reuse. People from all walks of life have joined together to turn trash into treasure.
+            </p>
+          a.btn.btn-primary.btn-lg(href='index-more.html') Tell Me More
+        // right image
+        .col-md-5.animation_fade_in
+          img.visible-md.visible-lg.img-responsive.pull-right(src='images/Freecycle Logo3 700x265.png', alt='')
+  // PARALLAX
 
-//- Page-specific stuff
-block scripts
-  //- Async load odometer styles
-  script.
-    var cb = function() {
-      var l = document.createElement('link'); l.rel = 'stylesheet';
-      l.href = 'lib/odometer/themes/odometer-theme-minimal.css';
-      var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-    };
-    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-        webkitRequestAnimationFrame || msRequestAnimationFrame;
-    if (raf) raf(cb);
-    else window.addEventListener('load', cb);
-
-  //- Tweak the styles a bit...
-  style.
-    .github-count {
-      margin-top:20px;
-      font-size: 20px;
-      text-align: center;
-    }
-    .odometer-label {
-      margin-right: 10px;
-      line-height: 1;
-      vertical-align: middle;
-    }
-    .odometer {
-      padding: 13px 21px 11px;
-      margin: auto;
-      line-height: 1 !important;
-      border-radius: 6px;
-    }
-    .odometer-label a {
-      text-decoration: none;
-    }
-    .odometer-label a:hover {
-      color: #B10DC9;
-    }
-
-  script.
-    $(document).ready(function() {
-      $('body').addClass('bg-brand1');
-
-      //- Get Mailcheck Script
-      $.ajax({
-        type: 'GET',
-        url: 'lib/odometer/odometer.min.js',
-        dataType: 'script',
-        cache: true
-      }).done(function() {
-          $(function(){
-            var starsOdometer = new Odometer({ el: $('.odometer')[0], theme: 'minimal', value: '0' });
-            starsOdometer.render()
-
-            var update = function() {
-              $.ajax('https://api.github.com/repos/dstroot/skeleton?access_token=1003ff07ff454596250e0bfa6940027a77a94866', {
-                cache: true,
-                success: function(data) {
-                  if (data.stargazers_count) {
-                    starsOdometer.update(data.stargazers_count);
-                  }
-                },
-                complete: function(xhr) {
-                  // Turn off rate limiting since we are using a token
-                  //remaining = xhr.getResponseHeader('X-RateLimit-Remaining');
-                  //setTimeout(update, 1000 * (4 + Math.pow(1.1, (60 - remaining))));
-                  setTimeout(update, 10000);
-                },
-                error: function(err) {
-                  console.log(err);
-                }
-              });
-            };
-
-            setTimeout(update, 1000);
-          });
-      });
-    });
+.container
+  .row
+    .col-md-7.animation_fade_in
+      // CALLOUT
+      .bs-callout.margin-top.text-center.styleBackground.noradius
+        h3
+          | Welcome to
+          strong The Freecycle Network™
+          a.btn.btn-primary.btn-lg(href='#', target='_blank') Join Now
+  // /CALLOUT

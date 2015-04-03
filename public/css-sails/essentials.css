@@ -55,7 +55,7 @@
 
 /**	01. Resets
 *************************************************** **/
-button::-moz-focus-inner, 
+button::-moz-focus-inner,
 input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
@@ -174,7 +174,7 @@ a, a:focus, a:hover, a:active {
 		position: relative;
 	}
 
-	
+
 	.animate_from_left {
 		opacity: 0;
 		left: -80px;
@@ -182,7 +182,7 @@ a, a:focus, a:hover, a:active {
 		position: relative;
 	}
 
-	
+
 	.animate_from_right {
 		opacity: 0;
 		right: -80px;
@@ -190,12 +190,12 @@ a, a:focus, a:hover, a:active {
 		position: relative;
 	}
 
-	
+
 	.animate_fade_in {
 		opacity: 0;
 		right: 0px;
 		position: relative;
-		padding-left: 0px;		
+		padding-left: 0px;
 	}
 
 
@@ -247,7 +247,7 @@ pre {
 .padding8 	{ padding:8px 0 !important; 	}
 .padding10 	{ padding:10px 0 !important; 	}
 .padding20 	{ padding:20px 0 !important; 	}
-.padding30 	{ padding:30px 0 !important; 	}		
+.padding30 	{ padding:30px 0 !important; 	}
 .padding40 	{ padding:40px 0 !important; 	}
 .padding50 	{ padding:50px 0 !important; 	}
 .padding60 	{ padding:50px 0 !important; 	}
@@ -348,7 +348,7 @@ i.fa 				{ text-decoration:none !important;}
 	}
 
 
-form .input-group-btn .btn i.fa { 
+form .input-group-btn .btn i.fa {
 	padding-right:0;
 }
 
@@ -360,15 +360,15 @@ a.label:hover {
 }
 
 /* social icons */
-a.social								{ 
-	display:inline-block; 
-	width:36px; height:36px; 
-	line-height:38px; 
-	font-size:20px; 
-	text-align:center; 
-	background:rgba(0,0,0,0.3); 
-	color:#fff; 
-	margin:10px 1px; 
+a.social								{
+	display:inline-block;
+	width:36px; height:36px;
+	line-height:38px;
+	font-size:20px;
+	text-align:center;
+	background:rgba(0,0,0,0.3);
+	color:#fff;
+	margin:10px 1px;
 	text-decoration:none;
 
 	-webkit-transition: all 0.2s;
@@ -392,7 +392,8 @@ a.social.rounded 						{ width:35px; height:35px; line-height:37px; }
 /* signin in with... */
 .btn-facebook,
 .btn-twitter,
-.btn-google-plus 						{ font-size:14px !important; height:40px; line-height:40px; display:inline-block; text-decoration:none !important; margin-bottom:3px; }
+.btn-google-plus 						{ font-size:24px !important; height:56px; line-height:56px; display:inline-block; text-decoration:none !important; margin-bottom:3px; }
+.btn-google-plus-original 						{ font-size:14px !important; height:40px; line-height:40px; display:inline-block; text-decoration:none !important; margin-bottom:3px; }
 .btn-facebook i.fa,
 .btn-twitter i.fa,
 .btn-google-plus i.fa					{ font-size:23px; float:left; height:40px; line-height:40px; padding:0; margin:0 10px 0 0; width:40px; text-align:center; position:relative; border-right:rgba(255,255,255,0.2) 1px solid; }
@@ -415,7 +416,7 @@ h3.page-header a {
 /* overlay */
 .overlay {
 	background:rgba(0,0,0, 0.2);
-	position:absolute; 
+	position:absolute;
 	left:0; right:0; top:0; bottom:0;
 
 	-webkit-transition: all 1s;
@@ -424,8 +425,8 @@ h3.page-header a {
 			transition: all 1s;
 }
 
-.overlay.gray { 
-	background:rgba(33,33,33,0.9) !important; 
+.overlay.gray {
+	background:rgba(33,33,33,0.9) !important;
 }
 
 
@@ -577,20 +578,20 @@ ul.list-icon.circle li:before {
 	}
 	ul.list-icon.heart li:before {
 		content:'\f004';
-	}	
+	}
 	ul.list-icon.angle-right li:before {
 		content:'\f105';
-	}	
+	}
 
 .breaknews-ticker {
-	text-align:left !important; 
+	text-align:left !important;
 	white-space: normal !important;
 	display:block !important;
 	font-size:13px;
 	line-height:20px;
 }
-	
-	
+
+
 /** 06. Callouts
  *  Not quite alerts, but custom and helpful notes for folks reading the docs.
  **************************************************************** **/
@@ -1035,8 +1036,8 @@ span.progress-bar-tooltip:after {
 		text-shadow:none;
 	}
 
-	
-	
+
+
 
 /** 17. Isotope Filtering
  **************************************************************** **/
@@ -1071,8 +1072,8 @@ ul.isotope {
 	list-style:none;
 }
 
-/* 
-	Isotope CSS3 transitions 
+/*
+	Isotope CSS3 transitions
 */
 .isotope,
 .isotope .isotope-item {
@@ -1101,7 +1102,7 @@ ul.isotope {
 
 
 /*
-	Disabling Isotope CSS3 Transitions 
+	Disabling Isotope CSS3 Transitions
 **/
 .isotope.no-transition,
 .isotope.no-transition .isotope-item,
@@ -1375,11 +1376,11 @@ div.toggle > label {
 		 -o-transition: all .10s ease-out;
 			transition: all .10s ease-out;
 
-	-webkit-touch-callout: none; 
-	  -webkit-user-select: none; 
-	   -khtml-user-select: none; 
-		 -moz-user-select: none; 
-		  -ms-user-select: none; 
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	   -khtml-user-select: none;
+		 -moz-user-select: none;
+		  -ms-user-select: none;
 			  user-select: none;
 }
 
@@ -1445,7 +1446,7 @@ div.featured-box {
 div.featured-box i.fa {
 	padding: 0;
 	color: #fff;
-	margin: 20px 0; 
+	margin: 20px 0;
 	font-size: 40px;
 	text-align:center;
 	position: relative;
@@ -1590,7 +1591,7 @@ figure {
 	width: 33px;
 	height: 33px;
 	position: absolute;
-	top: 0; right: 0; 
+	top: 0; right: 0;
 	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAd5JREFUeNrMlT1rwlAUhvMhImhEsRQEoRBag2t1Cjo4OmUpgj9D8D+4CeI/cFPcHR0iDiqdpBALgS46qFSKQhBSmwMNtJrozc2XB8Lh3gTuc8953xPyeDwSepAk+aKlZ8LjoE7WPe159RvCF5CAyX7vN2O1Jp/PhxKJBL3ZbNThcKjgQmCBwOHdbvchmUwG9b3lcnkol8sfl2DIE2EafYMk1kwmExyPx4+RSITe7XaqJEkKx3EhfV0qlWQzEArhgkgaqdfr93DgfD5XWJaVcrmcDBnWsF+r1e7sVAKpIovFgoM2FAqF9783hhaJovgE1WAY5g23EkgV0Q6gjfY1cX5DhmpYsSgWyGQy2UM+LTu0CfJgMPjCcYcl1zSbzXWxWIwKghCfTqfB0Wi053k+nM1mw/C+3W5/OqGJqxqpVqvxRqORMvoYBKrpQ16tVqqTEIYgYNVKpRKNxWL0drtVZVk+tFqtlO4cIxC7EEhzBBzS7/dZMxCKsB9X5whYFoYV2DSdToc6nU7Kjjtsg8AYn81mitPtsDzi7c4JR0a82xBYIG5AWAZxC8ISiJsQyCBuQyCBeAFxFcQriIsgXkKYgngNYQjiB8QZiF8Q/0AChL/RO/uL+hUUcQNxExA/AgwAQCThORpp8DAAAAAASUVORK5CYII=') no-repeat;
 }
 .img-thumbnail:hover:after {
@@ -1726,7 +1727,7 @@ h4.modal-title {
 		color:#fff;
 		font-weight:bold;
 	}
-	
+
 
 
 
@@ -1752,7 +1753,7 @@ h4.modal-title {
 /** 29. Nav List (aside)
  **************************************************************** **/
 aside ul.nav-list {
-	padding:0; 
+	padding:0;
 	margin:0;
 }
 aside h3,
@@ -1913,8 +1914,8 @@ p.dropcap.color:first-letter {
 
 /** 34. Media Elements
  **************************************************************** **/
-/* 
-	video cover 
+/*
+	video cover
 	WARNING! JS USED!
 	See: MEDIA ELEMENTS
 */
@@ -2629,10 +2630,10 @@ table,
 .black {
   color: #111 !important; }
 
-/* Border colors 
+/* Border colors
 
-   Use with another border utility that sets border-width and style 
-   i.e .border { border-width: 1px; border-style: solid !important; }     
+   Use with another border utility that sets border-width and style
+   i.e .border { border-width: 1px; border-style: solid !important; }
 */
 .border-navy {
   border-color: #001F3F !important; }
@@ -2789,23 +2790,23 @@ table,
 .stroke-black {
   stroke: #111 !important; }
 
-  
-  
- 
+
+
+
 /**	--. Printable Div
-	If want to dismiss these rules, 
+	If want to dismiss these rules,
 	add to body: class="printable"
 	Or simply delete custom rules!
 *************************************************** **/
 @media print {
-	/* 
-		@CUSTOM RULES 
+	/*
+		@CUSTOM RULES
 	*/
 	body * {
 		visibility: hidden;
 		margin:0; padding:0;
 	}
-	.printable * { 
+	.printable * {
 		visibility: visible;
 	}
 
@@ -2820,13 +2821,13 @@ table,
 	#page-title, .btn { display:none; }
 
 
-	/* 
+	/*
 		@REQUIRED RULES
 	*/
-	.col-sm-1, .col-sm-2, .col-sm-3, 
-	.col-sm-4, .col-sm-5, .col-sm-6, 
-	.col-sm-7, .col-sm-8, .col-sm-9, 
-	.col-sm-10, .col-sm-11, 
+	.col-sm-1, .col-sm-2, .col-sm-3,
+	.col-sm-4, .col-sm-5, .col-sm-6,
+	.col-sm-7, .col-sm-8, .col-sm-9,
+	.col-sm-10, .col-sm-11,
 	.col-sm-12 	{ float: left; }
 	.col-sm-12 	{ width: 100%; }
 	.col-sm-11 	{ width: 91.66666666666666%; }

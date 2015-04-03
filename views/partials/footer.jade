@@ -1,12 +1,34 @@
+
 footer.footer.bg-black
   .container
-    p
-      | Copyright © #{moment().format('YYYY')}&nbsp;
-      img.hidden-xs(src='/favicon.png', width='50px')
-      | &nbsp;#{application}, all rights reserved. |&nbsp;
-      a(href='/terms') Terms of Use&nbsp;
-      | |&nbsp;
-      a(href='/privacy') Privacy Policy
+    .row
+      .col-md-12
+        p
+          //a.logo(href='/')
+            img(src='images/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle')
+          //|           Copyright © 2015 The Freecycle Network (http://www.freecycle.org). All rights reserved.
+          //br
+          //|                   Freecycle and the Freecycle logo are trademarks of The Freecycle Network in various countries.
+          // Logo text or image
+          //
+            <a class="toTop" href="#topNav">BACK TO TOP <i class="fa fa-arrow-circle-up"></i></a>
+            <div id="back-top"><a href="#header"><i class="fa fa-chevron-up"></i></a></div>
+          //br
+          // copyright , scrollTo Top
+
+        | Copyright © #{moment().format('YYYY')}&nbsp;
+        a.logo(href='/')
+          img.hidden-xs(src='/favicon.png', width='20px' alt='Freecycle')
+        //| &nbsp;#{application}, all rights reserved. |&nbsp;
+        | The Freecycle Network&trade;. &nbsp; All rights reserved. &nbsp;
+        a(href='/terms') Terms of Service&nbsp;
+        | |&nbsp;
+        a(href='/privacy') Privacy Policy
+        br
+        | Freecycle and the Freecycle logo are trademarks of The Freecycle Network in various countries.
+
+        //a.logo(href='/')
+          img(src='images/logo/Freecycle Logo Dark2 Transparent 140x68.png', valign="middle" height='50px' alt='Freecycle')
 
 //- Load jQuery, food for thought:
 //- https://palant.de/2014/06/30/please-don-t-use-externally-hosted-javascript-libraries
