@@ -1,0 +1,36 @@
+extends ../layouts/layout
+
+block head
+  title #{application} &middot; Facebook
+
+block content
+  .container
+    .page-header
+      h2
+        i.fa.fa-facebook-square(style='color: #335397')
+        | &nbsp;Facebook API
+
+    .btn-group.btn-group-justified.hidden-xs
+      a.btn.btn-primary(href='https://developers.facebook.com/docs/graph-api/quickstart/', rel='external')
+        i.fa.fa-check-square-o
+        | &nbsp;Quickstart
+      a.btn.btn-primary(href='https://developers.facebook.com/tools/explorer', rel='external')
+        i.fa.fa-facebook
+        | &nbsp;Graph API Explorer
+      a.btn.btn-primary(href='https://developers.facebook.com/docs/graph-api/reference/', rel='external')
+        i.fa.fa-code-fork
+        | &nbsp;API Reference
+
+    h2 My Info
+    h4= me.name
+    h6 Username: #{me.username}
+    h6 Email: #{me.email}
+
+    h2 List of my friends
+    ul.list-unstyled
+      for friend in friends
+        li
+          a.thumbnail(href='http://facebook.com/#{friend.id}', style="width: 150px;text-decoration: none;position:relative;")
+            div(style="position:relative;height:150px;width: 150px;")
+              img(src='https://graph.facebook.com/#{friend.id}/picture?type=normal', width=150, height=150)
+              div.input-block-level(style="background-color: black; opacity: .5; color: #ffffff; padding: 3px; position:absolute; bottom:0px;") #{friend.name}

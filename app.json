@@ -1,0 +1,29 @@
+{
+  "name": "Freecycle",
+  "description": "Freecycle Beta Web Site",
+  "repository": "https://github.com/VentureLabsInc/website",
+  "logo": "https://static.freecycle.org/images/freecycle_logo.jpg",
+  "keywords": [
+    "freecycle",
+    "recycle",
+    "environment",
+    "green",
+    "node",
+    "express",
+    "passport",
+    "bootstrap"
+  ],
+  "env": {
+    "SESSION_SECRET": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "MySessionSecretACJEFJSDPAJGLMLDFOPJEIRLFOPDF"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of processes to run.",
+      "value": "2"
+    }
+  },
+  "addons": [
+    "mongolab:shared-single-small"
+  ]
+}

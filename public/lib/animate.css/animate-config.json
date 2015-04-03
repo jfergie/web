@@ -1,0 +1,100 @@
+{
+
+  "attention_seekers": {
+    "bounce": false,
+    "flash": false,
+    "pulse": false,
+    "rubberBand": false,
+    "shake": false,
+    "swing": false,
+    "tada": false,
+    "wobble": false
+  },
+
+  "bouncing_entrances": {
+    "bounceIn": false,
+    "bounceInDown": false,
+    "bounceInLeft": true,
+    "bounceInRight": false,
+    "bounceInUp": false
+  },
+
+  "bouncing_exits": {
+    "bounceOut": false,
+    "bounceOutDown": false,
+    "bounceOutLeft": false,
+    "bounceOutRight": false,
+    "bounceOutUp": false
+  },
+
+  "fading_entrances": {
+    "fadeIn": false,
+    "fadeInDown": false,
+    "fadeInDownBig": false,
+    "fadeInLeft": false,
+    "fadeInLeftBig": false,
+    "fadeInRight": false,
+    "fadeInRightBig": false,
+    "fadeInUp": false,
+    "fadeInUpBig": false
+  },
+
+  "fading_exits": {
+    "fadeOut": false,
+    "fadeOutDown": false,
+    "fadeOutDownBig": false,
+    "fadeOutLeft": false,
+    "fadeOutLeftBig": false,
+    "fadeOutRight": false,
+    "fadeOutRightBig": false,
+    "fadeOutUp": false,
+    "fadeOutUpBig": false
+  },
+
+  "flippers": {
+    "flip": false,
+    "flipInX": false,
+    "flipInY": false,
+    "flipOutX": false,
+    "flipOutY": false
+  },
+
+  "lightspeed": {
+    "lightspeedIn": false,
+    "lightspeedOut": false
+  },
+
+  "rotating_entrances": {
+    "rotateIn": false,
+    "rotateInDownLeft": false,
+    "rotateInDownRight": false,
+    "rotateInUpLeft": false,
+    "rotateInUpRight": false
+  },
+
+  "rotating_exits": {
+    "rotateOut": false,
+    "rotateOutDownLeft": false,
+    "rotateOutDownRight": false,
+    "rotateOutUpLeft": false,
+    "rotateOutUpRight": false
+  },
+
+  "sliders": {
+    "slideInDown": false,
+    "slideInLeft": false,
+    "slideInRight": false,
+    "slideOutLeft": false,
+    "slideOutRight": false,
+    "slideOutUp": false,
+    "slideInUp": false,
+    "slideOutDown": false
+  },
+
+  "specials": {
+    "hinge": false,
+    "rollIn": false,
+    "rollOut": false
+  }
+
+}

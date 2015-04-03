@@ -1,0 +1,782 @@
+'use strict';
+
+/**
+ * Created by j on 3/23/2015.
+ */
+
+/**
+ * Built-in Log Configuration
+ * (winston.config.log)
+ * Configure the log level for your app, as well as the transport
+ * (Underneath the covers, Sails uses Winston for logging, which
+ * allows for some pretty neat custom transports/adapters for log messages)
+ *
+ * For more information on the Sails logger, check out:
+ * http://sailsjs.org/#/documentation/concepts/Logging
+ */
+
+
+
+/***************************************************************************
+ *
+ * Setup our Log Transports - i.e. Where to save or show the information
+ *
+ * The order of precedence for log levels from lowest to highest normally
+ * is silly, verbose, info, debug, warn, error, silent.  The custom settings
+ * below are similar, though verbose has been moved to prevent existing
+ * verbose log statements from showing.
+ *
+ * See function customizeLevels below for the specific settings
+ * for log levels.
+ *
+ * The settings may be different depending on environment
+ * (production or development).
+ *
+ *
+ ***************************************************************************/
+var winston = require('winston');
+winston.emitErrs = true;
+
+var winstonLoggly = require( 'winston-loggly' );
+//var winstonGrowl = require( 'winston-growl')
+
+var ansi = require( 'ansi-styles' );
+var path = require( 'path' );
+var moment = require( 'moment' );
+
+//var logDir = process.env.OPENSHIFT_LOG_DIR || './logs/';
+var logDir = process.env.LOG_DIR || './logs/';
+
+
+
+
+//*************************************************************************************
+//*************************************************************************************
+/*
+ //*************************************************************************************
+ //
+ // custom logger colors and levels
+ //
+ //*************************************************************************************
+ function customizeLevels(logger) {
+ */
+var customLogLevels = {
+  levels: {
+    profile: 5,
+    silly: 10,
+    input: 20,
+    verbose: 30,
+    prompt: 40,
+    info: 50,
+    data: 60,
+    help: 70,
+    warn:  100,
+    debug: 200,
+    error: 300,
+    crit:  400,
+    blank: 500
+  },
+
+  colors: {
+    profile: 'blue',
+    silly: 'magenta', //rainbow',
+    input: 'blue',
+    verbose: 'cyan',
+    prompt: 'white',
+    info: 'bold cyan',
+    data: 'bold green',
+    help: 'redbg white',
+    warn: 'bold yellow',
+    debug: 'bold blue',
+    error: 'bold redBG white',
+    crit:  'bold redBG yellow',
+    blank: 'white'
+  }
+
+  /*
+   levels: {
+   silly: 10,
+   trace: 20,
+   debug: 30,
+   verbose: 2, // Don't show verbose in this custom setup by setting it's level very low
+   status: 40,
+   info: 50,
+   config: 70,
+   warn: 100,
+   error: 200,
+   critical: 300,
+   emergency:500
+   },
+
+   colors: {
+   silly: 'magenta',
+   trace: 'bold cyan',
+   debug: 'bold blue',
+   verbose: 'cyan',
+   status: 'green',
+   config: 'bold green',
+   info: 'cyan',
+   warn: 'bold yellow',
+   error: 'bold red',
+   critical: 'bold red',
+   emergency: 'bold red'
+   }
+   */
+};
+
+//*************************************************************************************
+//
+// The following checks for environment all fall through to the development
+// settings for now.
+//
+//*************************************************************************************
+if (process.env.NODE_ENV === 'production') {
+  //
+  // Log settings for production environment
+  //
+} else if (process.env.NODE_ENV === 'development') {
+  //
+  // Log settings for development environment
+  //
+} else {
+  //customLogger.Warn('process.env.NODE_ENV="', process.env.NODE_ENV, '". Expected "production" or "development". Using "DEVELOPMENT" Log Settings.');
+}
+
+function addCallSite(logger) {
+  // WARNING: traceCaller is slow
+  // http://stackoverflow.com/a/20431861/665507
+  // http://stackoverflow.com/a/13411499/665507
+  /**
+   * examines the call stack and returns a string indicating
+   * the file and line number of the n'th previous ancestor call.
+   * this works in chrome, and should work in node as well.
+   *
+   * @param n : int (default: n = 1) - the number of calls to trace up the
+   *   stack from the current call.  `n=0` gives you your current file/line.
+   *  `n = 1` gives the file/line that called you.
+   */
+  function traceCaller(n) {
+    if (isNaN(n) || n < 0) n = 1;
+    n += 1;
+    var s = (new Error()).stack
+      , a = s.indexOf('\n', 5);
+    while (n--) {
+      a = s.indexOf('\n', a + 1);
+      if (a < 0) { a = s.lastIndexOf('\n', s.length); break; }
+    }
+    b = s.indexOf('\n', a + 1); if (b < 0) b = s.length;
+    a = Math.max(s.lastIndexOf(' ', b), s.lastIndexOf('/', b));
+    b = s.lastIndexOf(':', b);
+    s = s.substring(a + 1, b);
+    return s;
+  }
+
+
+  for (var func in logger.levels) {
+    (function (oldFunc) {
+      logger[func] = function () {
+        var args = Array.prototype.slice.call(arguments);
+        if (typeof args[0] === 'string') {
+          args[0] = traceCaller(1) + ' ' + args[0];
+        }
+        else {
+          args.unshift(traceCaller(1));
+        }
+        oldFunc.apply(logger, args);
+      };
+    })(logger[func]);
+  }
+}
+
+
+/*
+ var getLogger = function (module) {
+ var path = module.filename.split('/').slice(-2).join('/');
+
+ return new winston.Logger({
+ transports: [
+ new winston.transports.Console({
+ colorize: true,
+ level: 'debug',
+ label: path
+ }),
+ new (winston.transports.File)({ filename: 'debug.log', silent: false })
+ ]
+ });
+ };
+ */
+
+//Function LogLinInfo({
+//gLineInfo: function (prefix) {
+/*
+ function LogLineInfo(prefix)   {
+ var file, func, junk, line, stack, _ref, _ref1, _ref2, _ref3, _ref4;
+ if (prefix == null) {
+ prefix = '';
+ }
+ stack = new Error().stack;
+ _ref = stack.split('\n')[2].split(':'), file = _ref[0], line = _ref[1];
+ _ref1 = file.split(' ('), func = _ref1[0], file = _ref1[1];
+ if (!file) {
+ _ref2 = ['??', func], func = _ref2[0], file = _ref2[1];
+ }
+ _ref3 = [func.split(' ').pop(), path.basename(file)], func = _ref3[0], file = _ref3[1];
+ _ref4 = func.split('.'), junk = _ref4[0], func = _ref4[1];
+ if (!func) {
+ func = junk;
+ }
+ func = func === '??' || func === '<anonymous>' ? ' (' : " (<" + func + "> ";
+ return prefix + func + file + ':' + line + ')';
+ };
+ //});
+ */
+
+
+var customLogger = new winston.Logger( {
+  exitOnError: false,
+  handleExceptions: true,
+  levels: customLogLevels.levels,
+  colors: customLogLevels.colors,
+  transports: [
+
+    new winston.transports.Console({
+      name: 'console-transport',
+      level: 'silly',
+      padLevels: true,
+      //showLevels: false,
+      timestamp: function () { return ansi.dim.open + ansi.yellow.open + moment().format('HH:mm:ss.SSS') + ansi.yellow.close + ansi.dim.close; }, // '2014-07-03 20:14:28.500 +0900'
+      //timestamp: function () { return '\x1b[30;1m[' + moment().format('h:mm:ss.SSS') + ']'; }, // '2014-07-03 20:14:28.500 +0900'
+      handleExceptions: true,
+      json: false,
+      prettyPrint: true,
+      colorize: 'all'
+    } ),
+
+    /*
+     new winston.transports.growl({
+     name: 'error-growl-transport',
+     level: 'debug',
+     //showLevels: false,
+     timestamp: function () { return ansi.dim.open + ansi.yellow.open + moment().format( 'HH:mm:ss.SSS' ) + ansi.yellow.close + ansi.dim.close; }, // '2014-07-03 20:14:28.500 +0900'
+     //timestamp: function () { return '\x1b[30;1m[' + moment().format('h:mm:ss.SSS') + ']'; }, // '2014-07-03 20:14:28.500 +0900'
+     handleExceptions: true,
+     json: false,
+     prettyPrint: true,
+     colorize: 'all'
+     }),
+     */
+    new winston.transports.DailyRotateFile({
+      name: 'error-file-transport',
+      level: 'error',
+      datePattern: '-yyyy-MM-dd.log',
+      filename: path.join(logDir, 'Log-Error'),
+      timestamp: true,
+      handleExceptions: true,
+      json: true,
+      // maxsize: 5242880, //5MB
+      // maxFiles: 5,
+      colorize: false
+    }),
+
+
+    new winston.transports.Loggly( {
+      name: 'loggly-transport',
+      timestamp: true,
+      level: 'error',
+      subdomain: "vlabs",
+      inputToken: "1148e4d0-5480-4de3-b214-086624a0ba8b",
+      handleExceptions: true,
+      //colorize: false
+      json: true,
+      "auth": {
+        "username": "jfergie",
+        "password": "Hockey1973"
+      }
+    }),
+
+    /*
+     var logger = new (winston.Logger)({
+     transports : [
+     new (winston.transports.MongoDB)({
+     db : 'logs',
+     host : '123456.mongolab.com',
+     username : 'username',
+     password : 'password'
+     })
+     ]
+     });
+     */
+    new winston.transports.DailyRotateFile({
+      name: 'warning-file-transport',
+      level: 'warnings',
+      datePattern: '-yyyy-MM-dd.log',
+      filename: path.join(logDir, 'Log-Warning'),
+      timestamp: true,
+      handleExceptions: true,
+      json: true,
+      colorize: false
+    }),
+
+    new winston.transports.DailyRotateFile({
+      name: 'info-file-transport',
+      level: 'info',
+      datePattern: '-yyyy-MM-dd.log',
+      filename: path.join(logDir, 'Log-Info'),
+      timestamp: true,
+      handleExceptions: true,
+      json: true,
+      colorize: false
+    })
+
+    /*
+     new winston.transports.DailyRotateFile({
+     name: 'silly-file-transport',
+     level: 'silly',
+     datePattern: '-yyyy-MM-dd[.log]',
+     filename: path.join(logDir, 'Log-Silly'),
+     timestamp: true,
+     handleExceptions: true,
+     json: true,
+     // maxsize: 5242880, //5MB
+     // maxFiles: 5,
+     colorize: false
+     })
+     */
+  ]
+  /*
+   exceptionHandlers: [
+   new winston.transports.DailyRotateFile({
+   name: 'exception-file-transport',
+   level: 'error',
+   datePattern: '-yyyy-MM-dd.log',
+   filename: path.join(logDir, 'Log-UNHANDLED-EXCEPTIONS'),
+   timestamp: true,
+   handleExceptions: true,
+   //json: true,
+   maxsize: 5242880, //5MB
+   maxFiles: 5,
+   colorize: false
+   }),
+
+   new winston.transports.Console({
+   name: 'exception-console-transport',
+   timestamp: true,
+   level: 'info',
+   handleExceptions: true,
+   json: false,
+   //prettyPrint: true,
+   colorize: 'all'
+
+   })
+   ]    */
+});
+
+customLogger.setLevels( customLogLevels.levels );
+winston.setLevels( customLogLevels.levels );
+
+//customLogger.addColors( customLogLevels.colors );
+winston.addColors( customLogLevels.colors );
+//customLogger.addColors( customLogLevels.colors );
+//addExtendedModuleInfo( customLogger );
+
+//winston.transports.
+//addModuleInfo(customLogger);
+//addCallSite( customLogger );
+//addExtendedModuleInfo( customLogger );
+
+
+//winston.logger = customLogger;
+//winston.customLogger = customLogger;
+
+//var log = require('captains-log')({ custom: customLogger  } );
+
+
+/*
+var CaptainsLog = require( 'captains-log' );
+var captains = CaptainsLog( {
+  colorize: true,
+  prettyPrint: true,
+  //depth: 100,
+
+  level: 'info',
+  levels: customLogLevels.levels,
+  colors: customLogLevels.colors,
+  custom: customLogger
+} );
+*/
+
+//CaptainsLog.addColors( customLogLevels.colors );
+//addExtendedModuleInfo( customLogger );
+
+//winston.remove( winston.transports.Console );
+//winston.add( winston.transports.Console, { 'timestamp': true } );
+
+// module.exports.log = customLogger;
+
+module.exports.log = {
+  colors: false,  // To get clean logs without prefixes or color codings
+  colorize: 'all',
+  prettyPrint: true,
+  //depth: 100,
+
+  level: 'info',
+  //levels: customLogLevels.levels,
+  //colors: customLogLevels.colors,
+
+  custom: customLogger
+
+};
+
+
+//addExtendedModuleInfo( customLogger );
+
+//winston.util.
+//winston.a
+//winston.customLogLevels.addColors(customLogLevels.colors);
+//winston.log.transports
+
+
+//winston.cli();
+//customLogger.cli();
+
+//addCallSite(customLogger);
+//customizeLevels(customLogger);
+//customLogger.transports.Console.level = "info";
+
+//addModuleInfo(customLogger);
+
+
+
+
+// **help me to add line number**
+/*
+ var logger_info_old = customLogger.info;
+ customLogger.info = function (msg) {
+
+ function traceCaller(n) {
+ if (isNaN(n) || n < 0) n = 1;
+ n += 1;
+ var s = (new Error()).stack
+ , a = s.indexOf('\n', 5);
+ while (n--) {
+ a = s.indexOf('\n', a + 1);
+ if (a < 0) { a = s.lastIndexOf('\n', s.length); break; }
+ }
+ b = s.indexOf('\n', a + 1); if (b < 0) b = s.length;
+ a = Math.max(s.lastIndexOf(' ', b), s.lastIndexOf('/', b));
+ b = s.lastIndexOf(':', b);
+ s = s.substring(a + 1, b);
+ return s;
+ }
+
+ var m = traceCaller(1);
+ a = m.lastIndexOf('\\');
+ if ((a >= 0) && (a < m.length))
+ m = m.substr(a + 1);
+ return logger_info_old.call(this, m + ":" + msg);
+ }
+ */
+
+/*
+ //var sails = require("sails");
+ //var path = module.filename.split('/').slice(-2).join('/');
+ //customLogger.trace(module.filename);
+ //customLogger.info(path);
+ */
+
+var useDevSettings = true;
+
+//var environment = require(envConfigPath);
+if (process.env.NODE_ENV === 'production') { useDevSettings=false; }
+else if (process.env.NODE_ENV == 'development') { useDevSettings=true; }
+else {
+  winston.log.info('process.env.NODE_ENV="', process.env.NODE_ENV, '".');
+  winston.log.info('Using "development" Log settings as defaults');
+  useDevSettings = true
+}
+
+if (useDevSettings)
+{
+  //
+  // Log settings for development environment
+  //
+  //customLogger.Console.level = "info";
+  winston.log.info('Using Log settings for DEVELOPMENT environment.');
+} else {
+  //
+  // Log settings for production environment
+  //
+
+  winston.log.info('Using Log settings for PRODUCTION environment.');
+}
+
+//winston.log.info( "winston.logDir=", winston.logDir )
+
+
+//*************************************************************************************
+//
+// Set the directory to store log files.  Create it if it doesn't already exist.
+//
+//*************************************************************************************
+var mkdirp = require( 'mkdirp' );
+
+mkdirp( logDir, function ( err )
+{
+  try
+  {
+    if ( err ) { winston.log.error( "Error: ", err); }  // "Error during call to mkdirp('", logDir, "'); " ); //Description: ", err.ex.description, " - Stack:", ( err.ex.stack || err.ex ) );
+    else { winston.log.info( "Application logs will be stored in '", logDir, "'." ); }
+
+  } catch ( ex )
+  {
+    winston.log.error( "Exception during call to mkdirp('", logDir, "'); Description: ", ex.description, " - ", ( ex.stack || ex ) );
+  }
+} );
+
+/*
+ var CaptainsLog = require( 'captains-log' );
+ var captains = CaptainsLog( {
+ custom: customLogger
+ } );
+ */
+
+//try
+//{
+//logDir = "\\\\ttef"
+//} catch ( ex )
+//{
+//}
+
+
+// module.exports = logger;
+// module.exports.stream = {
+//    write: function (message, encoding) {
+//        logger.info(message);
+//    }
+//};
+
+
+/*
+ var ansi = require('ansi-styles');
+
+ $ npm install --save ansi-styles
+ ```
+
+
+ ## Usage
+
+ ```js
+ var ansi = require('ansi-styles');
+
+ console.log(ansi.green.open + 'Hello world!' + ansi.green.close);
+ ```
+
+
+ ## API
+
+ Each style has an `open` and `close` property.
+
+
+ ## Styles
+
+ ### General
+
+ - `reset`
+ - `bold`
+ - `dim`
+ - `italic` *(not widely supported)*
+ - `underline`
+ - `inverse`
+ - `hidden`
+ - `strikethrough` *(not widely supported)*
+
+ ### Text colors
+
+ - `black`
+ - `red`
+ - `green`
+ - `yellow`
+ - `blue`
+ - `magenta`
+ - `cyan`
+ - `white`
+ - `gray`
+
+ ### Background colors
+
+ - `bgBlack`
+ - `bgRed`
+ - `bgGreen`
+ - `bgYellow`
+ - `bgBlue`
+ - `bgMagenta`
+ - `bgCyan`
+ - `bgWhite`
+ */
+
+//*************************************************************************************
+//
+// add filename to winston logger instance
+//
+//*************************************************************************************
+function addModuleInfo(log) {
+  for (var func in winston.log.levels) {
+    var oldFunc = log[func];
+
+    log[func] = function () {
+      var args = Array.prototype.slice.call(arguments);
+      //                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  args.unshift(traceCaller(1));
+      oldFunc.apply(log, args);
+    }
+  }
+}
+
+//*************************************************************************************
+//
+// add module info to winston logger instance
+//
+//*************************************************************************************
+// add callsite info to winston logger instance
+function addCallSite(logger) {
+  // WARNING: traceCaller is slow
+  // http://stackoverflow.com/a/20431861/665507
+  // http://stackoverflow.com/a/13411499/665507
+  /**
+   * examines the call stack and returns a string indicating
+   * the file and line number of the n'th previous ancestor call.
+   * this works in chrome, and should work in nodejs as well.
+   *
+   * @param n : int (default: n = 1) - the number of calls to trace up the
+   *   stack from the current call.  `n=0` gives you your current file/line.
+   *  `n = 1` gives the file/line that called you.
+   */
+  function traceCaller(n) {
+    if( isNaN(n) || n < 0) n = 1;
+    n+=1;
+    var s = (new Error()).stack
+      , a = s.indexOf('\n',5);
+    while(n--) {
+      a = s.indexOf('\n',a + 1);
+      if( a < 0 ) { a = s.lastIndexOf('\n',s.length); break;}
+    }
+    b = s.indexOf('\n',a + 1); if( b < 0 ) b = s.length;
+    a=Math.max(s.lastIndexOf(' ',b), s.lastIndexOf('/',b));
+    b = s.lastIndexOf(':',b);
+    s = s.substring((a+1),b);
+    return s;
+  }
+
+  for (var func in logger.levels) {
+    (function (oldFunc) {
+      logger[func] = function() {
+        var args = Array.prototype.slice.call(arguments);
+        if (typeof args[0] === 'string') {
+          args[0] = traceCaller(1) + ' ' + args[0];
+        }
+        else {
+          args.unshift(traceCaller(1));
+        }
+        oldFunc.apply(logger, args);
+      };
+    })(logger[func]);
+  }
+}
+
+function addExtendedModuleInfo(logger) {
+
+  var ansi = require('ansi-styles');
+
+  function traceCaller(n) {
+    if (isNaN(n) || n < 0) n = 1;
+    n += 1;
+    var s = (new Error()).stack
+      , a = s.indexOf('\n', 5);
+    while (n--) {
+      a = s.indexOf('\n', a + 1);
+      if (a < 0) { a = s.lastIndexOf('\n', s.length); break; }
+    }
+    b = s.indexOf('\n', a + 1); if (b < 0) b = s.length;
+    a = Math.max(s.lastIndexOf(' ', b), s.lastIndexOf('/', b));
+    b = s.lastIndexOf(':', b);
+    s = s.substring(a + 1, b);
+    return s;
+  }
+
+  /*
+   * @param m : module.filename
+   */
+  function showExtraInfo(m) {
+    // m = module.filename;
+    // m = traceCaller(1);
+    a = m.lastIndexOf('\\');
+    if ((a >= 0) && (a < m.length))
+      m = m.substr(a + 1);
+
+    return ansi.bgBlue.open + ansi.bold.open + ansi.yellow.open + '[' + m + ']' + ansi.yellow.close + ansi.bold.close;// + ansi.bgBlue.close;
+  }
+
+  for (var func in logger.levels) {
+    (function (oldFunc) {
+      logger[func] = function () {
+        var args = Array.prototype.slice.call(arguments);
+        if (typeof args[0] === 'string') {
+          args[0] = showExtraInfo(traceCaller(1)) + ' ' + args[0];
+        }
+        else {
+          args.unshift(showExtraInfo(traceCaller(1)));
+        }
+        oldFunc.apply(logger, args);
+      };
+    })(logger[func]);
+  }
+  // add callsite info to winston logger instance
+  function addCallSite(logger) {
+    // WARNING: traceCaller is slow
+    // http://stackoverflow.com/a/20431861/665507
+    // http://stackoverflow.com/a/13411499/665507
+    /**
+     * examines the call stack and returns a string indicating
+     * the file and line number of the n'th previous ancestor call.
+     * this works in chrome, and should work in nodejs as well.
+     *
+     * @param n : int (default: n = 1) - the number of calls to trace up the
+     *   stack from the current call.  `n=0` gives you your current file/line.
+     *  `n = 1` gives the file/line that called you.
+     */
+    function traceCaller(n) {
+      if( isNaN(n) || n < 0) n = 1;
+      n+=1;
+      var s = (new Error()).stack
+        , a = s.indexOf('\n',5);
+      while(n--) {
+        a = s.indexOf('\n', a + 1);
+        if( a < 0 ) { a = s.lastIndexOf('\n',s.length); break;}
+      }
+      var b = s.indexOf('\n',a + 1);
+
+      if( b < 0 ) b = s.length;
+
+      a = Math.max(s.lastIndexOf(' ',b), s.lastIndexOf('/',b));
+
+      b = s.lastIndexOf(':',b);
+      s = s.substring((a + 1),b);
+      return s;
+    }
+
+    for (var func in logger.levels) {
+      (function (oldFunc) {
+        logger[func] = function () {
+          var args = Array.prototype.slice.call(arguments);
+          if (typeof args[0] === 'string') {
+            args[0] = traceCaller(1) + ' ' + args[0];
+          }
+          else {
+            args.unshift(traceCaller(1));
+          }
+          oldFunc.apply(logger, args);
+        };
+      })(logger[func]);
+    }
+  }
+}
+
