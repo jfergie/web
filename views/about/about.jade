@@ -1,0 +1,62 @@
+extends ../layouts/layout
+
+block head
+  title #{application} &middot; About
+
+block styles
+  link(rel='stylesheet', href='/lib/animate.css/animate.css')
+
+block content
+  .container
+    .row
+      ul.breadcrumb
+        li
+          a(href='/') Home
+        li.active About
+
+    .row.row.row-centered
+      .col-sm-8.col-sm-offset-2
+        header#main_logo.boxCenter
+          img.img-responsive(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', title='The Freecycle Network')
+          //p#tagline
+            | changing the world
+            br
+            | one gift at a time™
+
+          section#content
+            article.mostWidth.textJustify.boxCenter
+
+              h2.animated.bounceInRight Find out more about The Freecycle Network™
+              ul.animnated.bounceInLeft
+                li.animated.bounceInLeft
+                  a(href='Newswire') Newswire
+                li.animated.bounceInRight
+                  a(href='FAQ') FAQ
+                li.animated.bounceInLeft
+                  a(href='History') History
+                li.animated.bounceInRight
+                  a(href='Video-Instructional') Instructional Video
+                li.animated.bounceInLeft
+                  a(href='Video-Promotional') Promotional Video
+                li.animated.bounceInRight
+                  a(href='MissionStatement') Mission Statement
+                li.animated.bounceInLeft
+                  a(href='PressRoom') Press Room
+                li.animated.bounceInRight
+                  a(href='Sponsors') Sponsors
+                li.animated.bounceInLeft
+                  a(href='UseOfFunds') Sources and Use of Funds
+                li.animated.bounceInRight
+                  a(href='Volunteering' data-toggle="tooltip" data-original-title="Volunteer today!") Volunteering
+                li.animated.bounceInLeft
+                  a(href='Staff') Staff
+                li.animated.bounceInRight
+                  a(href='Board') Board
+                li.animated.bounceInLeft
+                  a(href='Privacy') Privacy
+                li.animated.bounceInRight
+                  a(href='Terms of Service') Terms of Service
+                li.animated.bounceInLeft
+                  a(href='Disclaimer') Disclaimer
+                li.animated.bounceInRight
+                  a(href='LinksWeLike') Links we like

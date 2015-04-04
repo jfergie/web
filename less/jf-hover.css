@@ -1,0 +1,33 @@
+/*--------------------------------------
+ * #CONTENTS
+ * -------------------------------------
+ *
+ * Hover effects....
+ *
+ *
+/*------------------------------------*\
+  #IMPORTS
+\*------------------------------------*/
+/*------------------------------------*\
+  #COLORS
+\*------------------------------------*/
+/**
+ * This needs some explaining.  I'd rather keep colors separate
+ * from widgets. That way I can just use HTML markup to colorize
+ * widgets in a semantic way:
+ *
+ *   <div class="jumbotron bg-blue white"></div>
+ *
+ * This means give me a jumbotron with a blue background and white text
+ *
+ *   <div class="jumbotron bg-green orange"></div>
+ *
+ * Green background, orange text, get it?
+ *
+ * This separation is very practical in use. However, if I
+ * make a widget that is designed with a particular color
+ * I use the color in the name. Example: .btn-white or .navbar-yellow
+ *
+ * I usually designate brand colors only but since this
+ * is an example so I included a more complete set.
+ */
