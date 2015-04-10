@@ -38,14 +38,14 @@ config.nodeVersion    = pkg.engines.node;
 
 config.port           = process.env.PORT || 3000;
 
-// todo this is vlabs google analytics key for testing - later change this to a dedicated Freecycle analytics key
+// todo this is vlabs google analytics key for the development site - later change this to a dedicated Freecycle analytics key
 config.ga             = process.env.GA   || 'UA-57756453-2';  // Google Analytics Key for freecycle beta web site
 
 /**
  * Logging Configuration
  */
 
-config.logging        = process.env.LOGGING || false;
+config.logging        = process.env.LOGGING || true;
 
 // Loggly configuration
 config.loggly         = {};

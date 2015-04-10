@@ -3,18 +3,20 @@
 header#topHead
   .container
     // PHONE/EMAIL
-    span.quick-contact.pull-left
+    //span.quick-contact.pull-left
       a.fa.fa-envelope(href='mailto:info@freecycle.org')  info@freecycle.org
       // <i class="fa fa-envelope" href="mailto:info@freecycle.org">&nbsp;info@freecycle.org</i>
       // <i class="fa fa-phone"></i> 1800-555-1234 &bull;
       // <a class="hidden-xs" href="mailto:info@freecycle.org">info@freecycle.org</a>
     // /PHONE/EMAIL
+
     // LANGUAGE
-    .btn-group.pull-right.hidden-xs
+    .btn-group.pull-right
       button.dropdown-toggle.language(type='button', data-toggle='dropdown')
         img(src='images/flags/us.png', width='16', height='11', alt='EN Language')
-        |  English
-        span.caret
+        span.hidden-xs
+          | English
+        //span.caret
       ul.dropdown-menu
         li
           a(href='#')
@@ -33,7 +35,10 @@ header#topHead
             img(src='images/flags/ru.png', width='16', height='11', alt='RU Language')
             |  [RU] Russian
     // /LANGUAGE
-    // SIGN IN
+
+    //  ************************************************************************
+    //    SIGN IN MENU IN NAVBAR
+    //  ************************************************************************
     .pull-right.nav.signin-dd
       a#quick_sign_in(href='page-signin.html', data-toggle='dropdown')
         i.fa.fa-users
@@ -73,13 +78,17 @@ header#topHead
         |                     < !-- GOOGLE PLUS END -->
         p.bottom-create-account
           a(href='page-signup.html') Manual create account
-    // /SIGN IN
+    //  ************************************************************************
+    //    /SIGN IN MENU IN NAVBAR END
+    //  ************************************************************************
+
     // CART MOBILE BUTTON
-    a#btn-mobile-quick-cart.pull-right(href='shop-cart.html')
+    //a#btn-mobile-quick-cart.pull-right(href='shop-cart.html')
       i.fa.fa-shopping-cart
     // CART MOBILE BUTTON
+
     // LINKS
-    .pull-right.nav.hidden-xs
+    //.pull-right.nav.hidden-xs
       a(href='page-about-us.html')
         i.fa.fa-angle-right
         |  About
@@ -87,6 +96,7 @@ header#topHead
         i.fa.fa-angle-right
         |  Contact
     // /LINKS
+
 // /Top Bar
 // TOP NAV
 header#topNav.topHead
@@ -97,12 +107,12 @@ header#topNav.topHead
       i.fa.fa-bars
     // Logo text or image
     a.logo(href='/')
-      img(src='images/logo.png', alt='Freecycle.org')
+      img.img-responsive(src='images/logo.png', alt='Freecycle.org')
 
-    //
-      ************************************************************************
-        THIS PART OF NAV BAR VARIES BY WHETHER USER IS LOGGED IN
-      ************************************************************************
+    //  ************************************************************************
+    //    THIS PART OF NAV BAR VARIES BY WHETHER USER IS LOGGED IN.
+    //    Add parts of the menu that only show when the user is logged in
+    //  ************************************************************************
     if user
       ul.nav.navbar-nav
         li.dropdown(class=url == '/apiopen' ? 'active' : undefined)
@@ -139,10 +149,11 @@ header#topNav.topHead
               a(href='/api/react')
                 i.fa.fa-fw.fa-laptop
                 | &nbsp;React Markdown Editor
+
         li.dropdown(class=url == '/apilocked' ? 'active' : undefined)
           a.dropdown-toggle(href='#', data-toggle='dropdown')
             i.fa.fa-fw.fa-lock
-            | &nbsp;APIs (auth req'd) &nbsp;
+            | &nbsp;API Functions &nbsp;
             b.caret
           ul.dropdown-menu
             li
@@ -173,6 +184,7 @@ header#topNav.topHead
               a(href='/api/twitter')
                 i.fa.fa-fw.fa-lock
                 | &nbsp;Twitter
+
       //- Right side
       ul.nav.navbar-nav.navbar-right
         //- Visible to Admin users only!
@@ -195,7 +207,7 @@ header#topNav.topHead
                 a(href='/colors')
                   i.fa.fa-fw.fa-cog
                   | &nbsp;Color Scheme
-        //- User account
+
         li.dropdown(class=url == '/account' ? 'active' : undefined)
           a.dropdown-toggle(href='#', data-toggle='dropdown')
             if user.profile.picture
@@ -219,16 +231,26 @@ header#topNav.topHead
                 i.fa.fa-fw.fa-sign-out
                 | &nbsp;Logout
     else
-      //- No user/not logged in
-      ul.nav.navbar-nav.navbar-collapse.nav-main-collapse.collapse.pull-right
+      //
+      //  ************************************************************************
+      //    NO USER LOGGED IN - DISPLAY THE LOGIN MENU
+      //  ************************************************************************
+
+      //ul.nav.navbar-nav.navbar-collapse.nav-main-collapse.collapse.pull-right
+      ul.nav.navbar-nav.navbar-right
         li(class=url == '/login' ? 'active' : undefined)
           a(href='/login')
             i.fa.fa-sign-in.fa-fw
-            | &nbsp;Sign In
+            &nbsp;Sign In
 
-    //*********************************************
-    // Top Nav Bar Menu
-    //*********************************************
+     //
+     //  ************************************************************************
+     //    THE FOLLOWING IS DISPLAYED WHETHER USER IS LOGGED IN OR NOT
+     //  ************************************************************************
+     //
+     //  ************************************************************************
+     //   TOP NAV BAR MENUS
+     //  ************************************************************************
     .navbar-collapse.nav-main-collapse.collapse.pull-right
       nav.nav-main.mega-menu
         ul#topMain.nav.nav-pills.nav-main.scroll-menu
@@ -295,10 +317,10 @@ header#topNav.topHead
                   i.fa.fa-newspaper-o
                   |  Press Room
               li
-                em
                   a(href='https://www.freecycle.org/about/sponsors')
-                    i.fa.fa-thumbs-o-up
-                    |  Sponsors
+                    em
+                      i.fa.fa-thumbs-o-up
+                      |  Sponsors
               li
                 a(href='https://www.freecycle.org/about/funds')
                   i.fa.fa-money
@@ -485,9 +507,9 @@ header#topNav.topHead
 span#header_shadow
 // /TOP NAV
 //
-  ************************************************************************
-    THIS PART OF NAV BAR VARIES BY WHETHER USER IS LOGGED IN
-  ************************************************************************
+//  ************************************************************************
+//    THIS PART OF NAV BAR VARIES BY WHETHER USER IS LOGGED IN
+//  ************************************************************************
     // Mobile Menu Button
     //button.btn.btn-mobile(data-toggle='collapse', data-target='.nav-main-collapse')
       i.fa.fa-bars

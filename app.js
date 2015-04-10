@@ -85,11 +85,14 @@ app.locals.moment = require('moment');
 app.locals.numeral = require('numeral');
 
 if (app.get('env') === 'development') {
+
   // Jade options: Don't minify html, debug instrumentation
   app.locals.pretty = true;
   app.locals.compileDebug = true;
+
   // Turn on console logging in development
   app.use(morgan('dev'));
+
   // Turn off caching in development
   // This sets the Cache-Control HTTP header to no-store, no-cache,
   // which tells browsers not to cache anything.
@@ -97,11 +100,14 @@ if (app.get('env') === 'development') {
 }
 
 if (app.get('env') === 'production') {
+
   // Jade options: minify html, no debug instrumentation
   app.locals.pretty = false;
   app.locals.compileDebug = false;
+
   // Enable If behind nginx, proxy, or a load balancer (e.g. Heroku, Nodejitsu)
   app.enable('trust proxy', 1);  // trust first proxy
+
   // Since our application has signup, login, etc. forms these should be protected
   // with SSL encryption. Heroku, Nodejitsu and other hosters often use reverse
   // proxies or load balancers which offer SSL endpoints (but then forward unencrypted
@@ -116,14 +122,17 @@ if (app.get('env') === 'production') {
   //
   // NOTE: Use `enforce.HTTPS(true)` if you are behind a proxy or load
   // balancer that terminates SSL for you (e.g. Heroku, Nodejitsu).
+
   app.use(enforce.HTTPS(true));
   // This tells browsers, "hey, only use HTTPS for the next period of time".
   // This will set the Strict Transport Security header, telling browsers to
   // visit by HTTPS for the next ninety days:
   // TODO: should we actually have this *and* app.use(enforce.HTTPS(true)); above?
   //       this seems more flexible rather than a hard redirect.
+
   var ninetyDaysInMilliseconds = 7776000000;
   app.use(helmet.hsts({ maxAge: ninetyDaysInMilliseconds }));
+
   // Turn on HTTPS/SSL cookies
   config.session.proxy = true;
   config.session.cookie.secure = true;

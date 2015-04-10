@@ -1,0 +1,86 @@
+/*--------------------------------------
+ * #CONTENTS - X - Experimental Ideas
+ * -------------------------------------
+ *
+ *   Hover effects.
+ *
+ *--------------------------------------*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container{
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.container h1{
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.container h3{
+  font-size: 24px;
+  text-align: center;
+}
+
+.container p{
+  color: #555;
+  line-height: 1.5;
+  word-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+a{
+  color: #e74c3c;
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+a:hover{
+  color: #222;
+}
+
+a:before, a:after{
+  content: '';
+  background: #e74c3c;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+a:before{
+  top: 0;
+  left: 0;
+}
+
+a:after{
+  top: 100%;
+  right: 0;
+}
+
+a:hover:before, a:hover:after{
+  width: 100%;
+}

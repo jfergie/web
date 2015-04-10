@@ -208,10 +208,14 @@ passport.use('foursquare', new OAuth2Strategy({
  */
 
 exports.isAuthenticated = function (req, res, next) {
+
+
   // Is the user authenticated?
   if (req.isAuthenticated()) {
+
     // Does the user have enhanced security enabled?
     if (req.user.enhancedSecurity.enabled) {
+      console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". Passport.IsAuthenticated = TRUE. Proceeding with Two Factor Authentication');
       // If we already have validated the second factor it's
       // a noop, otherwise redirect to capture the OTP.
       if (req.session.passport.secondFactor === 'validated') {
@@ -221,10 +225,12 @@ exports.isAuthenticated = function (req, res, next) {
         res.redirect('/verify-setup');
       }
     } else {
+      console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". Passport.IsAuthenticated = TRUE. (User did not require Two factor)');
       // If enhanced security is disabled just continue.
       return next();
     }
   } else {
+    console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". Passport.IsAuthenticated = TRUE. (User did not require Two factor)');
     req.session.attemptedURL = req.url;  // Save URL so we can redirect to it after authentication
     res.set('X-Auth-Required', 'true');
     req.flash('error', { msg: 'You must be logged in to reach that page.' });
@@ -240,13 +246,16 @@ exports.isAuthorized = function (req, res, next) {
   var provider = req.path.split('/').slice(-1)[0];
   if (_.find(req.user.tokens, { kind: provider })) {
     // we found the provider so just continue
+    console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". Found user.token for ' + provider);
     next();
   } else {
     // we have to get authorized first
     if (provider === 'facebook' || provider === 'twitter' || provider === 'github' || provider === 'google') {
       req.flash('info', { msg: 'You must connect ' + utils.capitalize(provider) + ' first!' });
+      console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". redirecting to /account. Provider: ' + provider);
       res.redirect('/account');
     } else {
+      console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". Found user.token. Redirecting to /auth/ ' + provider + '. ');
       res.redirect('/auth/' + provider);
     }
   }

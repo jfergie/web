@@ -3,7 +3,7 @@ extends ../layouts/layout
 block head
   title #{application} &middot; About
 
-block styles
+//block styles
   link(rel='stylesheet', href='/lib/animate.css/animate.css')
 
 block content
@@ -16,13 +16,27 @@ block content
 
     .row.row.row-centered
       .col-sm-8.col-sm-offset-2
-        header#main_logo.boxCenter
-          img.img-responsive(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', title='The Freecycle Network')
+        .block
+          i.hover.circle-rotate rot
+          i.hover.circle-rotate.sub-b rot2
+          i.hover.sonar-ping sonar
+
+          header#main_logo.boxCenter
+          i.hover.sonar-ping
+            img.img-responsive.hover.circle-rotate(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', title='The Freecycle Network')
+
+          i.hover.circle-rotate
+            img.img-responsive(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+
+          img.img-responsive.hover.sonar-ping(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', title='The Freecycle Network')
+          i.hover.circle-rotate.sub-b
           //p#tagline
             | changing the world
             br
             | one gift at a time™
 
+          //section#content
+          //.jumbotron
           section#content
             article.mostWidth.textJustify.boxCenter
 
