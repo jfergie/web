@@ -11,6 +11,10 @@ var $             = require('gulp-load-plugins')({ lazy: true });
 var psi           = require('psi');
 var del           = require('del');
 var gulp          = require('gulp');
+var browserSync   = require('browser-sync');
+//var sass          = require('gulp-sass');
+//+var filter       = require('gulp-filter');
+var reload        = browserSync.reload;
 var pngquant      = require('imagemin-pngquant');
 var terminus      = require('terminus');
 var runSequence   = require('run-sequence');
@@ -41,7 +45,10 @@ var paths = {
     'public/js/**/*.min.js',
     'public/css/**/*.css',
     'public/css/**/*.min.css',
-    '!public/js/main.js',            // ! not
+    '!public/js/main.js'            // ! not
+  ],
+  jade:[
+    'views/**/*.jade'
   ],
   js: [
     // ============= Bootstrap  ================
@@ -119,7 +126,8 @@ gulp.task('styles', function () {
     .pipe($.header(banner, { pkg : pkg }))  // Add banner
     .pipe($.size({ title: 'CSS:' }))        // What size are we at?
     .pipe(gulp.dest('./public/css'))        // Save minified CSS
-    .pipe($.livereload());                  // Initiate a reload
+    .pipe(reload({stream: true}));
+    //.pipe($.livereload());                  // Initiate a reload
 });
 
 /**
@@ -135,7 +143,8 @@ gulp.task('scripts', function () {
     .pipe($.header(banner, { pkg : pkg }))  // Add banner
     .pipe($.size({ title: 'JS:' }))         // What size are we at?
     .pipe(gulp.dest('./public/js'))         // Save minified .js
-    .pipe($.livereload());                  // Initiate a reload
+    .pipe(reload({stream: true}));
+    //.pipe($.livereload());                  // Initiate a reload
 });
 
 /**
@@ -242,14 +251,46 @@ gulp.task('open', ['nodemon'], function () {
 });
 
 /**
+ * Compile jade files into HTML
+ */
+gulp.task('compile-jade', function() {
+
+  return gulp.src('./app/*.jade')
+    .pipe(jade(
+      //{ paths.jade }
+      paths.jade
+    ))
+    .pipe(gulp.dest('./dist/'))
+});
+
+/**
+ * Important!!
+ * Separate task for the reaction to `.jade` files
+ */
+gulp.task('jade-watch', ['compile-jade'], reload);
+
+
+/**
  * Default Task
  */
-
 gulp.task('default', ['open'], function () {
   gulp.watch(paths.less, ['styles']);
   gulp.watch(paths.js, ['scripts']);
   gulp.watch(paths.lint, ['lint', 'jscs']);
-  gulp.watch('views/**/*.jade').on('change', $.livereload.changed);
+  gulp.watch(oaths.jade, ['jade-watch']);
+  //gulp.watch('views/**/*.jade').on('change', $.livereload.changed);
+});
+
+// BrowserSync
+// Runs a BrowserSync proxy to hammer, will automatically open a new window
+// to turn off the auto open, set `open` to false.
+gulp.task('browser-sync', function() {
+  browserSync({
+    proxy: "localhost:5000",
+    open: true,
+    logConnections: true,
+    logSnippet: false
+  });
 });
 
 /**
@@ -260,7 +301,7 @@ gulp.task('default', ['open'], function () {
  // registering for an API key from the Google Developer Console
  // is recommended.
 
-var site = 'skeleton-app.jit.su';
+var site = 'freecycle-app.jit.su';
 
 gulp.task('mobile', function (cb) {
   // output a formatted report to the terminal
