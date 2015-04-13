@@ -471,6 +471,8 @@ if (app.get('env') === 'development') {
 
 db.on('error', function () {
   debug('MongoDB Connection Error. Please make sure MongoDB is running.'.red.bold);
+  debug('Requested MongoDB connection on port ' + app.get('port').toString().green.bold + ' in ' + app.settings.env.green.bold + ' mode.');
+  debug('listening in ' + app.settings.env.green.bold + ' mode.');
   process.exit(0);
 });
 
