@@ -5,37 +5,48 @@
  *   Hover effects.
  *
  *--------------------------------------*/
-* {
+/*
+*{
   margin: 0;
   padding: 0;
 }
-body {
+
+.h1 {
+  colo: #FF0000;
+}
+body{
   background: #f9f9f9;
   font-family: 'Roboto', sans-serif;
 }
-.container {
+*/
+/*
+.container{
   width: 70%;
   margin: auto;
   margin-top: 5%;
   padding: 20px;
   text-align: justify;
 }
-.container h1 {
+
+.container h1{
   color: #333;
   margin-bottom: 20px;
   text-align: center;
   text-transform: capitalize;
 }
-.container h3 {
+
+.container h3{
   font-size: 24px;
   text-align: center;
 }
-.container p {
+
+.container p{
   color: #555;
   line-height: 1.5;
   word-spacing: 1px;
   margin-bottom: 20px;
 }
+*/
 a {
   color: #e74c3c;
   position: relative;

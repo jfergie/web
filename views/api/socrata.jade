@@ -1,19 +1,45 @@
 extends ../layouts/layout
 
 block head
-  title #{application} &middot; Web Scraping
+  title #{application} &middot; Open Data
 
 block content
   .container
     .page-header
       h2
         i.fa.fa-database
-        | &nbsp;Open Data API
+        | &nbsp;Open Data API / Data Online / Web Scraping
       p.lead
-        | Why this is cool - many cities and governmental agencies have adopted "Open Data" policies and are making their data publicly available&nbsp;
+        | Many cities and governmental agencies have adopted "Open Data" policies and are making their data publicly available&nbsp;
+        | The United States Government maintains its
+        a(href='https://github.com/project-open-data/project-open-data.github.io', rel='external')
+        | Open Data Policy on GitHub
+        | as open source software.  They have 132,712 different datasets available online at
+        a(href='http://www.data.gov/', rel='external')
+        | http://www.data.gov/
+        | as of this writing.  And, there are more than 40 other countries with data sets online.
+        | There is already a vast amount of data online. and momentum is growing,
+      p
+        | Much of this data was available (in the US anyway) through the Freedom of Information Act (and state equivalents),
+        | but previously they were in custom formats available on DVD or tape and there was substantial friction in obtaining the
+        | data, which frequently included signing contracts for ongoing data feeds.
+      p
+        | This is a much better solution. The data is available online in a known, consistent format and the government is providing
+        | Open Source software support making the formats and implementation details readily available online and
+        | standards have been drafted, such as ISO 37120, allowing other entities to share data in the same format so that one
+        | set of code can read them all.  Another benefit is that it is now possible to quickly and easily merge and
+        | correllate data sets.
+      p
+        a(href='http://pillbox.nlm.nih.gov/pillimage/search.php', rel='external')
+        | Link to simple search form
+        | on top of a massive amount of pill data in one of the government data sets.
+      p
+        | The table below is pulling live data from one of the data sets as a test. A myriad of other datasets are available now, and more
+        | are coming online frequently now - momentum seems to be growing rapidly.
+      p
         a(href='http://danstroot.com/2014/07/01/from-open-government-to-open-corporation/', rel='external')
-          | (See my blog post)
-        | . Many of these agencies are using a platform called&nbsp;
+        | This is a good article on the subject
+        | I've listed 3 of the salient points from the article at the bottom of this page. Many of these agencies are using a platform called&nbsp;
         a(href='http://www.socrata.com/', rel='external') Socrata
         | . This platform makes public datasets available via an API that we can consume making it easy to integrate public datasets into your site or application.  This is a simple example showing the top 20 highest paid positions in the City of Los Angeles using data from the Los Angeles Open Data platform.
 

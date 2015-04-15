@@ -1,0 +1,50 @@
+extends ../layouts/layout
+
+block head
+  title #{application} &middot; Open Data Sources
+
+block content
+  .container
+    .page-header
+      h2
+        i.fa.fa-database
+        | &nbsp;Open Data Sources - How to find them
+      p.lead
+        | Many cities and governmental agencies have adopted "Open Data" policies and are making their data publicly available&nbsp;
+        | The United States Government maintains its
+        a(href='https://github.com/project-open-data/project-open-data.github.io', rel='external')
+        | Open Data Policy on GitHub
+        | as open source software.
+
+      p
+        | The Federal government has 132,712 different datasets available online at
+        a(href='http://www.data.gov/', rel='external')
+        | http://www.data.gov/
+        | There are more than 40 other countries with data sets online.
+        | There is already a vast amount of data online. and momentum is growing,
+      h2
+        | How to find data that is available online
+
+      ol
+        li
+          a(href='https://opendata.socrata.com/dataset/Socrata-Customer-Spotlights/6wk3-4ija')
+          | Search the online Socrata-powered open data sites
+        li
+          a(href='http://catalog.data.gov/#topic=developers_navigation')
+          | Search the catalog at data.gov
+        li
+          a(href='https://www.data.gov/cities/community/cities/datasets')
+          | Search cities
+        li
+          a(href='https://www.data.gov/cities/community/counties/datasets')
+          | Search counties
+        li
+          a(href='https://www.data.gov/cities/community/states/datasets')
+          | Search states
+        li
+          a(href='https://www.data.gov/catalog-help/')
+          | Search Tips
+        li
+          | Check to see if there’s a community group in your area with their own catalog hosted on
+          a(href='https://www.data.gov/catalog-help/')
+          | communities.socrata.com

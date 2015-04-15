@@ -47,6 +47,17 @@ module.exports.controller = function (app) {
   });
 
   /**
+   * GET /api/opendata
+   * How to find opendata sources
+   */
+
+  app.get('/api/opendata', function (req, res) {
+    res.render('api/opendata', {
+      url: req.url
+    });
+  });
+
+  /**
    * GET /api/react
    * React examples
    */

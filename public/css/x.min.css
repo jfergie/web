@@ -4,4 +4,4 @@
  * @link http://1.get.gs
  * @license MIT
  */
-*{margin:0;padding:0}body{font-family:'Roboto',sans-serif;background:#f9f9f9}.container{width:70%;margin:5% auto auto;padding:20px;text-align:justify}.container h1{margin-bottom:20px;text-align:center;text-transform:capitalize;color:#333}.container h3{font-size:24px;text-align:center}.container p{line-height:1.5;margin-bottom:20px;word-spacing:1px;color:#555}a{font-weight:600;position:relative;display:inline-block;transition:all .3s linear;text-decoration:none;color:#e74c3c}a:hover{color:#222}a:before,a:after{position:absolute;width:0;height:2px;content:'';transition:all .3s linear;background:#e74c3c}a:before{top:0;left:0}a:after{top:100%;right:0}a:hover:before,a:hover:after{width:100%}
+a{font-weight:600;position:relative;display:inline-block;transition:all .3s linear;text-decoration:none;color:#e74c3c}a:hover{color:#222}a:before,a:after{position:absolute;width:0;height:2px;content:'';transition:all .3s linear;background:#e74c3c}a:before{top:0;left:0}a:after{top:100%;right:0}a:hover:before,a:hover:after{width:100%}

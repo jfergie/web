@@ -4,55 +4,67 @@ block head
   title #{application} &middot; Experimental
 
 block styles
-  link(rel='stylesheet', href='/css/x.min.css')
+  link(rel='stylesheet', href='./css/x.min.css')
 
 block content
   .container
     .row
-      ul.breadcrumb
+      p
+      br
+      ul.breadcrumb.list-inline
         li
-          a(href='/') X
-        li.active X - Experimental Pages
+          a(href='/')
+            | Freecycle Home
+          | &nbsp;&nbsp;&nbsp;/
+        li
+          a(href='/x')
+            | X
+          | &nbsp;&nbsp;&nbsp;/
+        li.active
+            | Index
 
-    .row.row.row-centered
       .col-sm-8.col-sm-offset-2
-        .block
-          i.hover.circle-rotate rot
-          i.hover.circle-rotate.sub-b rot2
-          i.hover.sonar-ping sonar
-
-          header#main_logo.boxCenter
+        section#content
             img.img-responsive.center-block(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+            | test
 
-          //section#content
-          //.jumbotron
-          section#content
-            article.mostWidth.textJustify.boxCenter
 
-              h2.animated.bounceInRight Experimental / Concept Pages
-              h2 Test2
-              ul
-                li.animated.bounceInLeft
-                  a(href='x/controls') Controls
-                li.animated.bounceInRight
-                  a(href='x/3d') 3D
-                li.animated.bounceInLeft
-                  a(href='x/svg') SVG Experiment / Explosions
-                li.animated.bounceInRight
-                  a(href='x/hover') Hover Effects
-                li.animated.bounceInLeft
-                  a(href='x/text effects') Text Effects
-                li.animated.bounceInRight
-                  a(href='x/x1') X1
-                li.animated.bounceInLeft
-                  a(href='x/x2') X2
-                li.animated.bounceInRight
-                  a(href='x/x3') X3
-                li.animated.bounceInLeft
-                  a(href='x/x4') X4
-                li.animated.bounceInRight
-                  a(href='x/x5' data-toggle="tooltip" data-original-title="Experimental Lab #5!") X5
-                li.animated.bounceInRight
-                  a(href='x/suggestions') Suggestions
-                li.animated.bounceInRight
-                  a(href='x/links') Cool links worth viewing
+      .jumbotron
+        //header#main_logo.boxCenter
+        img.img-responsive.center-block(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+
+        //section#content
+        //article.mostWidth.textJustify.boxCenter
+
+        h2.animated.bounceInRight Experimental / Concept Pages
+
+        ul
+          li.animated.bounceInLeft
+            a(href='x/controls') Controls
+          li.animated.bounceInRight
+            a(href='x/3d') 3D
+          li.animated.bounceInLeft
+            a(href='x/svg') SVG Experiment / Explosions
+          li.animated.bounceInRight
+            a(href='x/hover') Hover Effects
+          li.animated.bounceInLeft
+            a(href='x/text effects') Text Effects
+          li.animated.bounceInRight
+            a(href='x/x1') X1
+          li.animated.bounceInLeft
+            a(href='x/x2') X2
+          li.animated.bounceInRight
+            a(href='x/x3') X3
+          li.animated.bounceInLeft
+            a(href='x/x4') X4
+          li.animated.bounceInRight
+            a(href='x/x5' data-toggle="tooltip" data-original-title="Experimental Lab #5!") X5
+          li.animated.bounceInRight
+            a(href='x/suggestions') Suggestions
+          li.animated.bounceInRight
+                a(href='x/links') Cool links worth viewing
+
+      .block
+        i.hover.circle-rotate rot
+        i.hover.circle-rotate.sub-b rot2
+        i.hover.sonar-ping sonar

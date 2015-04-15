@@ -265,11 +265,54 @@ gulp.task('bs-reload', function () {
 // to turn off the auto open, set `open` to false.
 gulp.task('browser-sync', function () {
   console.log ('Gulp task browser-sync executing.');
+
   browserSync({
-    proxy: 'localhost:5000',
+    files: ['views/**/*.jade", "less/**/*.less'],
+
+    port: '5000',
+    proxy: 'localhost:3000',
+
+    notify: false,
     open: true,
+    // logLevel: "silent",
+    logLevel: 'info',
     logConnections: true,
-    logSnippet: false
+    logSnippet: false,
+    logFileChanges: true,
+
+    // Will not attempt to determine your network status, assumes you're ONLINE.
+    online: true,
+
+    // Will not attempt to determine your network status, assumes you're OFFLINE
+    // online: false,
+
+    watchOptions: {
+      debounceDelay: 1000
+    },
+
+    // Open the site in Chrome & Firefox
+    browser: ['google chrome']
+
+    /*    proxy: {
+     target: 'http://localhost:3000',
+     middeware: function (req, res, next) {
+     console.log(req.url);
+     next();
+     },
+     reqHeaders: function (config) {
+     console.log(config);
+     return config;
+     */
+    /*        return {
+     "host":            config.urlObj.host,
+     "accept-encoding": "identity",
+     "agent":           false
+     }
+     */
+//      }
+//    },
+
+
   });
 });
 
@@ -277,9 +320,9 @@ gulp.task('browser-sync', function () {
  * Open the browser
  */
 // gulp.task('open', ['nodemon', 'browser-sync'], function () {
-gulp.task('open', ['nodemon'], function () {
+gulp.task('open', ['nodemon', 'browser-sync'], function () {
   var options = {
-    url: 'http://localhost:3000/'
+    url: 'http://localhost:5000/x'
   };
   // Specify a file or gulp will skip the task
   gulp.src('./public/favicon.ico')
@@ -314,7 +357,7 @@ gulp.task('default', ['open'], function () {
   gulp.watch(paths.js, ['scripts']);
   gulp.watch(paths.lint, ['lint', 'jscs']);
   gulp.watch(paths.jade, ['jade-watch']);
-  gulp.watch('views/**/*.jade').on('change', $.livereload.changed);
+  // gulp.watch('views/**/*.jade').on('change', $.livereload.changed);
 });
 
 /**
