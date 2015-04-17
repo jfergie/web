@@ -64,6 +64,9 @@ script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min
 script.
   $(document).ready(function() {
 
+    $( "a" ).addClass( "hvr-grow-shadow" );
+    $("nav.li").addClass("hvr-glow hvr-float-shadow");
+
     //- Async load main project js
     $.ajax({
       type: 'GET',

@@ -3342,7 +3342,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 30px 15px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #efecda;
+  background-color: #ffffff;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -3354,7 +3354,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   font-weight: 200;
 }
 .jumbotron > hr {
-  border-top-color: #e0dab6;
+  border-top-color: #e6e6e6;
 }
 .container .jumbotron,
 .container-fluid .jumbotron {
@@ -7222,6 +7222,92 @@ fieldset[disabled] .btn-yahoo.active {
     opacity: 0;
   }
 }
+/*--------------------------------------
+ * #CONTENTS - X - Experimental Ideas
+ * -------------------------------------
+ *
+ *   Hover effects.
+ *
+ *--------------------------------------*/
+/*
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.h1 {
+  colo: #FF0000;
+}
+body{
+  background: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+}
+*/
+/*
+.container{
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.container h1{
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.container h3{
+  font-size: 24px;
+  text-align: center;
+}
+
+.container p{
+  color: #555;
+  line-height: 1.5;
+  word-spacing: 1px;
+  margin-bottom: 20px;
+}
+*/
+a {
+  color: #009E74;
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+}
+a:hover {
+  color: #41e757;
+  background: #009E74;
+}
+a:before,
+a:after {
+  content: '';
+  background: #009E74;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+}
+a:before {
+  top: 0;
+  left: 0;
+}
+a:after {
+  top: 100%;
+  right: 0;
+}
+a:hover:before,
+a:hover:after {
+  width: 100%;
+}
 /*------------------------------------*\
     #TYPOGRAPHY
 \*------------------------------------*/
@@ -7303,7 +7389,7 @@ fieldset[disabled] .btn-yahoo.active {
 @brand-danger:  #d9534f;
 */
 .brand1 {
-  color: #efecda;
+  color: #e0e0e0;
 }
 .brand2 {
   color: #009e74;
@@ -7318,7 +7404,7 @@ fieldset[disabled] .btn-yahoo.active {
   color: #d9534f;
 }
 .bg-brand1 {
-  background-color: #efecda;
+  background-color: #e0e0e0;
 }
 .bg-brand2 {
   background-color: #009e74;
@@ -7458,6 +7544,12 @@ fieldset[disabled] .btn-yahoo.active {
 .bg-maroon {
   background-color: #85144b;
 }
+.titlebar-bg {
+  background-color: #cccccc;
+}
+.body-bg {
+  background-color: #ffffff;
+}
 /*------------------------------------*\
   #SCAFFOLDING
 \*------------------------------------*/
@@ -7471,6 +7563,14 @@ body {
   padding-top: 50px;
   /* Sticky Footer: margin bottom = footer height */
   margin-bottom: 80px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #e0e0e0 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #e0e0e0 0%, #ffffff 100%);
+  background-image: linear-gradient(to bottom, #e0e0e0 0%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@body-bg-darker', endColorstr='@body-bg', GradientType=0);
+  background-repeat: repeat-x;
 }
 /* Use a thin style for large headers */
 h1,
@@ -7511,12 +7611,12 @@ h2 {
 .jumbotron,
 .mini-tron {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-  background-color: #efecda;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e3ddbe), to(#efecda));
-  background-image: -webkit-linear-gradient(top, #e3ddbe 0%, #efecda 100%);
-  background-image: -o-linear-gradient(top, #e3ddbe 0%, #efecda 100%);
-  background-image: linear-gradient(to bottom, #e3ddbe 0%, #efecda 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@brand1-darker', endColorstr='@brand1', GradientType=0);
+  background-color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e0e0e0), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #e0e0e0 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #e0e0e0 0%, #ffffff 100%);
+  background-image: linear-gradient(to bottom, #e0e0e0 0%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@jumbotron-bg-darker', endColorstr='@jumbotron-bg', GradientType=0);
   background-repeat: repeat-x;
 }
 .jumbotron {

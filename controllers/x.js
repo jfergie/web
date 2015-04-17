@@ -25,9 +25,9 @@ module.exports.controller = function (app) {
    * *ALL* x routes must be authenticated first
    */
 
-  debug('Testing');
+  debug('DDD Testing');
   app.all('/x*', passportConf.isAuthenticated);
-  debug('Testing2');
+  debug('DDD Testing2');
 
   /**
    * GET /x
@@ -37,7 +37,120 @@ module.exports.controller = function (app) {
   app.get('/x', function (req, res) {
     console.log('app.get URL ' + req.url + '..');
     res.render('x/home', {
-      url: req.url
+      url: req.url,
+      navTitle: 'X-Home'
+    });
+  });
+
+  app.get('/x/svg', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/svg', {
+      url: req.url,
+      navTitle: 'SVG'
+    });
+  });
+
+  app.get('/x/svg2', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/svg2', {
+      url: req.url,
+      navTitle: 'SVG2'
+    });
+  });
+
+  app.get('/x/svg3', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/svg3', {
+      url: req.url,
+      navTitle: 'SVG3'
+    });
+  });
+
+  app.get('/x/hover', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/hover', {
+      url: req.url,
+      navTitle: 'Hover'
+    });
+  });
+
+  app.get('/x/3d', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/3d', {
+      url: req.url,
+      navTitle: '3D'
+    });
+  });
+
+  app.get('/x/controls', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/controls', {
+      url: req.url,
+      navTitle: 'controls'
+    });
+  });
+
+  app.get('/x/text', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/text', {
+      url: req.url,
+      navTitle: 'text'
+    });
+  });
+
+  app.get('/x/x1', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/x1', {
+      url: req.url,
+      navTitle: 'x1'
+    });
+  });
+
+  app.get('/x/21', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/x2', {
+      url: req.url,
+      navTitle: 'x2'
+    });
+  });
+
+  app.get('/x/x3', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/x3', {
+      url: req.url,
+      navTitle: 'x3'
+    });
+  });
+
+  app.get('/x/x4', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/x4', {
+      url: req.url,
+      navTitle: 'x4'
+    });
+  });
+
+  app.get('/x/x5', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/x5', {
+      url: req.url,
+      navTitle: 'x5'
+    });
+  });
+
+  app.get('/x/suggestions', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/suggestions', {
+      url: req.url,
+      navTitle: 'suggestions'
+    });
+  });
+
+  app.get('/x/links', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/links', {
+      url: req.url,
+      navTitle: 'links'
     });
   });
 

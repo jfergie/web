@@ -38,8 +38,10 @@
 @import "bootstrap.less";
 @import "../public/lib/bootstrap-social/bootstrap-social.less";
 @import "../public/lib/font-awesome/less/font-awesome.less";
+//@inport "../public/lib/hover/css/hover.css";
+// @inport "../public/css-sails/animate.css";
 @import "jf-hover.less";
-//@import "x.less";  // Experimental
+@import "x.less";  // Experimental
 
 @fa-font-path: "../lib/font-awesome/fonts";
 
@@ -135,7 +137,8 @@
 */
 
 @brand8:        #BBBBBB;  // Blue
-@brand1:        #EFECDA; /// Blue
+@brand1-1:      #ecefd8; /// Blue
+@brand1:        #E0E0E0; /// Blue
 @brand2:        #009E74;  // Aqua
 @brand9:        #00A973;
 @brand3:        #E6E2AF;  // Salmon
@@ -259,6 +262,14 @@
 
 
 
+@navbar-default-brand-color: @gray-darker;
+@navbar-default-link-hover-bg: darken(@navbar-default-bg, 6.5%);
+@titlebar-bg: darken(@brand1, 8.0%);
+@body-bg: lighten(@brand1, 15.0%);
+@body-bg-darker: darken(@body-bg, 12.0%);
+
+.titlebar-bg {    background-color: @titlebar-bg; }
+.body-bg     {    background-color: @body-bg; }
 
 
 /*------------------------------------*\
@@ -276,6 +287,17 @@ body {
   padding-top: 50px;
   /* Sticky Footer: margin bottom = footer height */
   margin-bottom: 80px;
+
+  text-shadow: 0 1px 0 rgba(0,0,0,.2);
+
+  background-color: @body-bg;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@jumbotron-bg-darker), to(@jumbotron-bg));
+  background-image: -webkit-linear-gradient(top, @body-bg-darker 0%, @body-bg 100%);
+  background-image:      -o-linear-gradient(top, @body-bg-darker 0%, @body-bg 100%);
+  background-image:         linear-gradient(to bottom, @body-bg-darker 0%, @body-bg 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@body-bg-darker', endColorstr='@body-bg', GradientType=0);
+  background-repeat: repeat-x;
+
 }
 
 /* Use a thin style for large headers */
@@ -293,9 +315,6 @@ h1, h2 {
 /**
  * Navbar
  */
-
-@navbar-default-brand-color: @gray-darker;
-@navbar-default-link-hover-bg: darken(@navbar-default-bg, 6.5%);
 
 .navbar-nav .profile-image {
   width: 30px;
@@ -328,19 +347,20 @@ h1, h2 {
  * Jumbotron
  */
 
-@jumbotron-bg: @brand1;
+@jumbotron-bg: lighten(@brand2, 80%);
 @jumbotron-heading-color: @white;
+@jumbotron-bg-darker: darken(@jumbotron-bg, 12%);
 @brand1-darker: darken(@brand1, 8%);
 
 .jumbotron,
 .mini-tron {
   text-shadow: 0 1px 0 rgba(0,0,0,.2);
-  background-color: @brand1;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(@brand1-darker), to(@brand1));
-  background-image: -webkit-linear-gradient(top, @brand1-darker 0%, @brand1 100%);
-  background-image:      -o-linear-gradient(top, @brand1-darker 0%, @brand1 100%);
-  background-image:         linear-gradient(to bottom, @brand1-darker 0%, @brand1 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@brand1-darker', endColorstr='@brand1', GradientType=0);
+  background-color: @jumbotron-bg;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@jumbotron-bg-darker), to(@jumbotron-bg));
+  background-image: -webkit-linear-gradient(top, @jumbotron-bg-darker 0%, @jumbotron-bg 100%);
+  background-image:      -o-linear-gradient(top, @jumbotron-bg-darker 0%, @jumbotron-bg 100%);
+  background-image:         linear-gradient(to bottom, @jumbotron-bg-darker 0%, @jumbotron-bg 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@jumbotron-bg-darker', endColorstr='@jumbotron-bg', GradientType=0);
   background-repeat: repeat-x;
 }
 
