@@ -64,10 +64,15 @@ script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min
 script.
   $(document).ready(function() {
 
-    $( "a" ).addClass( "hvr-grow-shadow" );
-    $("nav.li").addClass("hvr-glow hvr-float-shadow");
+    $("a").addClass("hvr-grow-shadow");
+    $("li").addClass("hvr-float-shadow hvr-grow-shadow");
+    $("p").addClass("hvr-grow-shadow hvr-float-shadow");
+    $("h1").addClass("hvr-grow");
+    $("h2").addClass("hvr-grow");
+    $("h2:after").addClass("hvr-grow");
 
-    //- Async load main project js
+
+  //- Async load main project js
     $.ajax({
       type: 'GET',
       url: '/js/#{application}.min.js',

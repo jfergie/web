@@ -36,6 +36,7 @@ module.exports.controller = function (app) {
       return res.redirect('back');
     }
     res.render('twofactor/enable-enhanced-security', {
+      navTitle: 'Enable Enhanced Security',
       url: '/account', // to set navbar active state
       user: req.user
     });
@@ -49,6 +50,7 @@ module.exports.controller = function (app) {
 
   app.get('/complete-enhanced-security', passportConf.isAuthenticated, function (req, res) {
     res.render('twofactor/complete-enhanced-security', {
+      navTitle: 'Enhanced Security',
       url: '/account', // to set navbar active state
       user: req.user
     });
@@ -123,15 +125,16 @@ module.exports.controller = function (app) {
     }
   });
 
-/**
-   * GET /verify-code
-   *
-   *     Get OTP Code from user for validation.
-   *     Used for both TOTP and SMS authentication.
-   */
+  /**
+     * GET /verify-code
+     *
+     *     Get OTP Code from user for validation.
+     *     Used for both TOTP and SMS authentication.
+     */
 
   app.get('/verify-code', function (req, res) {
     res.render('twofactor/verify-code', {
+      navTitle: 'Verify Code',
       url: '/account', // to set navbar active state
       user: req.user
     });
@@ -317,6 +320,7 @@ module.exports.controller = function (app) {
     var qrImage = 'https://chart.googleapis.com/chart?chs=166x166&chld=L|0&cht=qr&chl=' + encodeURIComponent(otpUrl);
     // Render the setup page
     res.render('twofactor/setup-totp', {
+      navTitle: 'Setup Enhanced Security',
       user: req.user,
       url: '/account', // to set navbar active state
       key: encodedKey,
@@ -325,15 +329,16 @@ module.exports.controller = function (app) {
 
   });
 
-/**
-   * GET /verify-totp-first (requires authentication)
-   *
-   *   Test key validation.  Ensure that TOTP works
-   *   for user BEFORE we turn on enhanced security!
-   */
+  /**
+     * GET /verify-totp-first (requires authentication)
+     *
+     *   Test key validation.  Ensure that TOTP works
+     *   for user BEFORE we turn on enhanced security!
+     */
 
   app.get('/verify-totp-first', passportConf.isAuthenticated, function (req, res) {
     res.render('twofactor/verify-totp-first', {
+      navTitle: 'Verify',
       url: '/account', // to set navbar active state
       user: req.user
     });
@@ -399,6 +404,7 @@ module.exports.controller = function (app) {
 
   app.get('/setup-sms', passportConf.isAuthenticated, function (req, res) {
     res.render('twofactor/setup-sms', {
+      navTitle: 'Setup SMS',
       user: req.user,
       url: '/account' // to set navbar active state
     });
@@ -463,6 +469,7 @@ module.exports.controller = function (app) {
 
   app.get('/verify-sms-first', passportConf.isAuthenticated, function (req, res, next) {
     res.render('twofactor/verify-sms-first', {
+      navTitle: 'Verify SMS',
       user: req.user,
       url: '/account' // to set navbar active state
     });

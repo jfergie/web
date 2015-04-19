@@ -61,8 +61,7 @@ config.loggly.json    = true;
 config.mongodb        = {};
 config.mongodb.url    = process.env.MONGODB_URL || 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';
 //                                                 'mongodb:jamesfergusonx@gmail.com:Deltaecho1973!@dogen.mongohq.com:10010/vlabs'; // 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';
-
-                                                // 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';
+//                                                 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';
 
 /**
  * Session Configuration

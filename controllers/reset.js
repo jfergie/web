@@ -51,6 +51,7 @@ module.exports.controller = function (app) {
             return res.redirect('/forgot');
           } else {
             res.render('account/reset', {
+              navTitle: 'Account Reset',
               url: req.url
             });
           }
@@ -177,6 +178,7 @@ module.exports.controller = function (app) {
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/passwordChange', {
+        navTitle: 'Password Change',
         name:          user.profile.name,
         mailtoName:    config.smtp.name,
         mailtoAddress: config.smtp.address
@@ -221,9 +223,9 @@ module.exports.controller = function (app) {
 
     });
 
-  /**
-   * Initiate the workflow
-   */
+    /**
+    * Initiate the workflow
+    */
 
     workflow.emit('validate');
 

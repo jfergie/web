@@ -21,6 +21,7 @@ module.exports.controller = function (app) {
 
   app.get('/contact', function (req, res) {
     res.render('contact/contact', {
+      navTitle: 'Contact',
       url: req.url
     });
   });

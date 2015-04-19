@@ -4,7 +4,8 @@ block head
   title #{application} &middot; Experimental
 
 block styles
-  link(rel='stylesheet', href='css/x.min.css')
+link(rel='stylesheet', href='css/x.min.css')
+link(rel='stylesheet', href='css/jf-hover.css')
   link(rel='stylesheet', href='lib/hover/css/hover-min.css')
 
 
@@ -29,44 +30,48 @@ block content
 
           //section.body-bg
           .jumbotron.bg-brand2.body-content.text-left.vert-center
-              //header#main_logo.boxCenter
-              img.img-responsive.center-block.animated.rollIn(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+            //header#main_logo.boxCenter
+            img.hover(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+            img.img-responsive.center-block.animated.rollIn.hover.circle-rotate.animate-circle(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+            img.hover.sonar-ping(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
 
-              //section#content
-              //article.mostWidth.textJustify.boxCenter
+            //section#content
+            //article.mostWidth.textJustify.boxCenter
 
-              h2.zoomInDown.hvr-grow-shadow Experimental / Concept Pages
-                ul
-                  li.animated.bounceInLeft.hvr-float-shadow.hvr-grow-shadow.hvr-glow
-                    a(href='x/svg') SVG Experiment / Explosions
-                  li.animated.bounceInRight
-                    a(href='x/svg2') SVG High Resolution Mesh Experiments
-                  li.animated.bounceInLeft
-                    a(href='x/svg3') SVG Animation Experiments
-                  li.animated.bounceInRight
-                    a(href='x/hover') Hover Effects
-                  li.animated.bounceInLeft
-                    a(href='x/controls') Controls
-                  li.animated.bounceInRight
-                    a(href='x/3d') 3D
-                  li.animated.bounceInLeft
-                    a(href='x/text') Text Effects
-                  li.animated.bounceInRight
-                    a(href='x/x1') X1
-                  li.animated.bounceInLeft
-                    a(href='x/x2') X2
-                  li.animated.bounceInRight
-                    a(href='x/x3') X3
-                  li.animated.bounceInLeft
-                    a(href='x/x4') X4
-                  li.animated.bounceInRight
-                    a(href='x/x5' data-toggle="tooltip" data-original-title="Experimental Lab #5!") X5
-                  li.animated.bounceInRight
-                    a(href='x/suggestions') Suggestions
-                  li.animated.bounceInRight
-                        a(href='x/links') Cool links worth viewing
+
+            h2.hover.sonar-ping.zoomInDown.hvr-grow-shadow.hvr-float-shadow Experimental / Concept Pages
+            ul.hvr-grow-shadow(style='display: inline-block; list: block;')
+              li.animated.bounceInLeft.hvr-float-shadow.hvr-grow-shadow.hvr-glow
+                a(href='x/svg') SVG Experiment / Explosions
+              li.animated.bounceInRight
+                a(href='x/svg2') SVG High Resolution Mesh Experiments
+              li.animated.bounceInLeft
+                a(href='x/svg3') SVG Animation Experiments
+              li.animated.bounceInRight
+                a(href='x/hover') Hover Effects
+              li.animated.bounceInLeft
+                a(href='x/controls') Controls
+              li.animated.bounceInRight
+                a(href='x/3d') 3D
+              li.animated.bounceInLeft
+                a(href='x/text') Text Effects
+              li.animated.bounceInRight
+                a(href='x/x1') X1
+              li.animated.bounceInLeft
+                a(href='x/x2') X2
+              li.animated.bounceInRight
+                a(href='x/x3') X3
+              li.animated.bounceInLeft
+                a(href='x/x4') X4
+              li.animated.bounceInRight
+                a(href='x/x5' data-toggle="tooltip" data-original-title="Experimental Lab #5!") X5
+              li.animated.bounceInRight
+                a(href='x/suggestions') Suggestions
+              li.animated.bounceInRight
+                    a(href='x/links') Cool links worth viewing
 
         .block
           i.hover.circle-rotate hov1
-          i.hover.circle-rotate.sub-b hov2
+          i.hover.circle-rotate.sub-a hov2
+          i.hover.circle-rotate.animate-circle.sonar-ping hov3
           i.hover.sonar-ping sonar

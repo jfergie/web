@@ -20,10 +20,10 @@ var passportConf  = require('../config/passport');
 
 module.exports.controller = function (app) {
 
- /**
-   * GET /account*
-   * *ALL* x routes must be authenticated first
-   */
+  /**
+    * GET /account*
+    * *ALL* x routes must be authenticated first
+    */
 
   debug('DDD Testing');
   app.all('/x*', passportConf.isAuthenticated);
@@ -154,10 +154,10 @@ module.exports.controller = function (app) {
     });
   });
 
- /**
-   * POST /account
-   * Update User Profile Information
-   */
+  /**
+    * POST /account
+    * Update User Profile Information
+    */
 
   app.post('/x/post', function (req, res, next) {
 
@@ -220,9 +220,9 @@ module.exports.controller = function (app) {
     workflow.on('x2', function (user) {
   });
 
-  /**
-   * Initiate the workflow
-   */
+    /**
+     * Initiate the workflow
+     */
 
     workflow.emit('validate');
 

@@ -86,13 +86,13 @@
 .hover.circle-rotate:hover img {
   color: #00ff00;
 }
-/* Effect 4b */
-.hover.circle-rotate.sub-b:hover {
+/* Animated rotating circle effect */
+.hover.circle-rotate.spin-circle:hover {
   -webkit-transition: box-shadow 0.2s;
   -moz-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
 }
-.hover.circle-rotate.sub-b:hover:after {
+.hover.circle-rotate.spin-circle:hover:after {
   -webkit-animation: spinAround 9s linear infinite;
   -moz-animation: spinAround 9s linear infinite;
   animation: spinAround 9s linear infinite;

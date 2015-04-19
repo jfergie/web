@@ -20,6 +20,11 @@ header#topNav
     a.pull-left(href='/')
       img.img-responsive.hvr-grow-shadow(src='images/logo.png', alt='Freecycle.org')
 
+    // **************************************
+    //   MEGA MENU - 4 COLUMN FULL MENU
+    //     Available to be Displayed
+    //     whether user is logged in or not
+    // **************************************
     .navbar-collapse.nav-main-collapse.collapse.pull-right
       nav.nav-main.mega-menu.navbar-right
         ul.nav.nav-pills.nav-main.scroll-menu.navbar-nav
@@ -32,13 +37,23 @@ header#topNav
               li
                 .mega-menu-content
                   .row
-                    .col-sm-8.col-sm-offset-2.col-centered
-                      h1
-                        a.responsive-text-center.vert-centered(href='/')
-                          img.img-responsive.pull-left(src='img/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle.org')
+                    //.col-sm-8.col-sm-offset-2.col-centered
+                    //.col-sm-2
+                      a(href='/')
+                        img.img-responsive.pull-left(src='img/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle.org')
 
-                        a.responsive-text-center.vert-centered(href='/')
-                          | Freecycle™ Main Menu [Beta]
+                    .col-sm-4.col-sm-offset-4
+
+                      //a.responsive-text-center(href='/')
+                      h3
+                        a(href='/')
+                          em
+                            img.img-responsive.center-block(src='img/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle.org')
+                            | Freecycle™ Main Menu [Beta]
+                      br
+
+                    span#header_shadow
+                    //div(style='margin:20px 0px 0px 0px;')
                   .row
                     .col-md-3
                       ul.sub-menu
@@ -167,6 +182,7 @@ header#topNav
                                 a(href='https://www.freecycle.org/about/sponsors')
                                   i.fa.fa-thumbs-o-up
                                   |  Sponsors
+          li.divider
 
           //a.logo(href='/')
           //  img.img-responsive(src='images/logo.png', alt='Freecycle.org')
@@ -180,15 +196,14 @@ header#topNav
               nav.nav-main.mega-menu
                 ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav.navbar-nav.navbar-right
 
-        // ************************************************************************
-        //  THE FOLLOWING IS DISPLAYED WHETHER USER IS LOGGED IN OR NOT
-        // ************************************************************************
-        // ************************************
-        //    MEGA MENU - 4 COLUMN FULL MENU
-        // ************************************
-    .navbar-collapse.nav-main-collapse.collapse.pull-right
-      nav.nav-main.mega-menu
-        ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav
+      // ************************************************************************
+      //                   ***   MAIN APPLICATION MENUS   ***
+      //  THE FOLLOWING MENUS ARE DISPLAYED WHETHER USER IS LOGGED IN OR NOT
+      // ************************************************************************
+      // .navbar-collapse.nav-main-collapse.collapse.pull-right
+      nav.nav-main.mega-menu.navbar-right
+        ul#topMain.nav.scroll-menu.navbar-nav.nav-main.nav-pills
+          //ul#topMain.nav.navbar-nav.navbar-right
           //  ************************************************************************
           //   TOP NAV BAR MENUS
           //  ************************************************************************
@@ -223,7 +238,7 @@ header#topNav
                   |  Moderator manual
           li.dropdown.active
             a.dropdown-toggle(href='#')
-              | About
+              | About Freecycle&trade;
               // Freecycle™
               b.caret
             ul.dropdown-menu
@@ -231,14 +246,14 @@ header#topNav
                 a(href='http://newswire.freecycle.org/')
                   i.fa.fa-list-alt
                   |  Newswire
-              //
-                a(href='http://wiki.freecycle.org/Main_Page')
-                  i.fa.fa-question
-                  |  FAQ
               li
                 a(href='https://www.freecycle.org/about/background')
                   i.fa.fa-h-square
                   |  History
+              //
+                a(href='http://wiki.freecycle.org/Main_Page')
+                  i.fa.fa-question
+                  |  FAQ
               li.divider
               li
                 a(href='https://www.freecycle.org/about/video')
@@ -260,10 +275,10 @@ header#topNav
                   i.fa.fa-newspaper-o
                   |  Press Room
               li
-                  a(href='https://www.freecycle.org/about/sponsors')
-                    em
-                      i.fa.fa-thumbs-o-up
-                      |  Sponsors
+                a(href='https://www.freecycle.org/about/sponsors')
+                  em
+                    i.fa.fa-thumbs-o-up
+                    |  Sponsors
               li
                 a(href='https://www.freecycle.org/about/funds')
                   i.fa.fa-money
@@ -313,70 +328,75 @@ header#topNav
               | Sponsors
 
           if user
-            //- Right side
-            //ul.nav.navbar-nav.navbar-right
-            //ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav.navbar-nav.navbar-right
-            //- Visible to Admin users only!
-            if user.type == 'admin'
-              li.dropdown(class=url == '/administration' ? 'active' : undefined)
-                //a.dropdown-toggle(href='#', data-toggle='dropdown')
-                a.dropdown-toggle(href='#')
-                  i.fa.fa-fw.fa-cogs
-                  | &nbsp;Admin&nbsp;
-                  b.caret
-                ul.dropdown-menu
-                  li
-                    a(href='/dashboard')
-                      i.fa.fa-fw.fa-laptop
-                      | &nbsp;Dashboard
-                  li
-                    a(href='/accounts')
-                      i.fa.fa-fw.fa-users
-                      | &nbsp;Accounts
-                  li
-                    a(href='/colors')
-                      i.fa.fa-fw.fa-cog
-                      | &nbsp;Color Scheme
-                  li
-                    a(href='/api')
-                      i.fa.fa-fw.fa-crosshairs
-                      | &nbsp;API Code Pages
-                  li
-                    a(href='/x')
-                      i.fa.fa-fw.fa-pied-piper
-                      | &nbsp;Experimental Features
-              li.dropdown(class=url == '/account' ? 'active' : undefined)
-                a.dropdown-toggle(href='#', data-toggle='dropdown')
-                  if user.profile.picture
-                    img.profile-image(src='#{user.profile.picture}')
-                  else
-                    img.profile-image(src='#{user.gravatar(60)}')
-                  | #{user.profile.name || user.email || user.id}&nbsp;
-                  b.caret
-                ul.dropdown-menu
-                  li
-                    a(href='/account')
-                      i.fa.fa-fw.fa-user
-                      | &nbsp;My Account
-                  li
-                    a(href='/contact')
-                      i.fa.fa-fw.fa-envelope-o
-                      | &nbsp;Contact Us
-                  li.divider
-                  li
-                    a(href='/logout')
-                      i.fa.fa-fw.fa-sign-out
-                      | &nbsp;Logout
+              //- Right side
+              //ul.nav.navbar-nav.navbar-right
+              //ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav.navbar-nav.navbar-right
+              //- Visible to Admin users only!
+              if user.type == 'admin'
+                li.dropdown(class=url == '/administration' ? 'active' : undefined)
+                  //a.dropdown-toggle(href='#', data-toggle='dropdown')
+                  a.dropdown-toggle(href='#')
+                    i.fa.fa-fw.fa-cogs
+                    | &nbsp;Admin&nbsp;
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='/dashboard')
+                        i.fa.fa-fw.fa-laptop
+                        | &nbsp;Dashboard
+                    li
+                      a(href='/accounts')
+                        i.fa.fa-fw.fa-users
+                        | &nbsp;Accounts
+                    li
+                      a(href='/colors')
+                        i.fa.fa-fw.fa-cog
+                        | &nbsp;Color Scheme
+                    li
+                      a(href='/api')
+                        i.fa.fa-fw.fa-crosshairs
+                        | &nbsp;API Code Pages
+                    li
+                      a(href='/x')
+                        i.fa.fa-fw.fa-pied-piper
+                        | &nbsp;Experimental Features
+
+                li.dropdown(class=url == '/account' ? 'active' : undefined)
+                  a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    if user.profile.picture
+                      img.profile-image(src='#{user.profile.picture}')
+                    else
+                      img.profile-image(src='#{user.gravatar(60)}')
+                    | #{user.profile.name || user.email || user.id}&nbsp;
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='/account')
+                        i.fa.fa-fw.fa-user
+                        | &nbsp;My Account
+                    li
+                      a(href='/contact')
+                        i.fa.fa-fw.fa-envelope-o
+                        | &nbsp;Contact Us
+                    li.divider
+                    li
+                      a(href='/logout')
+                        i.fa.fa-fw.fa-sign-out
+                        | &nbsp;Logout
+                li.divider
           else
             //  ************************************************************************
             //    NO USER LOGGED IN - DISPLAY THE LOGIN MENU
             //  ************************************************************************
             // ul.nav.navbar-nav.navbar-collapse.nav-main-collapse.collapse.pull-right
-            ul.nav.navbar-nav.navbar-right
-              li(class=url == '/login' ? 'active' : undefined)
+            // ul.nav.navbar-nav.navbar-right
+            // ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav
+            ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav.navbar-nav.navbar-right
+              li.dropdown(class=url == '/login' ? 'active' : undefined)
                 a(href='/login')
-                  i.fa.fa-sign-in.fa-fw
-                  | &nbsp;Sign In
+                    i.fa.fa-sign-in.fa-fw
+                    | &nbsp;Sign In
+              li.divider
 
 
 
@@ -394,12 +414,11 @@ div(style='margin:80px 0px 0px 0px;')
           // img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
           // h1.navbar-brand &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{navTitle}
 
-          // a(href='/')
-          // .-float-shadow
-          // .hvr-grow-shadow.hvr-float-shadow
-          h1.hvr-grow-shadow
-            img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
-            | &nbsp;&nbsp;#{navTitle}
+          h1
+            a.hvr-float-shadow.hvr-grow-shadow.hvr-glow(href='/')
+              //h1.hvr-grow-shadow
+              img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
+              | &nbsp;&nbsp;#{navTitle}
       .row.titlebar-bg
         .col-sm-6.col-sm-offset-1.col-bottom
             ul.breadcrumb.list-inline.-bounce-in.-border-fade.glyphicon-object-align-bottom.ui-responsive-panel
@@ -409,6 +428,7 @@ div(style='margin:80px 0px 0px 0px;')
                   | &nbsp;Freecycle&trade; Home
               li.active
                   //a(href='#{url}')
+                if (navTitle)
                   | /
               li.active.hvr-glow.hvr-float-shadow
                 .hvr-grow-shadow

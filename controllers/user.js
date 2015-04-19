@@ -19,10 +19,10 @@ var LoginAttempt  = require('../models/LoginAttempt');
 
 module.exports.controller = function (app) {
 
-/**
- * GET /login
- * Render login page
- */
+  /**
+   * GET /login
+   * Render login page
+   */
 
   app.get('/login', function (req, res) {
     // Check if user is already logged in
@@ -35,15 +35,16 @@ module.exports.controller = function (app) {
     req.session.tooManyAttempts = null;
     // Render Login form
     res.render('account/login', {
+      navTitle: 'Sign In',
       tooManyAttempts: tooManyAttempts,
       url: req.url
     });
   });
 
-/**
- * POST /login
- * Log the user in
- */
+  /**
+   * POST /login
+   * Log the user in
+   */
 
   app.post('/login', function (req, res, next) {
 
@@ -189,10 +190,10 @@ module.exports.controller = function (app) {
 
   });
 
-/**
- * GET /logout
- * Log the user out
- */
+  /**
+   * GET /logout
+   * Log the user out
+   */
 
   app.get('/logout', function (req, res) {
     // Augment Logout to handle enhanced security
@@ -266,6 +267,7 @@ module.exports.controller = function (app) {
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/welcome', {
+        navTitle: 'Welcome',
         name:          user.profile.name,
         mailtoName:    config.smtp.name,
         mailtoAddress: config.smtp.address,
@@ -352,6 +354,7 @@ module.exports.controller = function (app) {
       return res.redirect('/');
     }
     res.render('account/signup', {
+      navTitle: 'Account Sign-up',
       url: req.url
     });
   });
@@ -471,6 +474,7 @@ module.exports.controller = function (app) {
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/accountVerification', {
+        navTitle: 'Account Verification',
         name:          user.profile.name,
         mailtoName:    config.smtp.name,
         validateLink:  req.protocol + '://' + req.headers.host + '/verify/' + user.id + '/' + verifyToken
@@ -534,6 +538,7 @@ module.exports.controller = function (app) {
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/welcome', {
+        navTitle: 'Welcome',
         name:          user.profile.name,
         mailtoName:    config.smtp.name,
         mailtoAddress: config.smtp.address,
@@ -626,6 +631,7 @@ module.exports.controller = function (app) {
 
   app.get('/signupsocial', function (req, res) {
     res.render('account/signupsocial', {
+      navTitle: 'Social Sign-up',
       url: req.url,
       email: ''
     });
@@ -752,6 +758,7 @@ module.exports.controller = function (app) {
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/welcome', {
+        navTitle: 'Welcome',
         name:          user.profile.name,
         mailtoName:    config.smtp.name,
         mailtoAddress: config.smtp.address,
@@ -898,7 +905,7 @@ module.exports.controller = function (app) {
           newSocialUser.profile.picture   = 'https://graph.facebook.com/' + info.profile.id + '/picture?type=large';
 
           req.session.socialProfile = newSocialUser;
-          res.render('account/signupsocial', { email: newSocialUser.email });
+          res.render('account/signupsocial', { navTitle: 'Social Sign-up', email: newSocialUser.email });
         }
       });
 
@@ -975,7 +982,7 @@ module.exports.controller = function (app) {
           newSocialUser.profile.picture   = info.profile._json.avatar_url;
 
           req.session.socialProfile = newSocialUser;
-          res.render('account/signupsocial', { email: newSocialUser.email });
+          res.render('account/signupsocial', { navTitle: 'Social Sign-up', email: newSocialUser.email });
         }
       });
 
@@ -1052,7 +1059,7 @@ module.exports.controller = function (app) {
           newSocialUser.profile.picture   = info.profile._json.picture;
 
           req.session.socialProfile = newSocialUser;
-          res.render('account/signupsocial', { email: newSocialUser.email });
+          res.render('account/signupsocial', { navTitle: 'Social Sign-up', email: newSocialUser.email });
         }
       });
 
@@ -1134,7 +1141,7 @@ module.exports.controller = function (app) {
           newSocialUser.profile.picture   = info.profile._json.profile_image_url;
 
           req.session.socialProfile = newSocialUser;
-          res.render('account/signupsocial', { email: newSocialUser.email });
+          res.render('account/signupsocial', { navTitle: 'Social Sign-up', email: newSocialUser.email });
         }
       });
 

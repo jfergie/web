@@ -24,6 +24,7 @@ module.exports.controller = function (app) {
         return (err, null);
       }
       res.render('admin/dashboard', {
+        navTitle: 'Administration',
         url: '/administration',  // to set navbar active state
         accounts: count
       });
@@ -37,6 +38,7 @@ module.exports.controller = function (app) {
 
   app.get('/accounts', passportConf.isAuthenticated, passportConf.isAdministrator, function (req, res) {
     res.render('admin/accounts', {
+      navTitle: 'Administration Accounts Page',
       url: '/administration', // to set navbar active state
       token: res.locals.token
     });
@@ -67,13 +69,14 @@ module.exports.controller = function (app) {
     });
   });
 
-    /**
+  /**
    * GET /dashboard
    * Render Dashboard Page
    */
 
   app.get('/colors', passportConf.isAuthenticated, passportConf.isAdministrator, function (req, res) {
     res.render('admin/colors', {
+      navTitle: 'Admin Dashboard / Colors',
       url: '/administration'  // to set navbar active state
     });
   });

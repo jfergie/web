@@ -26,6 +26,7 @@ module.exports.controller = function (app) {
 
     res.render('mail/welcome', { // <- What template do you want to test?
       // set proper options
+      navTitle: 'Mail',
       name:          'Dan',
       resetLink:     req.protocol + '://' + req.headers.host + '/reset/',
       mailtoName:    'Skeleton',

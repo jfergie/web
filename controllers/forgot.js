@@ -65,6 +65,7 @@ module.exports.controller = function (app) {
       return res.redirect('/');  // user already logged in!
     }
     res.render('account/forgot', {
+      navTitle: 'Forgot Password',
       url: req.url
     });
   });
@@ -175,6 +176,7 @@ module.exports.controller = function (app) {
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/passwordReset', {
+        navTitle: 'Password Reset',
         name:          user.profile.name,
         resetLink:     req.protocol + '://' + req.headers.host + '/reset/' + user.id + '/' + token,
         mailtoName:    config.smtp.name,

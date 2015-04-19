@@ -13,6 +13,7 @@ module.exports.controller = function (app) {
 
   app.get('/terms', function (req, res) {
     res.render('terms/terms', {
+      navTitle: 'Terms of Use',
       url: req.url
     });
   });

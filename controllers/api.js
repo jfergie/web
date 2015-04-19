@@ -42,6 +42,7 @@ module.exports.controller = function (app) {
 
   app.get('/api', function (req, res) {
     res.render('api/index', {
+      navTitle: 'API Home Page',
       url: req.url
     });
   });
@@ -53,6 +54,7 @@ module.exports.controller = function (app) {
 
   app.get('/api/opendata', function (req, res) {
     res.render('api/opendata', {
+      navTitle: 'Open Data',
       url: req.url
     });
   });
@@ -64,6 +66,7 @@ module.exports.controller = function (app) {
 
   app.get('/api/react', function (req, res) {
     res.render('api/react', {
+      navTitle: 'React',
       url: req.url
     });
   });
@@ -75,6 +78,7 @@ module.exports.controller = function (app) {
 
   app.get('/api/creditcard', function (req, res) {
     res.render('api/creditcard', {
+      navTitle: 'Credit Card',
       url: req.url
     });
   });
@@ -135,6 +139,7 @@ module.exports.controller = function (app) {
         topAlbums: results.artistTopAlbums
       };
       res.render('api/lastfm', {
+        navTitle: 'Last FM',
         artist: artist,
         url: '/apiopen'
       });
@@ -164,6 +169,7 @@ module.exports.controller = function (app) {
         req.flash('error', { msg: err.message });
       }
       res.render('api/nyt', {
+        navTitle: 'NYT Data',
         url: '/apiopen',
         books: bestsellers.results
       });
@@ -206,6 +212,7 @@ module.exports.controller = function (app) {
         for (var i = 0; i < links.length; i++) {
           if (links[i].rel === 'approval_url') {
             res.render('api/paypal', {
+              navTitle: 'Paypal',
               url: '/apilocked',
               approval_url: links[i].href
             });
@@ -226,12 +233,14 @@ module.exports.controller = function (app) {
     paypal.payment.execute(payment_id, payment_details, function (error, payment) {
       if (error) {
         res.render('api/paypal', {
+          navTitle: 'Paypal Error',
           url: req.url,
           result: true,
           success: false
         });
       } else {
         res.render('api/paypal', {
+          navTitle: 'Paypal Success',
           url: '/apilocked',
           result: true,
           success: true
@@ -248,6 +257,7 @@ module.exports.controller = function (app) {
   app.get('/api/paypal/cancel', function (req, res, next) {
     req.session.payment_id = null;
     res.render('api/paypal', {
+      navTitle: 'Paypal Cancel',
       url: '/apilocked',
       result: true,
       canceled: true
@@ -283,6 +293,7 @@ module.exports.controller = function (app) {
 
         // Render Page
         res.render('api/scraping', {
+          navTitle: 'Web Scraping',
           url: '/apiopen',
           links: links,
           comments: comments
@@ -309,6 +320,7 @@ module.exports.controller = function (app) {
         var payroll = JSON.parse(body);
         // Render the page
         res.render('api/socrata', {
+          navTitle: 'Open Data',
           url: '/apiopen',
           data: payroll
         });
@@ -326,6 +338,7 @@ module.exports.controller = function (app) {
 
   app.get('/api/stripe', function (req, res, next) {
     res.render('api/stripe', {
+      navTitle: 'Stripe API',
       title: 'Stripe API'
     });
   });
@@ -363,6 +376,7 @@ module.exports.controller = function (app) {
 
   app.get('/api/twilio', function (req, res, next) {
     res.render('api/twilio', {
+      navTitle: 'Twilio',
       url: '/apiopen'
     });
   });
@@ -417,6 +431,7 @@ module.exports.controller = function (app) {
         return next(err);
       }
       res.render('api/foursquare', {
+        navTitle: 'Foursquare',
         url: '/apilocked',
         trendingVenues: results.trendingVenues,
         venueDetail: results.venueDetail,
@@ -440,6 +455,7 @@ module.exports.controller = function (app) {
     });
     client.posts('danielmoyerdesign.tumblr.com', { type: 'photo' }, function (err, data) {
       res.render('api/tumblr', {
+        navTitle: 'Tumblr',
         url: '/apilocked',
         blog: data.blog,
         photoset: data.posts[0].photos
@@ -472,6 +488,7 @@ module.exports.controller = function (app) {
         return next(err);
       }
       res.render('api/facebook', {
+        navTitle: 'Facebook',
         url: '/apilocked',
         me: results.getMe,
         friends: results.getMyFriends
@@ -490,6 +507,7 @@ module.exports.controller = function (app) {
     var repo = github.getRepo('dstroot', 'skeleton');
     repo.show(function (err, repo) {
       res.render('api/github', {
+        navTitle: 'Github',
         url: '/apilocked',
         repo: repo
       });
@@ -516,6 +534,7 @@ module.exports.controller = function (app) {
         return next(err);
       }
       res.render('api/twitter', {
+        navTitle: 'Twitter',
         url: '/apilocked',
         tweets: data.statuses
       });

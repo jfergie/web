@@ -89,12 +89,14 @@ var paths = {
     'gulpfile.js'
   ],
   less: [
+    // 'less/**/*.less',
     'less/main.less',
     'less/page-api.less',
     'less/page-colors.less',
     'less/page-dashboard.less',
     'less/page-privacy.less',
     'less/page-react.less',
+    'less/jf-hover.less',
     'less/x.less'
   ]
 };
@@ -304,15 +306,13 @@ gulp.task('browser-sync', function () {
      return config;
      */
     /*        return {
-     "host":            config.urlObj.host,
-     "accept-encoding": "identity",
-     "agent":           false
-     }
-     */
-//      }
-//    },
-
-
+    "host":            config.urlObj.host,
+    "accept-encoding": "identity",
+    "agent":           false
+    }
+    */
+    //      }
+    //    },
   });
 });
 

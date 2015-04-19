@@ -20,7 +20,7 @@ var passportConf  = require('../config/passport');
 
 module.exports.controller = function (app) {
 
- /**
+  /**
    * GET /account*
    * *ALL* acount routes must be authenticated first
    */
@@ -34,11 +34,12 @@ module.exports.controller = function (app) {
 
   app.get('/account', function (req, res) {
     res.render('account/profile', {
+      navTitle: 'Profile',
       url: req.url
     });
   });
 
- /**
+  /**
    * POST /account
    * Update User Profile Information
    */
@@ -121,6 +122,7 @@ module.exports.controller = function (app) {
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/accountChange', {
+        navTitle: 'Account Change',
         name:          user.profile.name,
         mailtoName:    config.smtp.name,
         mailtoAddress: config.smtp.address
@@ -165,9 +167,9 @@ module.exports.controller = function (app) {
 
     });
 
-  /**
-   * Initiate the workflow
-   */
+    /**
+     * Initiate the workflow
+     */
 
     workflow.emit('validate');
 
@@ -180,7 +182,7 @@ module.exports.controller = function (app) {
 
   app.post('/account/password', function (req, res, next) {
 
-   // Create a workflow (here you could also use the async waterfall pattern)
+    // Create a workflow (here you could also use the async waterfall pattern)
     var workflow = new (require('events').EventEmitter)();
 
     /**
@@ -250,6 +252,7 @@ module.exports.controller = function (app) {
 
       // Render HTML to send using .jade mail template (just like rendering a page)
       res.render('mail/passwordChange', {
+        navTitle: 'Change Account Password',
         name:          user.profile.name,
         mailtoName:    config.smtp.name,
         mailtoAddress: config.smtp.address
@@ -282,7 +285,7 @@ module.exports.controller = function (app) {
               req.flash('error', { msg: err });
               return res.redirect('/account');
             } // else {
-              // console.log('Message sent: ' + info.response);
+            // console.log('Message sent: ' + info.response);
             // }
           });
 
@@ -295,9 +298,9 @@ module.exports.controller = function (app) {
 
     });
 
-  /**
-   * Initiate the workflow
-   */
+    /**
+     * Initiate the workflow
+     */
 
     workflow.emit('validate');
 
@@ -318,7 +321,7 @@ module.exports.controller = function (app) {
     });
   });
 
- /**
+  /**
    * GET /account/unlink/:provider
    * Unlink a social account
    */
