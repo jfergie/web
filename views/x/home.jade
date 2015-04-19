@@ -5,8 +5,8 @@ block head
 
 block styles
 link(rel='stylesheet', href='css/x.min.css')
-link(rel='stylesheet', href='css/jf-hover.css')
-  link(rel='stylesheet', href='lib/hover/css/hover-min.css')
+link(rel='stylesheet', href='css/jf-jf1.css')
+  link(rel='stylesheet', href='lib/jf1/css/jf1-min.css')
 
 
 block content
@@ -31,15 +31,16 @@ block content
           //section.body-bg
           .jumbotron.bg-brand2.body-content.text-left.vert-center
             //header#main_logo.boxCenter
-            img.hover(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
-            img.img-responsive.center-block.animated.rollIn.hover.circle-rotate.animate-circle(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
-            img.hover.sonar-ping(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+            img.jf1(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+            img.img-responsive.center-block.animated.rollIn.jf1.circle-rotate.border-circle(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+            img.img-responsive.center-block.animated.rollIn.jf1.circle-rotate.border-circle.large(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+            img.jf1.sonar-ping(src='images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
 
             //section#content
             //article.mostWidth.textJustify.boxCenter
 
-
-            h2.hover.sonar-ping.zoomInDown.hvr-grow-shadow.hvr-float-shadow Experimental / Concept Pages
+            //h2.jf1.sonar-ping.zoomInDown.hvr-grow-shadow.hvr-float-shadow Experimental / Concept Pages
+            h2.jf1.auto-width.sonar-ping.hvr-grow-shadow.hvr-float-shadow Experimental / Concept Pages
             ul.hvr-grow-shadow(style='display: inline-block; list: block;')
               li.animated.bounceInLeft.hvr-float-shadow.hvr-grow-shadow.hvr-glow
                 a(href='x/svg') SVG Experiment / Explosions
@@ -48,7 +49,7 @@ block content
               li.animated.bounceInLeft
                 a(href='x/svg3') SVG Animation Experiments
               li.animated.bounceInRight
-                a(href='x/hover') Hover Effects
+                a(href='x/jf1') jf1 Effects
               li.animated.bounceInLeft
                 a(href='x/controls') Controls
               li.animated.bounceInRight
@@ -71,7 +72,10 @@ block content
                     a(href='x/links') Cool links worth viewing
 
         .block
-          i.hover.circle-rotate hov1
-          i.hover.circle-rotate.sub-a hov2
-          i.hover.circle-rotate.animate-circle.sonar-ping hov3
-          i.hover.sonar-ping sonar
+          i.jf1.circle-rotate hov1
+          i.jf1.circle-rotate.sub-a hov2
+          i.jf1.circle-rotate.border-circle hov3
+          i.circle-rotate.border-circle hov4
+          i.border-circle hov5
+          i.jf1.circle-rotate.border-circle.sonar-ping hov6
+          i.jf1.sonar-ping sonar
