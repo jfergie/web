@@ -42,6 +42,14 @@ module.exports.controller = function (app) {
     });
   });
 
+  app.get('/x/cause500err', function (req, res) {
+    console.log('app.get URL ' + req.url + '..');
+    res.render('x/cause500err', {
+      url: req.url,
+      navTitle: 'Cause 500 Error'
+    });
+  });
+
   app.get('/x/svg', function (req, res) {
     console.log('app.get URL ' + req.url + '..');
     res.render('x/svg', {
@@ -70,7 +78,7 @@ module.exports.controller = function (app) {
     console.log('app.get URL ' + req.url + '..');
     res.render('x/hover', {
       url: req.url,
-      navTitle: 'Hover'
+      navTitle: 'Hover Effects'
     });
   });
 

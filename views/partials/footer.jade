@@ -5,7 +5,7 @@ footer.footer.bg-black
       .col-md-12
         p
           //a.logo(href='/')
-            img(src='images/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle')
+            img(src='/images/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle')
           //|           Copyright © 2015 The Freecycle Network (http://www.freecycle.org). All rights reserved.
           //br
           //|                   Freecycle and the Freecycle logo are trademarks of The Freecycle Network in various countries.
@@ -28,7 +28,7 @@ footer.footer.bg-black
         | Freecycle and the Freecycle logo are trademarks of The Freecycle Network in various countries.
 
         //a.logo(href='/')
-          img(src='images/logo/Freecycle Logo Dark2 Transparent 140x68.png', valign="middle" height='50px' alt='Freecycle')
+          img(src='/images/logo/Freecycle Logo Dark2 Transparent 140x68.png', valign="middle" height='50px' alt='Freecycle')
 
 //- Load jQuery, food for thought:
 //- https://palant.de/2014/06/30/please-don-t-use-externally-hosted-javascript-libraries
@@ -40,23 +40,23 @@ script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min
 
 // *****************************************************************************************
 // ************************************ TEMP JAVASCRIPT INCLDUES ***************************
-// script(type='text/javascript', src='plugins/jquery-2.1.1.min.js')
-// script(type='text/javascript', src='plugins/jquery.easing.1.3.js')
-// script(type='text/javascript', src='plugins/jquery.cookie.js')
-// script(type='text/javascript', src='plugins/jquery.appear.js')
-// script(type='text/javascript', src='plugins/jquery.isotope.js')
-// script(type='text/javascript', src='plugins/masonry.js')
-// script(type='text/javascript', src='plugins/bootstrap/js/bootstrap.min.js')
-// script(type='text/javascript', src='plugins/magnific-popup/jquery.magnific-popup.min.js')
-// script(type='text/javascript', src='plugins/owl-carousel/owl.carousel.min.js')
-// script(type='text/javascript', src='plugins/stellar/jquery.stellar.min.js')
-// script(type='text/javascript', src='plugins/knob/js/jquery.knob.js')
-// script(type='text/javascript', src='plugins/jquery.backstretch.min.js')
-// script(type='text/javascript', src='plugins/superslides/dist/jquery.superslides.min.js')
-// script(type='text/javascript', src='plugins/styleswitcher/styleswitcher.js')
+// script(type='text/javascript', src='/plugins/jquery-2.1.1.min.js')
+// script(type='text/javascript', src='/plugins/jquery.easing.1.3.js')
+// script(type='text/javascript', src='/plugins/jquery.cookie.js')
+// script(type='text/javascript', src='/plugins/jquery.appear.js')
+// script(type='text/javascript', src='/plugins/jquery.isotope.js')
+// script(type='text/javascript', src='/plugins/masonry.js')
+// script(type='text/javascript', src='/plugins/bootstrap/js/bootstrap.min.js')
+// script(type='text/javascript', src='/plugins/magnific-popup/jquery.magnific-popup.min.js')
+// script(type='text/javascript', src='/plugins/owl-carousel/owl.carousel.min.js')
+// script(type='text/javascript', src='/plugins/stellar/jquery.stellar.min.js')
+// script(type='text/javascript', src='/plugins/knob/js/jquery.knob.js')
+// script(type='text/javascript', src='/plugins/jquery.backstretch.min.js')
+// script(type='text/javascript', src='/plugins/superslides/dist/jquery.superslides.min.js')
+// script(type='text/javascript', src='/plugins/styleswitcher/styleswitcher.js')
 // STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT
-//script(type='text/javascript', src='js/scripts.js')
-// script(type='text/javascript', src='js-sails/scripts.js')
+//script(type='text/javascript', src='/js/scripts.js')
+// script(type='text/javascript', src='/js-sails/scripts.js')
 // **********************************************************************************************
 // ************************************ /TEMP JAVASCRIPT INCLDUES END ***************************
 
@@ -69,7 +69,7 @@ script.
     $("p").addClass("hvr-grow-shadow hvr-float-shadow");
     $("h1").addClass("hvr-grow");
     $("h2").addClass("hvr-grow");
-    $("h2:after").addClass("hvr-grow");
+    //$("h2:after").addClass("hvr-grow");
 
 
   //- Async load main project js

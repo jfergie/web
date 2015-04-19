@@ -1,209 +1,208 @@
 /*--------------------------------------
- * #CONTENTS
- * -------------------------------------
- *
- *   jf1 effects....
- *
- *--------------------------------------*/
+* #CONTENTS
+* -------------------------------------
+*
+*   jf1 effects....
+*
+*--------------------------------------*/
 
-  .jf1 {
-    display: inline-block;
-    font-size: 45px;
-    line-height: 90px;
-    cursor: pointer;
-    margin: 20px;
-    width: auto;
-    height: auto;
-    border-radius: 0;
-    text-align: center;
-    position: relative;
-    text-decoration: none;
-    z-index: 1;
-    color: #00ff00;
-  }
-  .jf1.auto-width {
-    width: auto;
-    height: auto;
-    padding: 15px;
-  }
-  .jf1:after {
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    content:'';
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-  }
-  .jf1:before {
-    /* speak: none; */
-    font-size: 48px;
-    line-height: 90px;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    display: block;
-    -webkit-font-smoothing: antialiased;
-  }
+.jf1 {
+  display: inline-block;
+  font-size: 45px;
+  line-height: 90px;
+  cursor: pointer;
+  margin: 20px;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+  color: #00ff00;
+}
+.jf1.auto-width {
+  width: auto;
+  height: auto;
+  padding: 15px;
+}
+.jf1:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content:'';
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.jf1:before {
+  /* speak: none; */
+  font-size: 48px;
+  line-height: 90px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+}
 
 
-  /* Circle border that rotates on hover */
-  .jf1.border-circle {
-    width: 92px;
-    height: 92px;
-    box-shadow: 0 0 0 4px rgba(0, 255, 0, 1);
+/* Circle border that rotates on hover */
+.jf1.border-circle {
+  /* width: 92px;
+  height: 92px; */
+  box-shadow: 0 0 0 4px rgba(0, 255, 0, 1);
+}
+.jf1.border-circle.large {
+  width: 92px;
+  height: 92px;
+}
+.jf1.border-circle.small {
+  width:45px;
+  height:45px;
+}
+.jf1.border-circle.mini {
+  width:30px;
+  height:30px;
+}
+.jf1.border-circle.animate-border-fade {
+  -webkit-transition: box-shadow 1.2s;
+  -moz-transition: box-shadow 1.2s;
+  transition: box-shadow 1.2s;
+}
+.jf1.border-circle:before {
+  line-height: 92px;
+}
+.jf1.border-circle:after {
+  top: -4px;
+  left: -4px;
+  padding: 0;
+  z-index: 10;
+  border: 4px dashed #00ff00;
+}
+.jf1.border-circle:hover {
+  box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+  color: #00ff00;
+}
+.jf1.border-circle:hover i {
+  color: #00ff00;
+}
+.jf1.border-circle:hover img {
+  color: #00ff00;
+}
+/* Animating Circle Effect  */
+.jf1.border-circle.hover-animate-circle:hover {
+  -webkit-transition: box-shadow 0.2s;
+  -moz-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+.jf1.border-circle.hover-animate-circle:hover:after {
+  -webkit-animation: spinAround 9s linear infinite;
+  -moz-animation: spinAround 9s linear infinite;
+  animation: spinAround 9s linear infinite;
+}
+@-webkit-keyframes spinAround {
+  from {
+    -webkit-transform: rotate(0deg)
   }
-  .jf1.border-circle.large {
-    width: 90px;
-    height: 90px;
+  to {
+    -webkit-transform: rotate(360deg);
   }
-  .jf1.border-circle.small {
-    width:45px;
-    height:45px;
+}
+@-moz-keyframes spinAround {
+  from {
+    -moz-transform: rotate(0deg)
   }
-  .jf1.border-circle.mini {
-    width:30px;
-    height:30px;
+  to {
+    -moz-transform: rotate(360deg);
   }
-  .jf1.border-circle.sub-a {
-    -webkit-transition: box-shadow 0.2s;
-    -moz-transition: box-shadow 0.2s;
-    transition: box-shadow 0.2s;
+}
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg)
   }
-  .jf1.border-circle:before {
-    line-height: 92px;
+  to {
+    transform: rotate(360deg);
   }
-  .jf1.border-circle:after {
-    top: -4px;
-    left: -4px;
-    padding: 0;
-    z-index: 10;
-    border: 4px dashed #00ff00;
-  }
-  .jf1.border-circle:hover {
-    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
-    color: #00ff00;
-  }
-  .jf1.border-circle:hover i {
-    color: #00ff00;
-  }
-  .jf1.border-circle:hover img {
-    color: #00ff00;
-  }
-  /* Effect 4b */
-  .jf1.border-circle.animate-circle:hover {
-    -webkit-transition: box-shadow 0.2s;
-    -moz-transition: box-shadow 0.2s;
-    transition: box-shadow 0.2s;
-  }
-  .jf1.border-circle.animate-circle:hover:after {
-    -webkit-animation: spinAround 9s linear infinite;
-    -moz-animation: spinAround 9s linear infinite;
-    animation: spinAround 9s linear infinite;
-  }
-  @-webkit-keyframes spinAround {
-    from {
-      -webkit-transform: rotate(0deg)
-    }
-    to {
-      -webkit-transform: rotate(360deg);
-    }
-  }
-  @-moz-keyframes spinAround {
-    from {
-      -moz-transform: rotate(0deg)
-    }
-    to {
-      -moz-transform: rotate(360deg);
-    }
-  }
-  @keyframes spinAround {
-    from {
-      transform: rotate(0deg)
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+}
 
-  /* Effect 8 */
-  .jf1.sonar-ping {
-    background: rgba(255, 255, 255, 0.1);
-    -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
-    -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
-    transition: transform ease-out 0.1s, background 0.2s;
+/* Sonar Ping Effect */
+.jf1.sonar-ping {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
+  -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
+  transition: transform ease-out 0.1s, background 0.2s;
+}
+.jf1.sonar-ping:after {
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: -1;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.jf1.sonar-ping:hover {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-transform: scale(0.93);
+  -moz-transform: scale(0.93);
+  -ms-transform: scale(0.93);
+  transform: scale(0.93);
+  color: #fff;
+}
+.jf1.sonar-ping:hover i {
+  color: #fff;
+}
+.jf1.sonar-ping:hover:after {
+  -webkit-animation: sonarEffect 1.3s ease-out 75ms;
+  -moz-animation: sonarEffect 1.3s ease-out 75ms;
+  animation: sonarEffect 1.3s ease-out 75ms;
+}
+@-webkit-keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
   }
-  .jf1.sonar-ping:after {
-    top: 0;
-    left: 0;
-    padding: 0;
-    z-index: -1;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #80ff40, 0 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #00ff00, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    -webkit-transform: scale(1.5);
     opacity: 0;
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
   }
-  .jf1.sonar-ping:hover {
-    background: rgba(255, 255, 255, 0.05);
-    -webkit-transform: scale(0.93);
-    -moz-transform: scale(0.93);
-    -ms-transform: scale(0.93);
-    transform: scale(0.93);
-    color: #fff;
+}
+@-moz-keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
   }
-  .jf1.sonar-ping:hover i {
-    color: #fff;
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #ff00ff, 0 0 0 10px rgba(255, 255, 255, 0.5);
   }
-  .jf1.sonar-ping:hover:after {
-    -webkit-animation: sonarEffect 1.3s ease-out 75ms;
-    -moz-animation: sonarEffect 1.3s ease-out 75ms;
-    animation: sonarEffect 1.3s ease-out 75ms;
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #00ffff, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    -moz-transform: scale(1.5);
+    opacity: 0;
   }
-  @-webkit-keyframes sonarEffect {
-    0% {
-      opacity: 0.3;
-    }
-    40% {
-      opacity: 0.5;
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #80ff40, 0 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #00ff00, 0 0 0 10px rgba(255, 255, 255, 0.5);
-      -webkit-transform: scale(1.5);
-      opacity: 0;
-    }
+}
+@keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
   }
-  @-moz-keyframes sonarEffect {
-    0% {
-      opacity: 0.3;
-    }
-    40% {
-      opacity: 0.5;
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #ff00ff, 0 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #00ffff, 0 0 0 10px rgba(255, 255, 255, 0.5);
-      -moz-transform: scale(1.5);
-      opacity: 0;
-    }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #00ff00, 0 0 0 10px rgba(255, 255, 255, 0.5);
   }
-  @keyframes sonarEffect {
-    0% {
-      opacity: 0.3;
-    }
-    40% {
-      opacity: 0.5;
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #00ff00, 0 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #00ff00, 0 0 0 10px rgba(255, 255, 255, 0.5);
-      transform: scale(1.5);
-      opacity: 0;
-    }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #00ff00, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: scale(1.5);
+    opacity: 0;
   }
 }

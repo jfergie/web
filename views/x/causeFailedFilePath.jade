@@ -1,0 +1,93 @@
+extends ../layouts/layout
+block head
+title #{application} &middot; Experimental
+  block styles
+link(rel='stylesheet', href='css/x.min.css')
+link(rel='stylesheet', href='css/jf-jf1.css')
+  link(rel='stylesheet', href='lib/jf1/css/jf1-min.css')
+    block content
+  .container
+    .row
+      .col-sm-8.col-sm-offset-2
+        //| hi
+        //
+          p
+          br
+          ul.breadcrumb.list-inline
+            li
+              a(href='/')
+                | Freecycle Home
+              | &nbsp;&nbsp;&nbsp;/
+            li
+              a(href='/x')
+                | X
+              | &nbsp;&nbsp;&nbsp;/
+            li.active
+                | Index
+                                       //section.body-bg
+        //.jumbotron.bg-brand2.body-content.text-left.vert-center
+        //| hi2
+        //.jumbotron
+        //| hi3
+        //header#main_logo.boxCenter
+        //section#content
+        //article.mostWidth.textJustify.boxCenter
+                                       //h2.jf1.sonar-ping.zoomInDown.hvr-grow-shadow.hvr-float-shadow Experimental / Concept Pages
+        h2.jf1.auto-width.sonar-ping.hvr-grow-shadow.hvr-float-shadow Experimental / Concept Pages
+        p
+          | The file path has been purposely changed so resources are not available, such as images and CSS files.
+          | This amounts to a catastrophic failure as we are missing critical resources.  This page is to test what
+          | would happen in such an event.
+        p
+        ul.hvr-grow-shadow(style='display: block; list: block;')
+          li.animated.bounceInRight
+            a(href='x/hover') Hover Effects
+          li.animated.bounceInLeft.hvr-float-shadow.hvr-grow-shadow.hvr-glow
+            a(href='x/svg') SVG Experiment / Explosions
+          li.animated.bounceInRight
+            a(href='x/svg2') SVG High Resolution Mesh Experiments
+          li.animated.bounceInLeft
+            a(href='x/svg3') SVG Animation Experiments
+          li.animated.bounceInLeft
+            a(href='x/text') Text Effects
+          li.animated.bounceInLeft
+            a(href='x/controls') Controls
+          li.animated.bounceInRight
+            a(href='x/3d') 3D
+          li.animated.bounceInRight
+            a(href='x/x1') X1
+          li.animated.bounceInLeft
+            a(href='x/x2') X2
+          li.animated.bounceInRight
+            a(href='x/x3') X3
+          li.animated.bounceInLeft
+            a(href='x/x4') X4
+          li.animated.bounceInRight
+            a(href='x/x5' data-toggle="tooltip" data-original-title="Experimental Lab #5!") X5
+
+          li.divider
+          li.animated.bounceInRight
+            a(href='/x/cause500err') Cause 500 Error during page render
+          li.animated.bounceInRight
+            a(href='/x/causeFailedFilePath') Cause File Path Failure (page loads without needed resources)
+          li.animated.bounceInRight
+            a(href='/x/causeFailedFilePath') Cause File Path Navigation Failure (page does not exist)
+          li.divider
+
+          li.animated.bounceInRight
+            a(href='x/suggestions') Suggestions
+          li.animated.bounceInRight
+            a(href='x/links') Cool links worth viewing
+              .row
+      .block
+        i.jf1.border-circle hov1
+        i.jf1.border-circle.animate-border-fade hov2
+        i.jf1.border-circle.animate-border-fade.hover-animate-circle hov3
+        i.jf1.border-circle.hover-animate-circle hov4
+        i.jf1.border-circle hov5
+        i.jf1.border-circle.sonar-ping hov6
+        i.jf1.sonar-ping sonar
+          img.jf1.border-circle.animate-circle(src='/images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+        img.img-responsive.center-block.animated.rollIn.jf1.circle-rotate.border-circle.mini(src='/images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+        img.img-responsive.center-block.animated.rollIn.jf1.circle-rotate.border-circle.large(src='/images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
+        img.jf1.sonar-ping(src='/images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
