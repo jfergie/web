@@ -133,7 +133,7 @@ gulp.task('styles', function () {
     .pipe($.csslint.reporter())             // Report issues
     .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
     .pipe($.csso())                         // Minify CSS
-    .pipe($.header(banner, { pkg: pkg }))  // Add banner
+    .pipe($.header(banner, { pkg: pkg }))   // Add banner
     .pipe($.size({ title: 'CSS:' }))        // What size are we at?
     .pipe(gulp.dest('./public/css'))        // Save minified CSS
 
@@ -153,7 +153,7 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('./public/js'))         // Save main.js here
     .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
     .pipe($.uglify({ outSourceMap: true })) // Minify the .js
-    .pipe($.header(banner, { pkg: pkg }))  // Add banner
+    .pipe($.header(banner, { pkg: pkg }))   // Add banner
     .pipe($.size({ title: 'JS:' }))         // What size are we at?
     .pipe(gulp.dest('./public/js'))         // Save minified .js
 

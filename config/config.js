@@ -66,8 +66,8 @@ config.mongodb.url    = process.env.MONGODB_URL || 'mongodb://jfergie:Hockey1973
 //                                                 'mongodb:jamesfergusonx@gmail.com:Deltaecho1973!@dogen.mongohq.com:10010/vlabs'; // 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';
 //                                                 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';
 
-if(process.env.OPENSHIFT_MONGODB_DB_URL){
-  config.mongodb.url = process.env.OPENSHIFT_MONGODB_DB_URL + db_name;
+if (process.env.OPENSHIFT_MONGODB_DB_URL) {
+  config.mongodb.url = process.env.OPENSHIFT_MONGODB_DB_URL + config.db_name;
 }
 
 /**
