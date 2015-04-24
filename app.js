@@ -303,6 +303,7 @@ app.use(helmet.contentSecurityPolicy({
   ],
   connectSrc: [ // limit the origins (via XHR, WebSockets, and EventSource)
     "'self'",
+    'ws://localhost:8000',
     'ws://localhost:5000',
     'ws://localhost:3000',
     'ws://127.0.0.1:35729/livereload',

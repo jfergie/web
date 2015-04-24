@@ -4,8 +4,8 @@ block head
   title #{application} &middot; Experimental
 
 block styles
-link(rel='stylesheet', href='/css/x.min.css')
-link(rel='stylesheet', href='/css/jf-jf1.css')
+  link(rel='stylesheet', href='/css/x.min.css')
+  link(rel='stylesheet', href='/css/jf-jf1.css')
   link(rel='stylesheet', href='/lib/jf1/css/jf1-min.css')
 
 
@@ -40,45 +40,46 @@ block content
 
           //h2.jf1.sonar-ping.zoomInDown.hvr-grow-shadow.hvr-float-shadow Experimental / Concept Pages
           h2.jf1.auto-width.sonar-ping.hvr-grow-shadow.hvr-float-shadow Experimental / Concept Pages
-          ul.hvr-grow-shadow(style='display: block; list: block;')
-            li.animated.bounceInRight
-              a(href='/x/hover') Hover Effects
-            li.animated.bounceInLeft.hvr-float-shadow.hvr-grow-shadow.hvr-glow
-              a(href='/x/svg') SVG Experiment / Explosions
-            li.animated.bounceInRight
-              a(href='/x/svg2') SVG High Resolution Mesh Experiments
-            li.animated.bounceInLeft
-              a(href='/x/svg3') SVG Animation Experiments
-            li.animated.bounceInLeft
-              a(href='/x/text') Text Effects
-            li.animated.bounceInLeft
-              a(href='/x/controls') Controls
-            li.animated.bounceInRight
-              a(href='/x/3d') 3D
-            li.animated.bounceInRight
-              a(href='/x/x1') X1
-            li.animated.bounceInLeft
-              a(href='/x/x2') X2
-            li.animated.bounceInRight
-              a(href='/x/x3') X3
-            li.animated.bounceInLeft
-              a(href='/x/x4') X4
-            li.animated.bounceInRight
-              a(href='/x/x5' data-toggle="tooltip" data-original-title="Experimental Lab #5!") X5
+          h3
+            ul.hvr-grow-shadow(style='display: block; list: block;')
+              li.animated.bounceInRight
+                a(href='/x/hover') Hover Effects
+              li.animated.bounceInLeft.hvr-float-shadow.hvr-grow-shadow.hvr-glow
+                a(href='/x/svg') SVG Experiment / Explosions
+              li.animated.bounceInRight
+                a(href='/x/svg2') SVG High Resolution Mesh Experiments
+              li.animated.bounceInLeft
+                a(href='/x/svg3') SVG Animation Experiments
+              li.animated.bounceInLeft
+                a(href='/x/text') Text Effects
+              li.animated.bounceInLeft
+                a(href='/x/controls') Controls
+              li.animated.bounceInRight
+                a(href='/x/3d') 3D
+              li.animated.bounceInRight
+                a(href='/x/x1') X1
+              li.animated.bounceInLeft
+                a(href='/x/x2') X2
+              li.animated.bounceInRight
+                a(href='/x/x3') X3
+              li.animated.bounceInLeft
+                a(href='/x/x4') X4
+              li.animated.bounceInRight
+                a(href='/x/x5' data-toggle="tooltip" data-original-title="Experimental Lab #5!") X5
 
-            li.divider
-            li.animated.bounceInRight
-              a(href='/x/cause500err') Cause 500 Error during page render
-            li.animated.bounceInRight
-              a(href='/x/causeFailedFilePath') Cause File Path Failure (page loads without needed resources)
-            li.animated.bounceInRight
-              a(href='/xerr/causeFailedFilePath') Cause File Path Navigation Failure (page does not exist)
-            li.divider
+              li.divider
+              li.animated.bounceInRight
+                a(href='/x/cause500err') Cause 500 Error during page render
+              li.animated.bounceInRight
+                a(href='/x/causeFailedFilePath') Cause File Path Failure (page loads without needed resources)
+              li.animated.bounceInRight
+                a(href='/xerr/causeFailedFilePath') Cause File Path Navigation Failure (page does not exist)
+              li.divider
 
-            li.animated.bounceInRight
-              a(href='/x/suggestions') Suggestions
-            li.animated.bounceInRight
-                  a(href='/x/links') Cool links worth viewing
+              li.animated.bounceInRight
+                a(href='/x/suggestions') Suggestions
+              li.animated.bounceInRight
+                    a(href='/x/links') Cool links worth viewing
 
       .row
         .block
@@ -89,6 +90,9 @@ block content
           i.jf1.border-circle hov5
           i.jf1.border-circle.sonar-ping hov6
           i.jf1.sonar-ping sonar
+
+          i.fa.fa-flag.i.jf1.border-circle.animate-border-fade.hover-animate-circle Friends
+          i.fa.fa-flag.i.jf1.border-circle.animate-border-fade.hover-animate-circle
 
           img.jf1.border-circle.animate-circle(src='/images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')
           img.img-responsive.center-block.animated.rollIn.jf1.circle-rotate.border-circle.mini(src='/images/logo/Freecycle Logo Embossed Shadow 250x120.png', alt='The Freecycle Network', height='120', title='The Freecycle Network')

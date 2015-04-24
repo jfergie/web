@@ -27,7 +27,7 @@ dotenv.load();
 
 var config            = {};
 
-// From package.json
+// From package.json------------------------
 config.name           = pkg.name;
 config.version        = pkg.version;
 config.description    = pkg.description;
@@ -36,7 +36,8 @@ config.author         = pkg.author;
 config.keywords       = pkg.keywords;
 config.nodeVersion    = pkg.engines.node;
 
-config.port           = process.env.PORT || 3000;
+config.server_ip_address = process.env.OPENSHIFT_NODEJS_IP || 'localhost';  // 127.0.0.1
+config.port           = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000;
 
 // todo this is vlabs google analytics key for the development site - later change this to a dedicated Freecycle analytics key
 config.ga             = process.env.GA   || 'UA-57756453-2';  // Google Analytics Key for freecycle beta web site
@@ -58,10 +59,16 @@ config.loggly.json    = true;
  * Database Configuration
  */
 
+config.db_name =       'freecycle';
 config.mongodb        = {};
+
 config.mongodb.url    = process.env.MONGODB_URL || 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';
 //                                                 'mongodb:jamesfergusonx@gmail.com:Deltaecho1973!@dogen.mongohq.com:10010/vlabs'; // 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';
 //                                                 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';
+
+if(process.env.OPENSHIFT_MONGODB_DB_URL){
+  config.mongodb.url = process.env.OPENSHIFT_MONGODB_DB_URL + db_name;
+}
 
 /**
  * Session Configuration
