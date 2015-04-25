@@ -18,7 +18,7 @@ var methodOverride    = require('method-override');         // https://github.co
 // Additional Modules
 var fs                = require('fs');                      // http://nodejs.org/docs/v0.10.25/api/fs.html
 var path              = require('path');                    // http://nodejs.org/docs/v0.10.25/api/path.html
-var debug             = require('debug')('skeleton');       // https://github.com/visionmedia/debug
+var debug             = require('debug')('freecycle');      // https://github.com/visionmedia/debug
 var flash             = require('express-flash');           // https://npmjs.org/package/express-flash
 var config            = require('./config/config');         // Get configuration file
 var logger            = require('express-loggly');          // https://github.com/dstroot/express-loggly

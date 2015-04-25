@@ -9,15 +9,9 @@ block styles
   link(rel='stylesheet', href='/css/page-api.min.css')
 
 block content
-
-  //.mini-tron
-    .container
-      h2 API Code Page
-
   .container
     .row
-      //- .col-sm-10.col-sm-offset-1
-      .col-sm-12
+      .col-sm-6.col-sm-offset-3
 
         h1
           | Links
@@ -26,7 +20,7 @@ block content
             h2
                 i.fa.fa-fw.fa-laptop
                 | &nbsp;API Code and Tests
-              ul
+              ul.hvr-grow-shadow(style='display: block; list: block;')
                 li
                   a(href='/api/lastfm')
                     i.fa.fa-fw.fa-laptop
@@ -58,7 +52,7 @@ block content
             h2
                 i.fa.fa-fw.fa-lock
                 | &nbsp;APIs (OAuth required) &nbsp;
-              ul
+              ul.hvr-grow-shadow(style='display: block; list: block;')
                 li
                   a(href='/api/facebook')
                     i.fa.fa-fw.fa-lock
@@ -92,7 +86,7 @@ block content
               h2
                   i.fa.fa-fw.fa-cogs
                   | &nbsp;Admin&nbsp;Menu Functions
-                ul
+                ul.hvr-grow-shadow(style='display: block; list: block;')
                   li
                     a(href='/dashboard')
                       i.fa.fa-fw.fa-laptop

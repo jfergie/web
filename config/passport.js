@@ -270,13 +270,13 @@ exports.isAdministrator = function (req, res, next) {
   if (req.isAuthenticated()) {
     // user must be be an administrator
     if (req.user.type !== 'admin') {
-      req.flash('error', { msg: 'You must be an Administrator reach that page.' });
+      req.flash('error', { msg: 'You must be an Administrator to access that page.' });
       return res.redirect('/api');
     } else {
       return next();
     }
   } else {
-    req.flash('error', { msg: 'You must be logged in to reach that page.' });
+    req.flash('error', { msg: 'You must be logged in to access that page.' });
     res.redirect('/login');
   }
 };
