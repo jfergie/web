@@ -1,5 +1,5 @@
 # Freecycle 
-
+ 
 [![Build status][build-badge]][build-url]
 [![Dependency status][dependency-badge]][dependency-url]
 [![DevDependency status][dev-dep-badge]][dev-dep-url]
@@ -46,7 +46,7 @@ The Gulp build pipeline makes sure our assets are optimized.  The only thing we 
 
 ![Alt](https://raw.github.com/dstroot/skeleton/master/public/img/pagespeed.jpg)
 
-In addition we meet all basic security guidelines.  This is the result of a Tinfoil security scan of our site on Nodejitsu:
+All basic security guidelines passed.  Results of a Tinfoil security scan of site:
 
 ![Alt](https://raw.github.com/dstroot/skeleton/master/public/img/security.png)
 
