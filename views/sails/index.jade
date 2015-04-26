@@ -24,7 +24,7 @@ html
     meta(name='msapplication-window', content='width=800;height=600')
     meta(name='msapplication-task', content='name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico')
     meta(name='msapplication-task', content='name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico')
-    meta(name='msapplication-TileImage', content='assets/images/logo-144x144.png')
+    meta(name='msapplication-TileImage', content='/img/logo/logo-144x144.png')
     meta(name='msapplication-TileColor', content='#00A973')
     // CORE CSS
     link(href='assets/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet', type='text/css')
@@ -77,7 +77,7 @@ html
     // Morenizr
     script(type='text/javascript', src='assets/plugins/modernizr.min.js')
   body
-    // Available classes for body: boxed , pattern1...pattern10 . Background Image - example add: data-background="assets/images/boxed_background/1.jpg"
+    // Available classes for body: boxed , pattern1...pattern10 . Background Image - example add: data-background="assets/img/boxed_background/1.jpg"
     // Top Bar
     header#topHead
       .container
@@ -91,25 +91,25 @@ html
         // LANGUAGE
         .btn-group.pull-right.hidden-xs
           button.dropdown-toggle.language(type='button', data-toggle='dropdown')
-            img(src='assets/images/flags/us.png', width='16', height='11', alt='EN Language')
+            img(src='assets/img/flags/us.png', width='16', height='11', alt='EN Language')
             |  English
             span.caret
           ul.dropdown-menu
             li
               a(href='#')
-                img(src='assets/images/flags/us.png', width='16', height='11', alt='EN Language')
+                img(src='assets/img/flags/us.png', width='16', height='11', alt='EN Language')
                 |  [US] English
             li
               a(href='#')
-                img(src='assets/images/flags/de.png', width='16', height='11', alt='DE Language')
+                img(src='assets/img/flags/de.png', width='16', height='11', alt='DE Language')
                 |  [DE] German
             li
               a(href='#')
-                img(src='assets/images/flags/fr.png', width='16', height='11', alt='FR Language')
+                img(src='assets/img/flags/fr.png', width='16', height='11', alt='FR Language')
                 |  [FR] French
             li
               a(href='#')
-                img(src='assets/images/flags/ru.png', width='16', height='11', alt='RU Language')
+                img(src='assets/img/flags/ru.png', width='16', height='11', alt='RU Language')
                 |  [RU] Russian
         // /LANGUAGE
         // SIGN IN
@@ -176,7 +176,7 @@ html
           i.fa.fa-bars
         // Logo text or image
         a.logo(href='index.html')
-          img(src='assets/images/logo.png', alt='Freecycle.org')
+          img(src='/img/logo/logo.png', alt='Freecycle.org')
         // Top Nav
         .navbar-collapse.nav-main-collapse.collapse.pull-right
           nav.nav-main.mega-menu
@@ -544,21 +544,21 @@ html
                     |  You have 3 products on your cart
                   a.item(href='shop-product-full-width.html')
                     // item 1
-                    img.pull-left(src='assets/images/demo/shop/thumb/1.jpg', width='40', alt='quick cart')
+                    img.pull-left(src='assets/img/demo/shop/thumb/1.jpg', width='40', alt='quick cart')
                     .inline-block
                       span.title Man shirt XL
                       span.price 2 × $44.00
                   // /item 1
                   a.item(href='shop-product-full-width.html')
                     // item 2
-                    img.pull-left(src='assets/images/demo/shop/thumb/2.jpg', width='40', alt='quick cart')
+                    img.pull-left(src='assets/img/demo/shop/thumb/2.jpg', width='40', alt='quick cart')
                     .inline-block
                       span.title Great Black Shoes For Man and Only Man...
                       span.price 2 × $44.00
                   // /item 2
                   a.item(href='shop-product-full-width.html')
                     // item 3
-                    img.pull-left(src='assets/images/demo/shop/thumb/4.jpg', width='40', alt='quick cart')
+                    img.pull-left(src='assets/img/demo/shop/thumb/4.jpg', width='40', alt='quick cart')
                     .inline-block
                       span.title Pink Lady Perfect Shoes
                       span.price 1 × $67.32
@@ -582,34 +582,34 @@ html
         ul
           li
             a.color(href='#', onclick="setActiveStyleSheet('orange'); return false;", title='orange')
-              img(src='assets/images/demo/color_schemes/1.png', alt='', width='30', height='30')
+              img(src='assets/img/demo/color_schemes/1.png', alt='', width='30', height='30')
           li
             a.color(href='#', onclick="setActiveStyleSheet('red'); return false;", title='red')
-              img(src='assets/images/demo/color_schemes/2.png', alt='', width='30', height='30')
+              img(src='assets/img/demo/color_schemes/2.png', alt='', width='30', height='30')
           li
             a.color(href='#', onclick="setActiveStyleSheet('pink'); return false;", title='pink')
-              img(src='assets/images/demo/color_schemes/3.png', alt='', width='30', height='30')
+              img(src='assets/img/demo/color_schemes/3.png', alt='', width='30', height='30')
           li
             a.color(href='#', onclick="setActiveStyleSheet('yellow'); return false;", title='yellow')
-              img(src='assets/images/demo/color_schemes/4.png', alt='', width='30', height='30')
+              img(src='assets/img/demo/color_schemes/4.png', alt='', width='30', height='30')
           li
             a.color(href='#', onclick="setActiveStyleSheet('darkgreen'); return false;", title='darkgreen')
-              img(src='assets/images/demo/color_schemes/5.png', alt='', width='30', height='30')
+              img(src='assets/img/demo/color_schemes/5.png', alt='', width='30', height='30')
           li
             a.color(href='#', onclick="setActiveStyleSheet('green'); return false;", title='green')
-              img(src='assets/images/demo/color_schemes/6.png', alt='', width='30', height='30')
+              img(src='assets/img/demo/color_schemes/6.png', alt='', width='30', height='30')
           li
             a.color(href='#', onclick="setActiveStyleSheet('darkblue'); return false;", title='darkblue')
-              img(src='assets/images/demo/color_schemes/7.png', alt='', width='30', height='30')
+              img(src='assets/img/demo/color_schemes/7.png', alt='', width='30', height='30')
           li
             a.color(href='#', onclick="setActiveStyleSheet('blue'); return false;", title='blue')
-              img(src='assets/images/demo/color_schemes/8.png', alt='', width='30', height='30')
+              img(src='assets/img/demo/color_schemes/8.png', alt='', width='30', height='30')
           li
             a.color(href='#', onclick="setActiveStyleSheet('brown'); return false;", title='brown')
-              img(src='assets/images/demo/color_schemes/9.png', alt='', width='30', height='30')
+              img(src='assets/img/demo/color_schemes/9.png', alt='', width='30', height='30')
           li
             a.color(href='#', onclick="setActiveStyleSheet('lightgrey'); return false;", title='lightgrey')
-              img(src='assets/images/demo/color_schemes/10.png', alt='', width='30', height='30')
+              img(src='assets/img/demo/color_schemes/10.png', alt='', width='30', height='30')
         p CHOOSE YOUR COLOR SKIN
         label
           input#is_light.dark_switch(type='radio', name='color_skin', value='light', checked='checked')
@@ -628,37 +628,37 @@ html
         p Patterns for Boxed Version
         div
           button.pointer.switcher_thumb(onclick="pattern_switch('none');")
-            img(src='assets/images/patterns/none.jpg', width='27', height='27', alt='')
+            img(src='assets/img/patterns/none.jpg', width='27', height='27', alt='')
           button.pointer.switcher_thumb(onclick="pattern_switch('pattern2');")
-            img(src='assets/images/patterns/pattern2.png', width='27', height='27', alt='')
+            img(src='assets/img/patterns/pattern2.png', width='27', height='27', alt='')
           button.pointer.switcher_thumb(onclick="pattern_switch('pattern3');")
-            img(src='assets/images/patterns/pattern3.png', width='27', height='27', alt='')
+            img(src='assets/img/patterns/pattern3.png', width='27', height='27', alt='')
           button.pointer.switcher_thumb(onclick="pattern_switch('pattern4');")
-            img(src='assets/images/patterns/pattern4.png', width='27', height='27', alt='')
+            img(src='assets/img/patterns/pattern4.png', width='27', height='27', alt='')
           button.pointer.switcher_thumb(onclick="pattern_switch('pattern5');")
-            img(src='assets/images/patterns/pattern5.png', width='27', height='27', alt='')
+            img(src='assets/img/patterns/pattern5.png', width='27', height='27', alt='')
         div
           button.pointer.switcher_thumb(onclick="pattern_switch('pattern6');")
-            img(src='assets/images/patterns/pattern6.png', width='27', height='27', alt='')
+            img(src='assets/img/patterns/pattern6.png', width='27', height='27', alt='')
           button.pointer.switcher_thumb(onclick="pattern_switch('pattern7');")
-            img(src='assets/images/patterns/pattern7.png', width='27', height='27', alt='')
+            img(src='assets/img/patterns/pattern7.png', width='27', height='27', alt='')
           button.pointer.switcher_thumb(onclick="pattern_switch('pattern8');")
-            img(src='assets/images/patterns/pattern8.png', width='27', height='27', alt='')
+            img(src='assets/img/patterns/pattern8.png', width='27', height='27', alt='')
           button.pointer.switcher_thumb(onclick="pattern_switch('pattern9');")
-            img(src='assets/images/patterns/pattern9.png', width='27', height='27', alt='')
+            img(src='assets/img/patterns/pattern9.png', width='27', height='27', alt='')
           button.pointer.switcher_thumb(onclick="pattern_switch('pattern10');")
-            img(src='assets/images/patterns/pattern10.png', width='27', height='27', alt='')
+            img(src='assets/img/patterns/pattern10.png', width='27', height='27', alt='')
         p Images for Boxed Version
         button.pointer.switcher_thumb(onclick="background_switch('none');")
-          img(src='assets/images/boxed_background/none.jpg', width='27', height='27', alt='')
-        button.pointer.switcher_thumb(onclick="background_switch('assets/images/boxed_background/1.jpg');")
-          img(src='assets/images/boxed_background/1_thumb.jpg', width='27', height='27', alt='')
-        button.pointer.switcher_thumb(onclick="background_switch('assets/images/boxed_background/2.jpg');")
-          img(src='assets/images/boxed_background/2_thumb.jpg', width='27', height='27', alt='')
-        button.pointer.switcher_thumb(onclick="background_switch('assets/images/boxed_background/3.jpg');")
-          img(src='assets/images/boxed_background/3_thumb.jpg', width='27', height='27', alt='')
-        button.pointer.switcher_thumb(onclick="background_switch('assets/images/boxed_background/4.jpg');")
-          img(src='assets/images/boxed_background/4_thumb.jpg', width='27', height='27', alt='')
+          img(src='assets/img/boxed_background/none.jpg', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="background_switch('assets/img/boxed_background/1.jpg');")
+          img(src='assets/img/boxed_background/1_thumb.jpg', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="background_switch('assets/img/boxed_background/2.jpg');")
+          img(src='assets/img/boxed_background/2_thumb.jpg', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="background_switch('assets/img/boxed_background/3.jpg');")
+          img(src='assets/img/boxed_background/3_thumb.jpg', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="background_switch('assets/img/boxed_background/4.jpg');")
+          img(src='assets/img/boxed_background/4_thumb.jpg', width='27', height='27', alt='')
         hr
         .text-center
           button.btn.btn-primary.btn-xs(onclick='resetSwitcher();') Reset Styles
@@ -694,36 +694,36 @@ html
               ****************************************************************************
             li(data-transition='flyin', data-slotamount='10', data-delay='12000', data-masterspeed='1000')
               // COVER IMAGE - LAYER 1
-              img(src='assets/images/demo/revolution_slider/sliderbg.jpg', alt='', data-bgfit='cover', data-bgposition='left top', data-bgrepeat='no-repeat')
+              img(src='assets/img/demo/revolution_slider/sliderbg.jpg', alt='', data-bgfit='cover', data-bgposition='left top', data-bgrepeat='no-repeat')
               // LAYER NR. 2
               .tp-caption.lightgrey_divider.skewfromrightshort.customout.tp-resizeme(data-x='right', data-hoffset='0', data-y='top', data-voffset='50', data-customin='x:0;y:0;z:0;rotationX:30;rotationY:720;rotationZ:0;scaleX:2.5;scaleY:2.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;', data-customout='x:-500;y:0;z:0;rotationX:0;rotationY:720;rotationZ:00;scaleX:0.25;scaleY:0.25;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-speed='7000', data-start='1000', data-end='8000', data-endspeed='5000', data-easing='Elastic.easeInOut', data-endeasing='Elastic.easeInOut', data-captionhidden='off', style='z-index: 2')
-                img(src='assets/images/demo/revolution_slider/slider_run.png', alt='')
+                img(src='assets/img/demo/revolution_slider/slider_run.png', alt='')
               // LAYER NR. 3
               // LOGO PARTS "Free"
               .tp-caption.skewfromrightshort.customout.tp-resizeme(data-x='20', data-y='0', data-customout='x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-speed='2000', data-start='2000', data-end='15000', data-endspeed='500', data-easing='Back.easeOut', data-endeasing='Power4.easeIn', style='z-index: 3')
-                img(src='assets/images/demo/revolution_slider/logo1.png', alt='')
-                // style="z-index: 3"><img src="assets/images/demo/revolution_slider/desktop_slider_2.png" alt="">
+                img(src='assets/img/demo/revolution_slider/logo1.png', alt='')
+                // style="z-index: 3"><img src="assets/img/demo/revolution_slider/desktop_slider_2.png" alt="">
               // LAYER NR. 4
               // LOGO PARTS "cycle"
               .tp-caption.customin.customout.tp-resizeme(data-x='20', data-y='0', data-customin='x:50;y:150;z:0;rotationX:0;rotationY:720;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;', data-customout='x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-speed='5000', data-start='2500', data-end='14000', data-endspeed='500', data-easing='Elastic.easeInOut', data-endeasing='Power1.easeIn', style='z-index: 4')
-                img(src='assets/images/demo/revolution_slider/logo2.png', alt='')
-                // style="z-index: 3"><img src="assets/images/demo/revolution_slider/slider_run.png" alt="">
+                img(src='assets/img/demo/revolution_slider/logo2.png', alt='')
+                // style="z-index: 3"><img src="assets/img/demo/revolution_slider/slider_run.png" alt="">
               // LAYER NR. 5
               // LOGO PARTS ".org"
               .tp-caption.skewfromleftshort.customout.tp-resizeme(data-x='20', data-y='0', data-customout='x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-speed='2000', data-start='2000', data-end='14000', data-endspeed='1500', data-easing='Back.easeOut', data-endeasing='Power4.easeIn', data-captionhidden='off', style='z-index: 5')
-                img(src='assets/images/demo/revolution_slider/logo3.png', alt='')
+                img(src='assets/img/demo/revolution_slider/logo3.png', alt='')
               // LAYER NR. 6
               // LOGO PARTS "tagline - change the world..."
               .tp-caption.large_bold_grey.skewfromrightshort.customout.tp-resizeme(data-x='80', data-y='20', data-customout='x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-speed='1000', data-start='4000', data-end='15000', data-endspeed='1500', data-easing='Back.easeOut', data-endeasing='Power4.easeIn', data-captionhidden='off', style='z-index: 6')
-                img(src='assets/images/demo/revolution_slider/logo4.png', alt='')
+                img(src='assets/img/demo/revolution_slider/logo4.png', alt='')
               // LAYER NR. 7
               // LOGO PARTS "bottom arrow"
               .tp-caption.cusomin.randomrotate.tp-resizeme(data-x='20', data-y='0', data-customin='x:-500;y:0;z:0;rotationX:0;rotationY:0;rotationZ:360;scaleX:100.5;scaleY:100.5;skewX:0;skewY:0;opacity:100;transformPerspective:600;transformOrigin:75% 50%;', data-customout='x:-500;y:0;z:0;rotationX:0;rotationY:0;rotationZ:360;scaleX:100;scaleY:100;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:75% 50%;', data-speed='2000', data-start='5000', data-end='14000', data-endspeed='1500', data-easing='Elastic.easeInOut', data-endeasing='Elastic.easeInOut', data-captionhidden='off', style='z-index: 7')
-                img(src='assets/images/demo/revolution_slider/logo5.png', alt='')
+                img(src='assets/img/demo/revolution_slider/logo5.png', alt='')
               // LAYER NR.86
               // LOGO PARTS "top arrow"
               .tp-caption.randomrotate.randomrotate.tp-resizeme(data-x='20', data-y='0', data-customin='x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:-720;scaleX:1.0;scaleY:1.0;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:75% 50%;', data-customout='x:-500;y:0;z:0;rotationX:0;rotationY:0;rotationZ:360;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:75% 50%;', data-speed='2000', data-start='5000', data-end='14000', data-endspeed='1500', data-easing='Back.easeInOut', data-endeasing='Back.easeInOut', data-captionhidden='off', style='z-index: 8')
-                img(src='assets/images/demo/revolution_slider/logo6.png', alt='')
+                img(src='assets/img/demo/revolution_slider/logo6.png', alt='')
               // LAYER NR. 9
               //
                 <div class="tp-caption large_bold_grey skewfromrightshort customout"
@@ -823,7 +823,7 @@ html
               ****************************************************************************
             li(data-transition='incube-horizontal', data-slotamount=' 14', data-masterspeed='2000', data-delay='10000', tp-resizeme='')
               // COVER IMAGE
-              img(src='assets/images/demo/revolution_slider/slider7.jpg', alt='', data-bgfit='cover', data-bgposition='left top', data-bgrepeat='no-repeat')
+              img(src='assets/img/demo/revolution_slider/slider7.jpg', alt='', data-bgfit='cover', data-bgposition='left top', data-bgrepeat='no-repeat')
               .tp-caption.lft.boxshadow.tp-resizeme(data-x='left', data-hoffset='60', data-y='top', data-voffset='60', data-speed='900', data-start='500', data-autoplay='false', data-autoplayonlyfirsttime='false', data-nextslideatend='true', data-easing='easeOutBack')
                 .caption.lfb.boxshadow(data-x='70', data-y='120', data-speed='900', data-start='500', data-easing='easeOutBack')
                   iframe(width='420', height='315', src='//www.youtube.com/embed/KDiEpXT36jY', frameborder='0', controls='1', allowfullscreen='')
@@ -948,7 +948,7 @@ html
             // SLIDE
             li(data-transition='incube-horizontal', data-slotamount='5', data-masterspeed='700')
               // COVER IMAGE
-              img(src='assets/images/demo/revolution_slider/church_parallax.jpg', alt='', data-bgfit='cover', data-bgposition='left top', data-bgrepeat='no-repeat')
+              img(src='assets/img/demo/revolution_slider/church_parallax.jpg', alt='', data-bgfit='cover', data-bgposition='left top', data-bgrepeat='no-repeat')
               .tp-caption.large_text.sft.tp-resizeme(data-x='center', data-y='130', data-speed='300', data-start='1000', data-endspeed='500', data-easing='easeOutBack')
                 h1 The Freecycle Network™
               .tp-caption.large_text.sft.tp-resizeme(data-x='center', data-y='260', data-speed='300', data-start='1700', data-endspeed='500', data-easing='easeOutBack')
@@ -958,7 +958,7 @@ html
             // SLIDE
             li(data-transition='cubic-horizontal', data-slotamount='5', data-masterspeed='700')
               // COVER IMAGE
-              img(src='assets/images/demo/revolution_slider/church_parallax.jpg', alt='', data-bgfit='cover', data-bgposition='left top', data-bgrepeat='no-repeat')
+              img(src='assets/img/demo/revolution_slider/church_parallax.jpg', alt='', data-bgfit='cover', data-bgposition='left top', data-bgrepeat='no-repeat')
               .tp-caption.large_text.sft.tp-resizeme(data-x='center', data-y='130', data-speed='300', data-start='1000', data-endspeed='500', data-easing='easeOutBack')
                 h1 The Freecycle Network™
               .tp-caption.large_text.sft.tp-resizeme(data-x='center', data-y='260', data-speed='300', data-start='1700', data-endspeed='500', data-easing='easeOutBack')
@@ -976,8 +976,8 @@ html
               SLIDE
               ****************************************************************************
             li(data-transition='flyin', data-delay='60000', data-masterspeed='1000', data-slotamount='9', data-fstransition='fade', data-fsmasterspeed='1000', data-fsslotamount='9', data-saveperformance='off')
-              img(src='assets/images/demo/revolution_slider/video_woman_cover3.jpg', alt='video_woman_cover3', data-bgposition='center center', data-bgfit='cover', data-bgrepeat='no-repeat')
-              .tp-caption.rs-parallaxlevel-1.tp-fade.fadeout.fullscreenvideo.tp-videolayer.tp-resizeme(data-x='0', data-y='0', data-speed='1000', data-start='1100', data-easing='Power4.easeOut', data-elementdelay='0.01', data-endelementdelay='0.1', data-videowidth='100%', data-videoheight='100%', data-videocontrols='none', data-videoposter='assets/images/demo/revolution_slider/video_woman_cover2.jpg', data-videowebm='assets/images/demo/revolution_slider/woman_sun.webm', data-videomp4='assets/images/demo/revolution_slider/woman_sun.mp4', data-posteronmobile='off', data-videoloop='', data-forcecover='1', data-aspectratio='16:9', data-endspeed='1500', data-endeasing='Power4.easeIn', data-autoplay='true', data-autoplayonlyfirsttime='false', data-nextslideatend='true', data-volume='mute', data-forcerewind='on', style='z-index: 5;')
+              img(src='assets/img/demo/revolution_slider/video_woman_cover3.jpg', alt='video_woman_cover3', data-bgposition='center center', data-bgfit='cover', data-bgrepeat='no-repeat')
+              .tp-caption.rs-parallaxlevel-1.tp-fade.fadeout.fullscreenvideo.tp-videolayer.tp-resizeme(data-x='0', data-y='0', data-speed='1000', data-start='1100', data-easing='Power4.easeOut', data-elementdelay='0.01', data-endelementdelay='0.1', data-videowidth='100%', data-videoheight='100%', data-videocontrols='none', data-videoposter='assets/img/demo/revolution_slider/video_woman_cover2.jpg', data-videowebm='assets/img/demo/revolution_slider/woman_sun.webm', data-videomp4='assets/img/demo/revolution_slider/woman_sun.mp4', data-posteronmobile='off', data-videoloop='', data-forcecover='1', data-aspectratio='16:9', data-endspeed='1500', data-endeasing='Power4.easeIn', data-autoplay='true', data-autoplayonlyfirsttime='false', data-nextslideatend='true', data-volume='mute', data-forcerewind='on', style='z-index: 5;')
               .tp-caption.rs-parallaxlevel-10.large_text.customin.customout.ltl.tp-resizeme(data-x='center', data-y='300', data-customin='x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-customout='x:0;y:300;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:1;transformPerspective:600;transformOrigin:50% 50%;', data-speed='9000', data-start='4000', data-end='20000', data-endspeed='2000', data-easing='Power4.easeInOut', data-endeasing='Back.easeInOut', data-splitin='chars', data-splitout='chars', data-elementdelay='0.1', data-endelementdelay='0.1', <!--='', style='z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;', --='')
               | Join over 8.5 million happy members
               .tp-caption.large_text.rs-parallaxlevel-5.customin.customout.ltl.tp-resizeme(data-x='center', data-y='350', data-customin='x:0;y:-60;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-speed='1000', data-start='13000', data-end='24000', data-easing='Power4.easeInOut', data-endeasing='Back.easeInOut', data-splitin='chars', data-splitout='chars', data-elementdelay='0.1', data-endelementdelay='0.1', data-endspeed='1000', style='z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;')
@@ -1003,11 +1003,11 @@ html
                 changing the world one gift at a time&trade;
                 </div>
               .tp-caption.customin.randomrotate.ltl.tp-resizeme(data-x='center', data-y='20', data-customin='x:-100;y:-100;z:0;rotationX:0;rotationY:0;rotationZ:-360;scaleX:0.3;scaleY:0.3;skewX:0;skewY:0;opacity:0.01;transformPerspective:6000;transformOrigin:50% 50%;', data-speed='7000', data-start='7000', data-end='24000', data-easing='Power4.easeIn', data-elementdelay='0.1', data-endelementdelay='0.1', data-endspeed='1000', data-endeasing='SlowMo.ease', style='z-index: 8;')
-                // <img src="assets/images/demo/revolution_slider/slider_run.png" alt="">
-                img(src='assets/images/Freecycle Logo3 700x265.png', alt='')
+                // <img src="assets/img/demo/revolution_slider/slider_run.png" alt="">
+                img(src='assets/img/Freecycle Logo3 700x265.png', alt='')
               .tp-caption.blue_bold_bg_20.customin.ltl.tp-resizeme(data-x='center', data-y='20', data-customin='x:100;y:100;z:0;rotationX:0;rotationY:0;rotationZ:-360;scaleX:0.3;scaleY:0.3;skewX:0.5;skewY:0.5;opacity:0.01;transformPerspective:6000;transformOrigin:50% 50%;', data-speed='7000', data-start='7000', data-end='24000', data-easing='Power4.easeIn', data-elementdelay='0.1', data-endelementdelay='0.1', data-endspeed='1000', data-endeasing='SlowMo.ease', style='z-index: 8;')
-                // <img src="assets/images/demo/revolution_slider/slider_run.png" alt="">
-                img(src='assets/images/Freecycle Logo3 700x265.png', alt='')
+                // <img src="assets/img/demo/revolution_slider/slider_run.png" alt="">
+                img(src='assets/img/Freecycle Logo3 700x265.png', alt='')
             // *** END OF SLIDES ***
           .tp-bannertimer.tp-bottom.tp-resizeme
       // /REVOLUTION SLIDER
@@ -1077,48 +1077,48 @@ html
             //
               <div class="owl-carousel" data-plugin-options='{"items": 3, "singleItem": false, "pagination": false, "autoPlay": true}'>
               <div>
-              <img class="img-responsive" src="assets/images/demo/brands/1.jpg" alt="">
+              <img class="img-responsive" src="assets/img/demo/brands/1.jpg" alt="">
               </div>
               <div>
-              <img class="img-responsive" src="assets/images/demo/brands/2.jpg" alt="">
+              <img class="img-responsive" src="assets/img/demo/brands/2.jpg" alt="">
               </div>
               <div>
-              <img class="img-responsive" src="assets/images/demo/brands/3.jpg" alt="">
+              <img class="img-responsive" src="assets/img/demo/brands/3.jpg" alt="">
               </div>
               <div>
-              <img class="img-responsive" src="assets/images/demo/brands/4.jpg" alt="">
+              <img class="img-responsive" src="assets/img/demo/brands/4.jpg" alt="">
               </div>
               <div>
-              <img class="img-responsive" src="assets/images/demo/brands/6.jpg" alt="">
+              <img class="img-responsive" src="assets/img/demo/brands/6.jpg" alt="">
               </div>
               <div>
-              <img class="img-responsive" src="assets/images/demo/brands/7.jpg" alt="">
+              <img class="img-responsive" src="assets/img/demo/brands/7.jpg" alt="">
               </div>
               <div>
-              <img class="img-responsive" src="assets/images/demo/brands/8.jpg" alt="">
+              <img class="img-responsive" src="assets/img/demo/brands/8.jpg" alt="">
               </div>
               </div>
           .col-md-6
             .owl-carousel.controlls-over(data-plugin-options='{"items": 9, "singleItem": true, "pagination": true, "autoPlay": true}')
               // data-plugin-options='{"items": 9, "singleItem": true, "navigation": true, "authoplay":true, "pagination": true, "transitionStyle":"fadeUp"}'>
               div
-                img.img-responsive(alt='', src='assets/images/events/1.png')
+                img.img-responsive(alt='', src='assets/img/events/1.png')
               div
-                img.img-responsive(alt='', src='assets/images/events/2.png')
+                img.img-responsive(alt='', src='assets/img/events/2.png')
               div
-                img.img-responsive(alt='', src='assets/images/events/6.jpg')
+                img.img-responsive(alt='', src='assets/img/events/6.jpg')
               div
-                img.img-responsive(alt='', src='assets/images/events/7.jpg')
+                img.img-responsive(alt='', src='assets/img/events/7.jpg')
               div
-                img.img-responsive(alt='', src='assets/images/events/8.jpg')
+                img.img-responsive(alt='', src='assets/img/events/8.jpg')
               div
-                img.img-responsive(alt='', src='assets/images/events/9.jpg')
+                img.img-responsive(alt='', src='assets/img/events/9.jpg')
               div
-                img.img-responsive(alt='', src='assets/images/events/12.jpg')
+                img.img-responsive(alt='', src='assets/img/events/12.jpg')
               div
-                img.img-responsive(alt='', src='assets/images/events/13.jpg')
+                img.img-responsive(alt='', src='assets/img/events/13.jpg')
               div
-                img.img-responsive(alt='', src='assets/images/events/14.jpg')
+                img.img-responsive(alt='', src='assets/img/events/14.jpg')
       // /CAROUSEL
       // CALLOUT
       .bs-callout.margin-top.text-center.styleBackground.noradius
@@ -1128,7 +1128,7 @@ html
           a.btn.btn-primary.btn-lg(href='#', target='_blank') Join Now
       // /CALLOUT
       // PARALLAX
-      section.parallax.delayed.margin-footer(data-stellar-background-ratio='0.7', style="background-image: url('assets/images/demo/parallax.jpg');")
+      section.parallax.delayed.margin-footer(data-stellar-background-ratio='0.7', style="background-image: url('assets/img/demo/parallax.jpg');")
         span.overlay
         .container
           .row
@@ -1151,7 +1151,7 @@ html
               a.btn.btn-primary.btn-lg(href='index-more.html') Tell Me More
             // right image
             .col-md-5.animation_fade_in
-              img.visible-md.visible-lg.img-responsive.pull-right(src='assets/images/Freecycle Logo3 700x265.png', alt='')
+              img.visible-md.visible-lg.img-responsive.pull-right(src='assets/img/Freecycle Logo3 700x265.png', alt='')
       // PARALLAX
     // /WRAPPER
     // FOOTER
@@ -1193,7 +1193,7 @@ html
             // FOOTER LOGO
             .column.logo.col-md-4.text-center
               .logo-content
-                img.animate_fade_in(src='assets/images/logo_footer.png', width='200', alt='')
+                img.animate_fade_in(src='/img/images/logo_footer.png', width='200', alt='')
                 h4 The Freecycle Network™
             // /FOOTER LOGO
             // FOOTER LATEST POSTS

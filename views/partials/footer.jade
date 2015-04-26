@@ -5,7 +5,7 @@ footer.footer.bg-black
       .col-md-12
         p
           //a.logo(href='/')
-            img(src='/images/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle')
+            img(src='/img/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle')
           //|           Copyright © 2015 The Freecycle Network (http://www.freecycle.org). All rights reserved.
           //br
           //|                   Freecycle and the Freecycle logo are trademarks of The Freecycle Network in various countries.
@@ -28,7 +28,7 @@ footer.footer.bg-black
         | Freecycle and the Freecycle logo are trademarks of The Freecycle Network in various countries.
 
         //a.logo(href='/')
-          img(src='/images/logo/Freecycle Logo Dark2 Transparent 140x68.png', valign="middle" height='50px' alt='Freecycle')
+          img(src='/img/logo/Freecycle Logo Dark2 Transparent 140x68.png', valign="middle" height='50px' alt='Freecycle')
 
 //- Load jQuery, food for thought:
 //- https://palant.de/2014/06/30/please-don-t-use-externally-hosted-javascript-libraries
@@ -39,7 +39,7 @@ script window.jQuery || document.write('<script src="/lib/jquery/dist/jquery.min
 
 
 // *****************************************************************************************
-// ************************************ TEMP JAVASCRIPT INCLDUES ***************************
+// ************************************ TEMP JAVASCRIPT INCLUDES ***************************
 // script(type='text/javascript', src='/plugins/jquery-2.1.1.min.js')
 // script(type='text/javascript', src='/plugins/jquery.easing.1.3.js')
 // script(type='text/javascript', src='/plugins/jquery.cookie.js')
@@ -77,22 +77,20 @@ script(type='text/javascript', src='/js-sails/js/scripts.js')
 script.
   $(document).ready(function() {
 
+    $("h1").attr("data-sr", "enter top hustle 50px over 1.5s");
+    $("h2").attr("data-sr", "enter top hustle 50px over 1.5s");
+    $("p").attr("data-sr", "enter top hustle 50px over 1.5s");
+    $("li").attr("data-sr", "enter bottom over 1s and move 110px wait 0.3s");
+    //-$("#greatphoto").attr("title", function (i, val) {
+    //-  return val + " - photo by Kelly Clark";
+    //-});
+
     $("a").addClass("hvr-grow-shadow");
     $("li").addClass("hvr-float-shadow hvr-grow-shadow");
     $("p").addClass("hvr-grow-shadow hvr-float-shadow");
     $("h1").addClass("hvr-grow");
     $("h2").addClass("hvr-grow");
     //$("h2:after").addClass("hvr-grow");
-
-    $("h1").attr("data-sr","enter top hustle 50px over 1.5s");
-    $("h2").attr("data-sr","enter top hustle 50px over 1.5s");
-    $("p").attr("data-sr","enter top hustle 50px over 1.5s");
-
-    $("li").attr("data-sr","enter bottom over 1s and move 110px wait 0.3s");
-    //-$("#greatphoto").attr("title", function (i, val) {
-    //-  return val + " - photo by Kelly Clark";
-    //-});
-
 
   //- Async load main project js
     $.ajax({
