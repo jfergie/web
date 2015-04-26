@@ -70,6 +70,9 @@ script(type='text/javascript', src='/js-sails/js/scripts.js')
 
 // ************************************ /TEMP JAVASCRIPT INCLUDES END ***************************
 
+// ************************************ JAVASCRIPT INCLUDES ***************************
+// script(type='text/javascript', src='/lib/scrollreveal/dist/scrollReveal.min.js')
+// ************************************ /JAVASCRIPT INCLUDES END ***************************
 
 script.
   $(document).ready(function() {
@@ -80,6 +83,15 @@ script.
     $("h1").addClass("hvr-grow");
     $("h2").addClass("hvr-grow");
     //$("h2:after").addClass("hvr-grow");
+
+    $("h1").attr("data-sr","enter top hustle 50px over 1.5s");
+    $("h2").attr("data-sr","enter top hustle 50px over 1.5s");
+    $("p").attr("data-sr","enter top hustle 50px over 1.5s");
+
+    $("li").attr("data-sr","enter bottom over 1s and move 110px wait 0.3s");
+    //-$("#greatphoto").attr("title", function (i, val) {
+    //-  return val + " - photo by Kelly Clark";
+    //-});
 
 
   //- Async load main project js
@@ -111,6 +123,26 @@ script.
         };
       });
     });
+
+    //- ***** Scroll Reveal Initialization *****
+    window.sr = new scrollReveal( {
+      reset:  true,
+      delay:  'onload',
+      vFactor: 0.90,
+
+      opacity: 0,
+      mobile: false,
+
+      enter: 'bottom',
+      move: '8px',
+      over: '0.6s',
+      wait: '0s',
+      easing: 'ease',
+      //easing: 'hustle',
+      scale: {direction: 'up', power: '5%'},
+      rotate: {x: 0, y: 0, z: 0}
+    });
+    //- ***** /Scroll Reveal Initialization END *****
 
     // Initialize tooltip
     $('[data-toggle="tooltip"]').tooltip();  //{placement : 'top'});

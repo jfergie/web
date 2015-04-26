@@ -77,6 +77,7 @@ var paths = {
     // 'public/lib/bootstrap/js/affix.js'
     // =========================================
     'public/lib/fastclick/lib/fastclick.js',
+    'public/lib/scrollreveal/scrollReveal.js',
     'views/js/scripts.js',
     'public/js/main.js'
   ],
