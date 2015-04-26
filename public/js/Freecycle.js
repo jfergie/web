@@ -2213,7 +2213,7 @@ function _toggle() {
 
 /** 11. Background Image
  class="boxed" should be added to body.
- Add to body - example: data-background="assets/images/boxed_background/1.jpg"
+ Add to body - example: data-background="assets/img/boxed_background/1.jpg"
  **************************************************************** **/
 function _bgimage() {
   if(jQuery('body').hasClass('boxed')) {

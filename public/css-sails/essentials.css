@@ -1997,12 +1997,12 @@ p.dropcap.color:first-letter {
 .testimonial.male p,
 .testimonial.female p {
 	padding-left:52px;
-	background-image:url('../images/female.png');
+	background-image:url('../img/female.png');
 	background-repeat:no-repeat;
 	background-position:16px 25px;
 }
 .testimonial.male p {
-	background-image:url('../images/male.png');
+	background-image:url('../img/male.png');
 }
 
 
@@ -2013,34 +2013,34 @@ p.dropcap.color:first-letter {
 /**36. Background Patterns
 *************************************************** **/
 .pattern1 {
-	background:url('../images/patterns/pattern1.png') repeat;
+	background:url('../img/patterns/pattern1.png') repeat;
 }
 .pattern2 {
-	background:url('../images/patterns/pattern2.png') repeat;
+	background:url('../img/patterns/pattern2.png') repeat;
 }
 .pattern3 {
-	background:url('../images/patterns/pattern3.png') repeat;
+	background:url('../img/patterns/pattern3.png') repeat;
 }
 .pattern4 {
-	background:url('../images/patterns/pattern4.png') repeat;
+	background:url('../img/patterns/pattern4.png') repeat;
 }
 .pattern5 {
-	background:url('../images/patterns/pattern5.png') repeat;
+	background:url('../img/patterns/pattern5.png') repeat;
 }
 .pattern6 {
-	background:url('../images/patterns/pattern6.png') repeat;
+	background:url('../img/patterns/pattern6.png') repeat;
 }
 .pattern7 {
-	background:url('../images/patterns/pattern7.png') repeat;
+	background:url('../img/patterns/pattern7.png') repeat;
 }
 .pattern8 {
-	background:url('../images/patterns/pattern8.png') repeat;
+	background:url('../img/patterns/pattern8.png') repeat;
 }
 .pattern9 {
-	background:url('../images/patterns/pattern9.png') repeat;
+	background:url('../img/patterns/pattern9.png') repeat;
 }
 .pattern10 {
-	background:url('../images/patterns/pattern10.png') repeat;
+	background:url('../img/patterns/pattern10.png') repeat;
 }
 
 

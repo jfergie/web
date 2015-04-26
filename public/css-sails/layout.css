@@ -94,7 +94,7 @@ body {
 /** 03. Top Nav
  **************************************************************** **/
 #header_shadow {
-	background:url('../images/header_shadow.png') no-repeat top center;
+	background:url('../img/header_shadow.png') no-repeat top center;
 	position:fixed;
 	top:81px; left:0; right:0;
 	height:75px; 
@@ -757,7 +757,7 @@ header#topNav li a i.fa {
 	/* custom */
 	#slider.full-screen,
 	#slider.half-screen {
-		background:#F0F0F0 url('../images/loading.gif') no-repeat center;
+		background:#F0F0F0 url('../img/loading.gif') no-repeat center;
 	}
 	#slider .slides-pagination {
 		bottom:60px !important;
@@ -1519,7 +1519,7 @@ footer .footer-bar .toTop:hover {
 	footer address .footer-sprite {
 		margin-bottom:20px;
 		padding-left:30px; 
-		background:url('../images/footer_sprite.png') no-repeat 0 0;
+		background:url('../img/footer_sprite.png') no-repeat 0 0;
 	}
 		footer address .footer-sprite:last-child {
 			margin-bottom:0;

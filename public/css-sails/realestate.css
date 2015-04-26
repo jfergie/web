@@ -75,22 +75,22 @@
 
 /* icons */
 .bed-ico {
-	background:url('../images/icon/realestate/small/bed-ico.png') no-repeat;
+	background:url('../img/icon/realestate/small/bed-ico.png') no-repeat;
 	display:inline-block;
 	width:16px; height:16px;
 }
 .furnished-ico {
-	background:url('../images/icon/realestate/small/furnished-ico.png') no-repeat;
+	background:url('../img/icon/realestate/small/furnished-ico.png') no-repeat;
 	display:inline-block;
 	width:16px; height:16px;
 }
 .garage-ico {
-	background:url('../images/icon/realestate/small/garage-ico.png') no-repeat;
+	background:url('../img/icon/realestate/small/garage-ico.png') no-repeat;
 	display:inline-block;
 	width:16px; height:16px;
 }
 .home-ico {
-	background:url('../images/icon/realestate/small/home-ico.png') no-repeat;
+	background:url('../img/icon/realestate/small/home-ico.png') no-repeat;
 	display:inline-block;
 	width:16px; height:16px;
 }
