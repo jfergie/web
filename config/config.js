@@ -36,8 +36,11 @@ config.author         = pkg.author;
 config.keywords       = pkg.keywords;
 config.nodeVersion    = pkg.engines.node;
 
-config.server_ip_address = process.env.OPENSHIFT_NODEJS_IP || 'localhost';  // 127.0.0.1
+config.ip             = process.env.OPENSHIFT_NODEJS_IP || 'localhost';  // 127.0.0.1
 config.port           = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000;
+// config.pg_config = process.env.OPENSHIFT_POSTGRESQL_DB_URL || 'postgresql://127.0.0.1:5432';
+// config.appName = process.env.OPENSHIFT_APP_NAME || config.name;
+// OPENSHIFT_DATA_DIR
 
 // todo this is vlabs google analytics key for the development site - later change this to a dedicated Freecycle analytics key
 config.ga             = process.env.GA   || 'UA-57756453-2';  // Google Analytics Key for freecycle beta web site
