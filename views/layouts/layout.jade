@@ -1,10 +1,24 @@
 doctype html
 html(lang="en")
+  // Using layout "layout.jade"
+
+  // include ../partials/head
   include ../partials/head
+
+  // body
   body
-    //include ../partials/navigation_skel
+
+    // include ../partials/navbar
     include ../partials/navbar
+
+    // include ../partials/flash
     include ../partials/flash
+
+    // **block content
     block content
+
+    // include ../partials/footer
     include ../partials/footer
-    block scripts
+
+    // **block scripts
+    // block scripts

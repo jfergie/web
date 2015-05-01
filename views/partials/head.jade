@@ -10,100 +10,103 @@ head
 
   //- SEO Meta Data
   block head
-  meta(name='author', content='#{author}')
-  meta(name='description', content='#{description}')
-  meta(name='keywords', content='#{keywords}')
+    meta(name='author', content='#{author}')
+    meta(name='description', content='#{description}')
+    meta(name='keywords', content='#{keywords}')
 
-  //- Facebook Open Graph Meta Data
-  //- meta(property='og:description', content='#{description}')
-  //- meta(property='og:image', content='')
-  //- meta(property='og:site_name', content='')
-  //- meta(property='og:title', content='#{application}')
-  //- meta(property='og:type', content='website')
-  //- meta(property='og:url', content='')
+    //- Facebook Open Graph Meta Data
+    //- meta(property='og:description', content='#{description}')
+    //- meta(property='og:image', content='')
+    //- meta(property='og:site_name', content='')
+    //- meta(property='og:title', content='#{application}')
+    //- meta(property='og:type', content='website')
+    //- meta(property='og:url', content='')
 
-  //- Twitter Meta Data
-  //- meta(name='twitter:description', content='#{description}')
-  //- meta(name='twitter:image', content='')
-  //- meta(name='twitter:site', content='')
-  //- meta(name='twitter:title', content='#{application}')
-  //- meta(name='twitter:creator', content='')
-  //- meta(name='twitter:card', content='summary_large_image')
+    //- Twitter Meta Data
+    //- meta(name='twitter:description', content='#{description}')
+    //- meta(name='twitter:image', content='')
+    //- meta(name='twitter:site', content='')
+    //- meta(name='twitter:title', content='#{application}')
+    //- meta(name='twitter:creator', content='')
+    //- meta(name='twitter:card', content='summary_large_image')
 
-  //- Humans
-  link(rel='author', href='/humans.txt')
+    //- Humans
+    link(rel='author', href='/humans.txt')
 
-  //title Freecycle Beta Web Site
+    //title Freecycle Beta Web Site
 
-  // WEB FONTS
-  // link(href='/https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800', rel='stylesheet', type='text/css')
+    // WEB FONTS
+    // link(href='/https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800', rel='stylesheet', type='text/css')
 
-  // MICROSOFT SPECIFIC
-  meta(name='application-name', content='Freecycle Beta Site')
-  meta(name='msapplication-tooltip', content='The Freecycle Network™ - changing the world one gift at a time™.')
-  meta(name='msapplication-starturl', content='http://www.example.com/index.html?pinned=true')
-  meta(name='msapplication-navbutton-color', content='#ff0000')
-  meta(name='msapplication-window', content='width=800;height=600')
-  meta(name='msapplication-task', content='name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico')
-  meta(name='msapplication-task', content='name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico')
-  meta(name='msapplication-TileImage', content='/img/logo/logo-144x144.png')
-  meta(name='msapplication-TileColor', content='#00A973')
+    // MICROSOFT SPECIFIC
+    meta(name='application-name', content='Freecycle Beta Site')
+    meta(name='msapplication-tooltip', content='The Freecycle Network™ - changing the world one gift at a time™.')
+    meta(name='msapplication-starturl', content='http://www.example.com/index.html?pinned=true')
+    meta(name='msapplication-navbutton-color', content='#ff0000')
+    meta(name='msapplication-window', content='width=800;height=600')
+    meta(name='msapplication-task', content='name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico')
+    meta(name='msapplication-task', content='name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico')
+    meta(name='msapplication-TileImage', content='/img/logo/logo-144x144.png')
+    meta(name='msapplication-TileColor', content='#00A973')
 
   block styles
 
-  //- Fonts
-  link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,500,700')
+    // Hide elements that Scroll Reveal is going to set during page-load
+    // to prevent them from being displayed before their initial state is set
+    style.
+      [data-sr] {
+        visibility: hidden;
+      }
 
-  // CORE CSS
-  link(href='/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet', type='text/css')
-  //link(href='/css-sails/font-awesome.css', rel='stylesheet', type='text/css')
-  link(href='/plugins/owl-carousel/owl.carousel.css', rel='stylesheet', type='text/css')
-  link(href='/plugins/owl-carousel/owl.theme.css', rel='stylesheet', type='text/css')
-  link(href='/plugins/owl-carousel/owl.transitions.css', rel='stylesheet', type='text/css')
-  link(href='/plugins/magnific-popup/magnific-popup.css', rel='stylesheet', type='text/css')
-  link(href='/css-sails/animate.css', rel='stylesheet', type='text/css')
-  link(href='/css-sails/superslides.css', rel='stylesheet', type='text/css')
+    //- Fonts
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,500,700')
 
-  // REVOLUTION SLIDER
-  link(href='/plugins/revolution-slider/css/settings.css', rel='stylesheet', type='text/css')
+    // CORE CSS
+    link(href='/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+    //link(href='/css-sails/font-awesome.css', rel='stylesheet', type='text/css')
+    link(href='/plugins/owl-carousel/owl.carousel.css', rel='stylesheet', type='text/css')
+    link(href='/plugins/owl-carousel/owl.theme.css', rel='stylesheet', type='text/css')
+    link(href='/plugins/owl-carousel/owl.transitions.css', rel='stylesheet', type='text/css')
+    link(href='/plugins/magnific-popup/magnific-popup.css', rel='stylesheet', type='text/css')
+    link(href='/css-sails/animate.css', rel='stylesheet', type='text/css')
+    link(href='/css-sails/superslides.css', rel='stylesheet', type='text/css')
 
-  // THEME CSS
-  link(href='/css-sails/essentials.css', rel='stylesheet', type='text/css')
-  link(href='/css-sails/layout.css', rel='stylesheet', type='text/css')
-  link(href='/css-sails/layout-responsive.css', rel='stylesheet', type='text/css')
-  link(href='/css-sails/color_scheme/orange.css', rel='stylesheet', type='text/css')
+    // REVOLUTION SLIDER
+    link(href='/plugins/revolution-slider/css/settings.css', rel='stylesheet', type='text/css')
 
-  // orange: default style
-  // <link id="css_dark_skin" href="css-sails/layout-dark.css" rel="stylesheet" type="text/css" />
-  // DARK SKIN
-  // styleswitcher - demo only
-  link(href='/css-sails/color_scheme/orange.css', rel='alternate stylesheet', type='text/css', title='orange')
-  link(href='/css-sails/color_scheme/red.css', rel='alternate stylesheet', type='text/css', title='red')
-  link(href='/css-sails/color_scheme/pink.css', rel='alternate stylesheet', type='text/css', title='pink')
-  link(href='/css-sails/color_scheme/yellow.css', rel='alternate stylesheet', type='text/css', title='yellow')
-  link(href='/css-sails/color_scheme/darkgreen.css', rel='alternate stylesheet', type='text/css', title='darkgreen')
-  link(href='/css-sails/color_scheme/green.css', rel='alternate stylesheet', type='text/css', title='green')
-  link(href='/css-sails/color_scheme/darkblue.css', rel='alternate stylesheet', type='text/css', title='darkblue')
-  link(href='/css-sails/color_scheme/blue.css', rel='alternate stylesheet', type='text/css', title='blue')
-  link(href='/css-sails/color_scheme/brown.css', rel='alternate stylesheet', type='text/css', title='brown')
-  link(href='/css-sails/color_scheme/lightgrey.css', rel='alternate stylesheet', type='text/css', title='lightgrey')
+    // THEME CSS
+    link(href='/css-sails/essentials.css', rel='stylesheet', type='text/css')
+    link(href='/css-sails/layout.css', rel='stylesheet', type='text/css')
+    link(href='/css-sails/layout-responsive.css', rel='stylesheet', type='text/css')
+    link(href='/css-sails/color_scheme/orange.css', rel='stylesheet', type='text/css')
 
-  //
-  // X TESTING
-  //
-  link(href='/lib/hover/css/hover.css', rel='stylesheet', type='text/css')
-  link(href='/css-sails/animate.css', rel='stylesheet', type='text/css')
+    // orange: default style
+    // <link id="css_dark_skin" href="css-sails/layout-dark.css" rel="stylesheet" type="text/css" />
+    // DARK SKIN
+    // styleswitcher - demo only
+    link(href='/css-sails/color_scheme/orange.css', rel='alternate stylesheet', type='text/css', title='orange')
+    link(href='/css-sails/color_scheme/red.css', rel='alternate stylesheet', type='text/css', title='red')
+    link(href='/css-sails/color_scheme/pink.css', rel='alternate stylesheet', type='text/css', title='pink')
+    link(href='/css-sails/color_scheme/yellow.css', rel='alternate stylesheet', type='text/css', title='yellow')
+    link(href='/css-sails/color_scheme/darkgreen.css', rel='alternate stylesheet', type='text/css', title='darkgreen')
+    link(href='/css-sails/color_scheme/green.css', rel='alternate stylesheet', type='text/css', title='green')
+    link(href='/css-sails/color_scheme/darkblue.css', rel='alternate stylesheet', type='text/css', title='darkblue')
+    link(href='/css-sails/color_scheme/blue.css', rel='alternate stylesheet', type='text/css', title='blue')
+    link(href='/css-sails/color_scheme/brown.css', rel='alternate stylesheet', type='text/css', title='brown')
+    link(href='/css-sails/color_scheme/lightgrey.css', rel='alternate stylesheet', type='text/css', title='lightgrey')
 
-  // /styleswitcher - demo only
-  // STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT
-  link(href='/plugins/styleswitcher/styleswitcher.css', rel='stylesheet', type='text/css')
+    //
+    // X TESTING
+    //
+    link(href='/lib/hover/css/hover.css', rel='stylesheet', type='text/css')
+    link(href='/css-sails/animate.css', rel='stylesheet', type='text/css')
 
-  // Modernizr
-  script(type='text/javascript', src='/plugins/modernizr.min.js')
-  //- Styles
-  link(rel='stylesheet', href='/css/main.min.css')
+    // /styleswitcher - demo only
+    // STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT
+    link(href='/plugins/styleswitcher/styleswitcher.css', rel='stylesheet', type='text/css')
 
-  // Hide elements that Scroll Reveal is going to set during page-load
-  // to prevent them from being displayed before their initial state is set
-  style.
-    [data-sr] { visibility: hidden; }
+    // Modernizr
+    script(type='text/javascript', src='/plugins/modernizr.min.js')
+    //- Styles
+    link(rel='stylesheet', href='/css/main.min.css')
+

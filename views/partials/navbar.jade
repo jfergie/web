@@ -503,40 +503,41 @@ span#header_shadow(style='pointer-events: none; z-index:1000;')
     /STYLESWITCHER END
   ###################################################################################################
 
-
+block titlebar
   // ******************************** PAGE TITLE AND BREADCRUMBS ********************************
   //  div(style='margin:80px 0px 0px 0px;')
   // div(style='margin:120px 0px 0px 0px;') // bg-brand1
   //header#page-title(style='background-color: #7F7F7F')
 
 
-//div(style='margin:80px 0px 0px 0px;')
-div(style='margin:100px 0px 0px 0px;')
-  //#wrapper
-  //.fullwidthbanner-container.roundedcorners
-    .fullwidthbanner
-  .container-fluid
-      //.col-sm-1
-      .col-sm-6.col-sm-offset-1
-        // img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
-        h1.navbar-brand &nbsp;#{navTitle}
-        //a.hvr-float-shadow.hvr-grow-shadow.hvr-glow(href='/')
-          //h1.hvr-grow-shadow
-          img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
-          | &nbsp;&nbsp;#{navTitle}
+  //div(style='margin:80px 0px 0px 0px;')
+  div(style='margin:100px 0px 0px 0px;')
+    //#wrapper
+    //.fullwidthbanner-container.roundedcorners
+      .fullwidthbanner
+    .container-fluid
+        //.col-sm-1
+        .col-sm-6.col-sm-offset-1
+          // img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
+          h1.navbar-brand &nbsp;#{navTitle}
+          //a.hvr-float-shadow.hvr-grow-shadow.hvr-glow(href='/')
+            //h1.hvr-grow-shadow
+            img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
+            | &nbsp;&nbsp;#{navTitle}
 
-    .row.titlebar-bg
-        //.row.titlebar-bg
-        .col-sm-6.col-sm-offset-1.col-bottom
-            ul.breadcrumb.list-inline.ui-responsive-panel
-              li.hvr-grow-shadow
-                a.hvr-glow.hvr-float-shadow(href='/')
-                  //img.hvr-icon-float-away.pull-left(src='/favicon.png', alt='Freecycle.org' height='10')
-                  | &nbsp;Freecycle&trade; Home
-              li.active
-                //a(href='#{url}')
-                if (navTitle)
-                  | /
-              li.active.hvr-glow.hvr-float-shadow
-                .hvr-grow-shadow
-                  | #{navTitle}
+      .row.titlebar-bg
+          //.row.titlebar-bg
+          .col-sm-6.col-sm-offset-1.col-bottom
+              ul.breadcrumb.list-inline.ui-responsive-panel
+                li.hvr-grow-shadow
+                  a.hvr-glow.hvr-float-shadow(href='/')
+                    //img.hvr-icon-float-away.pull-left(src='/favicon.png', alt='Freecycle.org' height='10')
+                    | &nbsp;Freecycle&trade; Home
+                li.active
+                  //a(href='#{url}')
+                  if (navTitle)
+                    | /
+                li.active.hvr-glow.hvr-float-shadow
+                  .hvr-grow-shadow
+                    block title2
+                      | #{navTitle}
