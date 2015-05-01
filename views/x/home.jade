@@ -1,15 +1,17 @@
 extends ../layouts/layout
 
-block head
+block append head
   title #{application} &middot; Experimental
 
-block styles
+block append styles
   link(rel='stylesheet', href='/css/x.min.css')
   link(rel='stylesheet', href='/css/jf-jf1.css')
   link(rel='stylesheet', href='/lib/jf1/css/jf1-min.css')
 
+//- block titleblock-pagetitle
+//- block titleblock-breadcrumbs
 
-block content
+block append content
   .container
       .row
         .col-sm-6.col-sm-offset-3

@@ -1,0 +1,22 @@
+//- *************************************************************************************************
+//-   SCROLLREVEAL.JADE defines the blocks needed in order to implement the scrollreveal effects
+//- *************************************************************************************************
+//- head.jade defines the following blocks:
+//-   head - The header information such as charset, viewport, author, description, keywords
+//-     header-boilerplate - Header data that should be included in almost all pages, to properly setup for mobile, responsive rendering, etc.
+//-     head-title - Sub-block that contains the page title (i.e. <title>Page Title</title>)
+//-   styles - The style information and the CSS file includes
+
+block prepend styles
+  //- Hide elements that Scroll Reveal is going to set during page-load
+  //- to prevent them from being displayed before their initial state is set
+  style.
+    [data-sr] {
+      visibility: hidden;
+    }
+
+block append scripts-include
+   block scripts-revealscroll
+      // ************************************ JAVASCRIPT INCLUDES *************************************
+      script(type='text/javascript', src='/lib/scrollreveal/dist/scrollReveal.min.js')
+      // ************************************ /JAVASCRIPT INCLUDES END ********************************

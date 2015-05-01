@@ -1,509 +1,526 @@
-//nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
-header#topNav
-  // remove class="topHead" if no topHead used!
-  .container
-    //.navbar-header
-      // Mobile Menu Button
-    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-      span.sr-only Toggle navigation
-      span.icon-bar
-      span.icon-bar
-      span.icon-bar
+//- Navbar.jade defines the following blocks:
+//-   navbar - the upper navigation bar, including the menu's, logged in pictures and status and company logo
+//-     navbar-menubutton - The menu button displayed in place of the menu on mobile and smaller displays
+//-     navbar-fullmenupopup - The full menu popup for the grid/menu button
+//-     navbar-menu - The main menu for the navbar
+//-     navbar-shadow - the shadow under the navigation that separates it from the rest of the ui aesthetically
+//-   styleswitcher - the off-canvas menu allowing the user to customize colors and ui
+//-   titleblock - the section under the navbar, consisting of subblocks
+//-     titleblock-pagetitle - the page title - usually featured prominently under the navbar
+//-     titleblock-breadcrumbs - the line showing the page hierarchy as breadcrumbs as a navigation aid
 
-      button.btn.btn-mobile(data-toggle='collapse', data-target='.nav-main-collapse')
-        i.fa.fa-bars
+block navbar
+  //nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+  header#topNav
+    // remove class="topHead" if no topHead used!
+    .container
+      block navbar-menubutton
+        //.navbar-header
+          // Mobile Menu Button
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
 
-        // .animated.zoomInUp.hvr-icon-grow-rotate
-        //a.navbar-brand(href='/') #{application}
-
-    // Freecycle logo
-    //a.pull-left(href='/')
-    img.pull-leftimg-responsive.hvr-grow-shadow(src='/img/logo/logo.png', alt='Freecycle.org', height='90%')
-
-    // **************************************
-    //   MEGA MENU - 4 COLUMN FULL MENU
-    //     Available to be Displayed
-    //     whether user is logged in or not
-    // **************************************
-    .navbar-collapse.nav-main-collapse.collapse.pull-right
-      nav.nav-main.mega-menu.navbar-right
-        ul.nav.nav-pills.nav-main.scroll-menu.navbar-nav
-          li.dropdown.mega-menu-item.mega-menu-fullwidth
-            a.dropdown-toggle(href='#')
+          button.btn.btn-mobile(data-toggle='collapse', data-target='.nav-main-collapse')
             i.fa.fa-bars
-              //| [Full Menu Beta]
-              b.caret
-            ul.dropdown-menu
-              li
-                .mega-menu-content
-                  .row
-                    //.col-sm-8.col-sm-offset-2.col-centered
-                    //.col-sm-2
-                      a(href='/')
-                        img.img-responsive.pull-left(src='/img/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle.org')
 
-                    .col-sm-4.col-sm-offset-4
+            // .animated.zoomInUp.hvr-icon-grow-rotate
+            //a.navbar-brand(href='/') #{application}
 
-                      //a.responsive-text-center(href='/')
-                      h3
-                        a(href='/')
-                          em
-                            img.img-responsive.center-block(src='/img/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle.org')
-                            | Freecycle™ Main Menu [Beta]
-                      br
+        // Freecycle logo
+        //a.pull-left(href='/')
+        img.pull-leftimg-responsive.hvr-grow-shadow(src='/img/logo/logo.png', alt='Freecycle.org', height='90%')
 
-                    span#header_shadow
-                    //div(style='margin:20px 0px 0px 0px;')
-                  .row
-                    .col-md-3
-                      ul.sub-menu
-                        li
-                          span.mega-menu-sub-title Freecycle™ Home
-                          ul.sub-menu
-                            li
-                              a(href='/')
-                                i.fa.fa-home
-                                | Home
-                            li
-                              a(href='Browse')
-                                i.fa.fa-book
-                                | Browse Groups
-                            li
-                              a(href='http://wiki.freecycle.org/Main_Page')
-                                i.fa.fa-question
-                                |  General FAQ
-                            li
-                              a(href='http://wiki.freecycle.org/MemberFAQ')
-                                i.fa.fa-question-circle
-                                |  Member FAQ
-                            li
-                              a(href='http://wiki.freecycle.org/Moderator_Manual:Main_Page')
-                                i.fa.fa-book
-                                |  Moderator manual
-                    .col-md-3
-                      ul.sub-menu
-                        li
-                          span.mega-menu-sub-title About Freecycle™
-                          ul.sub-menu
-                            li
-                              a(href='http://newswire.freecycle.org/')
-                                i.fa.fa-list-alt
-                                |  Newswire
-                            //li
-                              a(href='http://wiki.freecycle.org/Main_Page')
-                                i.fa.fa-question
-                                |  FAQ
-                            li
-                              a(href='https://www.freecycle.org/about/background')
-                                i.fa.fa-h-square
-                                |  History
-                            li.divider
-                            li
-                              a(href='https://www.freecycle.org/about/video')
-                                b
-                                  i.fa.fa-video-camera
-                                  |  Instructional Video
-                            li
-                              a(href='https://www.freecycle.org/about/promovideo')
-                                b
-                                  i.fa.fa-film
-                                  |  Promotional Video
-                            li.divider
-                            li
-                              a(href='https://www.freecycle.org/about/missionstatement')
-                                i.fa.fa-flag
-                                |  Mission Statement
-                            li
-                              a(href='https://www.freecycle.org/about/pressroom')
-                                i.fa.fa-newspaper-o
-                                |  Press Room
-                            li
+      block navbar-fullmenupopup
+        // **************************************
+        //   MEGA MENU - 4 COLUMN FULL MENU
+        //     Available to be Displayed
+        //     whether user is logged in or not
+        // **************************************
+        .navbar-collapse.nav-main-collapse.collapse.pull-right
+          nav.nav-main.mega-menu.navbar-right
+            ul.nav.nav-pills.nav-main.scroll-menu.navbar-nav
+              li.dropdown.mega-menu-item.mega-menu-fullwidth
+                a.dropdown-toggle(href='#')
+                i.fa.fa-bars
+                  //| [Full Menu Beta]
+                  b.caret
+                ul.dropdown-menu
+                  li
+                    .mega-menu-content
+                      .row
+                        //.col-sm-8.col-sm-offset-2.col-centered
+                        //.col-sm-2
+                          a(href='/')
+                            img.img-responsive.pull-left(src='/img/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle.org')
+
+                        .col-sm-4.col-sm-offset-4
+
+                          //a.responsive-text-center(href='/')
+                          h3
+                            a(href='/')
                               em
-                                a(href='Sponsors')
-                                  i.fa.fa-thumbs-o-up
-                                  |  Sponsors
-                            li
-                              a(href='https://www.freecycle.org/about/funds')
-                                i.fa.fa-money
-                                |  Sources and Use of Funds
-                    .col-md-3
-                      ul.sub-menu
-                        li
-                          span.mega-menu-sub-title Freecycle™ Operations
+                                img.img-responsive.center-block(src='/img/logo/Freecycle Logo Dark2 Transparent 140x68.png', alt='Freecycle.org')
+                                | Freecycle™ Main Menu [Beta]
+                          br
+
+                        span#header_shadow
+                        //div(style='margin:20px 0px 0px 0px;')
+                      .row
+                        .col-md-3
                           ul.sub-menu
                             li
-                              a(href='https://www.freecycle.org/about/volunteering')
-                                em
-                                  i.fa.fa-check-square
-                                  |  Volunteering
-                            li
-                              a(href='http://wiki.freecycle.org/Staff')
-                                i.fa.fa-smile-o
-                                |  Staff
-                            li
-                              a(href='https://www.freecycle.org/about/board')
-                                i.fa.fa-th
-                                |  Board
-                            li.divider
-                            li
-                              a(href='privacy')
-                                i.fa.fa-dot-circle-o
-                                |  Privacy
-                            li
-                              a(href='/terms')
-                                i.fa.fa-empire
-                                |  Terms of Service
-                            li
-                              a(href='https://www.freecycle.org/about/disclaimer')
-                                i.fa.fa-comment
-                                |  Disclaimer
-                            li.divider
-                            li
-                              a(href='https://www.freecycle.org/about/links')
-                                i.fa.fa-external-link
-                                |  Links we like
-                    .col-md-3
-                      ul.sub-menu
-                        li
-                          span.mega-menu-sub-title Donate
+                              span.mega-menu-sub-title Freecycle™ Home
+                              ul.sub-menu
+                                li
+                                  a(href='/')
+                                    i.fa.fa-home
+                                    | Home
+                                li
+                                  a(href='Browse')
+                                    i.fa.fa-book
+                                    | Browse Groups
+                                li
+                                  a(href='http://wiki.freecycle.org/Main_Page')
+                                    i.fa.fa-question
+                                    |  General FAQ
+                                li
+                                  a(href='http://wiki.freecycle.org/MemberFAQ')
+                                    i.fa.fa-question-circle
+                                    |  Member FAQ
+                                li
+                                  a(href='http://wiki.freecycle.org/Moderator_Manual:Main_Page')
+                                    i.fa.fa-book
+                                    |  Moderator manual
+                        .col-md-3
                           ul.sub-menu
                             li
-                              em
-                                a(href='https://www.freecycle.org/donate')
-                                  i.fa.fa-star-o
-                                  |  Donate
+                              span.mega-menu-sub-title About Freecycle™
+                              ul.sub-menu
+                                li
+                                  a(href='http://newswire.freecycle.org/')
+                                    i.fa.fa-list-alt
+                                    |  Newswire
+                                //li
+                                  a(href='http://wiki.freecycle.org/Main_Page')
+                                    i.fa.fa-question
+                                    |  FAQ
+                                li
+                                  a(href='https://www.freecycle.org/about/background')
+                                    i.fa.fa-h-square
+                                    |  History
+                                li.divider
+                                li
+                                  a(href='https://www.freecycle.org/about/video')
+                                    b
+                                      i.fa.fa-video-camera
+                                      |  Instructional Video
+                                li
+                                  a(href='https://www.freecycle.org/about/promovideo')
+                                    b
+                                      i.fa.fa-film
+                                      |  Promotional Video
+                                li.divider
+                                li
+                                  a(href='https://www.freecycle.org/about/missionstatement')
+                                    i.fa.fa-flag
+                                    |  Mission Statement
+                                li
+                                  a(href='https://www.freecycle.org/about/pressroom')
+                                    i.fa.fa-newspaper-o
+                                    |  Press Room
+                                li
+                                  em
+                                    a(href='Sponsors')
+                                      i.fa.fa-thumbs-o-up
+                                      |  Sponsors
+                                li
+                                  a(href='https://www.freecycle.org/about/funds')
+                                    i.fa.fa-money
+                                    |  Sources and Use of Funds
+                        .col-md-3
+                          ul.sub-menu
                             li
-                              b
-                                a(href='http://store.freecycle.org/')
-                                  i.fa.fa-bicycle
-                                  |  Store
+                              span.mega-menu-sub-title Freecycle™ Operations
+                              ul.sub-menu
+                                li
+                                  a(href='https://www.freecycle.org/about/volunteering')
+                                    em
+                                      i.fa.fa-check-square
+                                      |  Volunteering
+                                li
+                                  a(href='http://wiki.freecycle.org/Staff')
+                                    i.fa.fa-smile-o
+                                    |  Staff
+                                li
+                                  a(href='https://www.freecycle.org/about/board')
+                                    i.fa.fa-th
+                                    |  Board
+                                li.divider
+                                li
+                                  a(href='privacy')
+                                    i.fa.fa-dot-circle-o
+                                    |  Privacy
+                                li
+                                  a(href='/terms')
+                                    i.fa.fa-empire
+                                    |  Terms of Service
+                                li
+                                  a(href='https://www.freecycle.org/about/disclaimer')
+                                    i.fa.fa-comment
+                                    |  Disclaimer
+                                li.divider
+                                li
+                                  a(href='https://www.freecycle.org/about/links')
+                                    i.fa.fa-external-link
+                                    |  Links we like
+                        .col-md-3
+                          ul.sub-menu
                             li
-                              em
-                                a(href='https://www.freecycle.org/about/sponsors')
-                                  i.fa.fa-thumbs-o-up
-                                  |  Sponsors
-          li.divider
-
-          //a.logo(href='/')
-          //  img.img-responsive(src='/img/logo/logo.png', alt='Freecycle.org')
-
-          //  ************************************************************************
-          //    THIS PART OF NAV BAR VARIES BY WHETHER USER IS LOGGED IN.
-          //    Add parts of the menu that only show when the user is logged in
-          //  ************************************************************************
-          //.collapse.navbar-collapse
-            .navbar-collapse.nav-main-collapse.collapse.pull-right
-              nav.nav-main.mega-menu
-                ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav.navbar-nav.navbar-right
-
-      // ************************************************************************
-      //                   ***   MAIN APPLICATION MENUS   ***
-      //  THE FOLLOWING MENUS ARE DISPLAYED WHETHER USER IS LOGGED IN OR NOT
-      // ************************************************************************
-      // .navbar-collapse.nav-main-collapse.collapse.pull-right
-      nav.nav-main.mega-menu.navbar-right
-        ul#topMain.nav.scroll-menu.navbar-nav.nav-main.nav-pills
-          //ul#topMain.nav.navbar-nav.navbar-right
-          //  ************************************************************************
-          //   TOP NAV BAR MENUS
-          //  ************************************************************************
-          //.navbar-collapse.nav-main-collapse.collapse.pull-right
-            //  nav.nav-main.mega-menu
-            //ul#topMain.nav.nav-pills.nav-main.scroll-menu
-            // i.dropdown.active
-              a.dropdown-toggle(href='/')
-                | Home
-                // .fa.fa-angle-down
-
-          li.dropdown.active
-            a.dropdown-toggle(href='#')
-              | Browse Groups
-              // .fa.fa-bicycle
-          li.dropdown.active
-            a.dropdown-toggle(href='http://wiki.freecycle.org/Main_Page')
-              | FAQ
-              b.caret
-            ul.dropdown-menu
-              li
-                a(href='http://wiki.freecycle.org/Main_Page')
-                  i.fa.fa-question
-                  |  General FAQ
-              li
-                a(href='http://wiki.freecycle.org/MemberFAQ')
-                  i.fa.fa-question-circle
-                  |  Member FAQ
-              li
-                a(href='http://wiki.freecycle.org/Moderator_Manual:Main_Page')
-                  i.fa.fa-book
-                  |  Moderator manual
-          li.dropdown.active
-            a.dropdown-toggle(href='#')
-              | About Freecycle&trade;
-              // Freecycle™
-              b.caret
-            ul.dropdown-menu
-              li
-                a(href='http://newswire.freecycle.org/')
-                  i.fa.fa-list-alt
-                  |  Newswire
-              li
-                a(href='https://www.freecycle.org/about/background')
-                  i.fa.fa-h-square
-                  |  History
-              //
-                a(href='http://wiki.freecycle.org/Main_Page')
-                  i.fa.fa-question
-                  |  FAQ
+                              span.mega-menu-sub-title Donate
+                              ul.sub-menu
+                                li
+                                  em
+                                    a(href='https://www.freecycle.org/donate')
+                                      i.fa.fa-star-o
+                                      |  Donate
+                                li
+                                  b
+                                    a(href='http://store.freecycle.org/')
+                                      i.fa.fa-bicycle
+                                      |  Store
+                                li
+                                  em
+                                    a(href='https://www.freecycle.org/about/sponsors')
+                                      i.fa.fa-thumbs-o-up
+                                      |  Sponsors
               li.divider
-              li
-                a(href='https://www.freecycle.org/about/video')
-                  b
-                    i.fa.fa-video-camera
-                    |  Instructional Video
-              li
-                a(href='https://www.freecycle.org/about/promovideo')
-                  b
-                    i.fa.fa-film
-                    |  Promotional Video
-              li.divider
-              li
-                a(href='https://www.freecycle.org/about/missionstatement')
-                  i.fa.fa-flag
-                  |  Mission Statement
-              li
-                a(href='https://www.freecycle.org/about/pressroom')
-                  i.fa.fa-newspaper-o
-                  |  Press Room
-              li
-                a(href='https://www.freecycle.org/about/sponsors')
-                  em
-                    i.fa.fa-thumbs-o-up
-                    |  Sponsors
-              li
-                a(href='https://www.freecycle.org/about/funds')
-                  i.fa.fa-money
-                  |  Sources and Use of Funds
-              li.divider
-              li
-                a(href='https://www.freecycle.org/about/volunteering')
-                  em
-                    i.fa.fa-check-square
-                    |  Volunteering
-              li
-                a(href='http://wiki.freecycle.org/Staff')
-                  i.fa.fa-smile-o
-                  |  Staff
-              li
-                a(href='https://www.freecycle.org/about/board')
-                  i.fa.fa-th
-                  |  Board
-              li.divider
-              li
-                a(href='/privacy')
-                  i.fa.fa-dot-circle-o
-                  |  Privacy
-              li
-                a(href='/terms')
-                  i.fa.fa-empire
-                  |  Terms of Service
-              li
-                a(href='https://www.freecycle.org/about/disclaimer')
-                  i.fa.fa-comment
-                  |  Disclaimer
-              li.divider
-              li
-                a(href='https://www.freecycle.org/about/links')
-                  i.fa.fa-external-link
-                  |  Links we like
-          li.dropdown.active
-            a.dropdown-toggle(href='https://www.freecycle.org/donate')
-              | Donate
-              //i.fa.fa-star-o
-          li.dropdown.active
-            a.dropdown-toggle(href='http://store.freecycle.org/')
-              i.fa.fa-angle-money
-              | Store
-          //li.dropdown.active
-            a.dropdown-toggle(href='/Sponsors')
-              | Sponsors
 
-          if user
-              //- Right side
-              //ul.nav.navbar-nav.navbar-right
-              //ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav.navbar-nav.navbar-right
-              //- Visible to Admin users only!
-              if user.type == 'admin'
-                li.dropdown(class=url == '/administration' ? 'active' : undefined)
-                  //a.dropdown-toggle(href='#', data-toggle='dropdown')
-                  a.dropdown-toggle(href='#')
-                    i.fa.fa-fw.fa-cogs
-                    | &nbsp;Admin&nbsp;
-                    b.caret
-                  ul.dropdown-menu
-                    li
-                      a(href='/dashboard')
-                        i.fa.fa-fw.fa-laptop
-                        | &nbsp;Dashboard
-                    li
-                      a(href='/accounts')
-                        i.fa.fa-fw.fa-users
-                        | &nbsp;Accounts
-                    li
-                      a(href='/colors')
-                        i.fa.fa-fw.fa-cog
-                        | &nbsp;Color Scheme
-                    li
-                      a(href='/api')
-                        i.fa.fa-fw.fa-crosshairs
-                        | &nbsp;API Code Pages
-                    li
-                      a(href='/x')
-                        i.fa.fa-fw.fa-pied-piper
-                        | &nbsp;Experimental Features
+            //a.logo(href='/')
+            //  img.img-responsive(src='/img/logo/logo.png', alt='Freecycle.org')
 
-                li.dropdown(class=url == '/account' ? 'active' : undefined)
-                  a.dropdown-toggle(href='#', data-toggle='dropdown')
-                    if user.profile.picture
-                      img.profile-image(src='#{user.profile.picture}')
-                    else
-                      img.profile-image(src='#{user.gravatar(60)}')
-                    | #{user.profile.name || user.email || user.id}&nbsp;
-                    b.caret
-                  ul.dropdown-menu
-                    li
-                      a(href='/account')
-                        i.fa.fa-fw.fa-user
-                        | &nbsp;My Account
-                    li
-                      a(href='/contact')
-                        i.fa.fa-fw.fa-envelope-o
-                        | &nbsp;Contact Us
-                    li.divider
-                    li
-                      a(href='/logout')
-                        i.fa.fa-fw.fa-sign-out
-                        | &nbsp;Logout
+            //  ************************************************************************
+            //    THIS PART OF NAV BAR VARIES BY WHETHER USER IS LOGGED IN.
+            //    Add parts of the menu that only show when the user is logged in
+            //  ************************************************************************
+            //.collapse.navbar-collapse
+              .navbar-collapse.nav-main-collapse.collapse.pull-right
+                nav.nav-main.mega-menu
+                  ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav.navbar-nav.navbar-right
+
+      block navbar-menu
+        // ************************************************************************
+        //                   ***   MAIN APPLICATION MENUS   ***
+        //  THE FOLLOWING MENUS ARE DISPLAYED WHETHER USER IS LOGGED IN OR NOT
+        // ************************************************************************
+        // .navbar-collapse.nav-main-collapse.collapse.pull-right
+        nav.nav-main.mega-menu.navbar-right
+          ul#topMain.nav.scroll-menu.navbar-nav.nav-main.nav-pills
+            //ul#topMain.nav.navbar-nav.navbar-right
+            //  ************************************************************************
+            //   TOP NAV BAR MENUS
+            //  ************************************************************************
+            //.navbar-collapse.nav-main-collapse.collapse.pull-right
+              //  nav.nav-main.mega-menu
+              //ul#topMain.nav.nav-pills.nav-main.scroll-menu
+              // i.dropdown.active
+                a.dropdown-toggle(href='/')
+                  | Home
+                  // .fa.fa-angle-down
+
+            li.dropdown.active
+              a.dropdown-toggle(href='#')
+                | Browse Groups
+                // .fa.fa-bicycle
+            li.dropdown.active
+              a.dropdown-toggle(href='http://wiki.freecycle.org/Main_Page')
+                | FAQ
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='http://wiki.freecycle.org/Main_Page')
+                    i.fa.fa-question
+                    |  General FAQ
+                li
+                  a(href='http://wiki.freecycle.org/MemberFAQ')
+                    i.fa.fa-question-circle
+                    |  Member FAQ
+                li
+                  a(href='http://wiki.freecycle.org/Moderator_Manual:Main_Page')
+                    i.fa.fa-book
+                    |  Moderator manual
+            li.dropdown.active
+              a.dropdown-toggle(href='#')
+                | About Freecycle&trade;
+                // Freecycle™
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='http://newswire.freecycle.org/')
+                    i.fa.fa-list-alt
+                    |  Newswire
+                li
+                  a(href='https://www.freecycle.org/about/background')
+                    i.fa.fa-h-square
+                    |  History
+                //
+                  a(href='http://wiki.freecycle.org/Main_Page')
+                    i.fa.fa-question
+                    |  FAQ
                 li.divider
-          else
-            //  ************************************************************************
-            //    NO USER LOGGED IN - DISPLAY THE LOGIN MENU
-            //  ************************************************************************
-            // ul.nav.navbar-nav.navbar-collapse.nav-main-collapse.collapse.pull-right
-            // ul.nav.navbar-nav.navbar-right
-            // ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav
-            ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav.navbar-nav.navbar-right
-              li.dropdown(class=url == '/login' ? 'active' : undefined)
-                a(href='/login')
-                    i.fa.fa-sign-in.fa-fw
-                    | &nbsp;Sign In
-              li.divider
+                li
+                  a(href='https://www.freecycle.org/about/video')
+                    b
+                      i.fa.fa-video-camera
+                      |  Instructional Video
+                li
+                  a(href='https://www.freecycle.org/about/promovideo')
+                    b
+                      i.fa.fa-film
+                      |  Promotional Video
+                li.divider
+                li
+                  a(href='https://www.freecycle.org/about/missionstatement')
+                    i.fa.fa-flag
+                    |  Mission Statement
+                li
+                  a(href='https://www.freecycle.org/about/pressroom')
+                    i.fa.fa-newspaper-o
+                    |  Press Room
+                li
+                  a(href='https://www.freecycle.org/about/sponsors')
+                    em
+                      i.fa.fa-thumbs-o-up
+                      |  Sponsors
+                li
+                  a(href='https://www.freecycle.org/about/funds')
+                    i.fa.fa-money
+                    |  Sources and Use of Funds
+                li.divider
+                li
+                  a(href='https://www.freecycle.org/about/volunteering')
+                    em
+                      i.fa.fa-check-square
+                      |  Volunteering
+                li
+                  a(href='http://wiki.freecycle.org/Staff')
+                    i.fa.fa-smile-o
+                    |  Staff
+                li
+                  a(href='https://www.freecycle.org/about/board')
+                    i.fa.fa-th
+                    |  Board
+                li.divider
+                li
+                  a(href='/privacy')
+                    i.fa.fa-dot-circle-o
+                    |  Privacy
+                li
+                  a(href='/terms')
+                    i.fa.fa-empire
+                    |  Terms of Service
+                li
+                  a(href='https://www.freecycle.org/about/disclaimer')
+                    i.fa.fa-comment
+                    |  Disclaimer
+                li.divider
+                li
+                  a(href='https://www.freecycle.org/about/links')
+                    i.fa.fa-external-link
+                    |  Links we like
+            li.dropdown.active
+              a.dropdown-toggle(href='https://www.freecycle.org/donate')
+                | Donate
+                //i.fa.fa-star-o
+            li.dropdown.active
+              a.dropdown-toggle(href='http://store.freecycle.org/')
+                i.fa.fa-angle-money
+                | Store
+            //li.dropdown.active
+              a.dropdown-toggle(href='/Sponsors')
+                | Sponsors
 
-// ******************************** /TOP NAVBAR END ********************************
+            if user
+                //- Right side
+                //ul.nav.navbar-nav.navbar-right
+                //ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav.navbar-nav.navbar-right
+                //- Visible to Admin users only!
+                if user.type == 'admin'
+                  li.dropdown(class=url == '/administration' ? 'active' : undefined)
+                    //a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    a.dropdown-toggle(href='#')
+                      i.fa.fa-fw.fa-cogs
+                      | &nbsp;Admin&nbsp;
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='/dashboard')
+                          i.fa.fa-fw.fa-laptop
+                          | &nbsp;Dashboard
+                      li
+                        a(href='/accounts')
+                          i.fa.fa-fw.fa-users
+                          | &nbsp;Accounts
+                      li
+                        a(href='/colors')
+                          i.fa.fa-fw.fa-cog
+                          | &nbsp;Color Scheme
+                      li
+                        a(href='/api')
+                          i.fa.fa-fw.fa-crosshairs
+                          | &nbsp;API Code Pages
+                      li
+                        a(href='/x')
+                          i.fa.fa-fw.fa-pied-piper
+                          | &nbsp;Experimental Features
 
-// ******************************** SHADOW ********************************
-span#header_shadow(style='pointer-events: none; z-index:1000;')
-// ******************************** /SHADOW ********************************
+                  li.dropdown(class=url == '/account' ? 'active' : undefined)
+                    a.dropdown-toggle(href='#', data-toggle='dropdown')
+                      if user.profile.picture
+                        img.profile-image(src='#{user.profile.picture}')
+                      else
+                        img.profile-image(src='#{user.gravatar(60)}')
+                      | #{user.profile.name || user.email || user.id}&nbsp;
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='/account')
+                          i.fa.fa-fw.fa-user
+                          | &nbsp;My Account
+                      li
+                        a(href='/contact')
+                          i.fa.fa-fw.fa-envelope-o
+                          | &nbsp;Contact Us
+                      li.divider
+                      li
+                        a(href='/logout')
+                          i.fa.fa-fw.fa-sign-out
+                          | &nbsp;Logout
+                  li.divider
+            else
+              //  ************************************************************************
+              //    NO USER LOGGED IN - DISPLAY THE LOGIN MENU
+              //  ************************************************************************
+              // ul.nav.navbar-nav.navbar-collapse.nav-main-collapse.collapse.pull-right
+              // ul.nav.navbar-nav.navbar-right
+              // ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav
+              ul#topMain.nav.nav-pills.nav-main.scroll-menu.navbar-nav.navbar-nav.navbar-right
+                li.dropdown(class=url == '/login' ? 'active' : undefined)
+                  a(href='/login')
+                      i.fa.fa-sign-in.fa-fw
+                      | &nbsp;Sign In
+                li.divider
+
+        // ******************************** /TOP NAVBAR END ********************************
+
+  block navbar-shadow
+    // ******************************** SHADOW ********************************
+    span#header_shadow(style='pointer-events: none; z-index:1000;')
+    // ******************************** /SHADOW ********************************
 
 
-//  ###################################################################################################
-//    STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT
-//  ###################################################################################################
-#switcher
-  .content-switcher
-    h4 STYLE OPTIONS
-    p 10 Predefined Color Schemes
-    ul
-      li
-        a.color(href='#', onclick="setActiveStyleSheet('orange'); return false;", title='orange')
-          img(src='/img/demo/color_schemes/1.png', alt='', width='30', height='30')
-      li
-        a.color(href='#', onclick="setActiveStyleSheet('red'); return false;", title='red')
-          img(src='/img/demo/color_schemes/2.png', alt='', width='30', height='30')
-      li
-        a.color(href='#', onclick="setActiveStyleSheet('pink'); return false;", title='pink')
-          img(src='/img/demo/color_schemes/3.png', alt='', width='30', height='30')
-      li
-        a.color(href='#', onclick="setActiveStyleSheet('yellow'); return false;", title='yellow')
-          img(src='/img/demo/color_schemes/4.png', alt='', width='30', height='30')
-      li
-        a.color(href='#', onclick="setActiveStyleSheet('darkgreen'); return false;", title='darkgreen')
-          img(src='/img/demo/color_schemes/5.png', alt='', width='30', height='30')
-      li
-        a.color(href='#', onclick="setActiveStyleSheet('green'); return false;", title='green')
-          img(src='/img/demo/color_schemes/6.png', alt='', width='30', height='30')
-      li
-        a.color(href='#', onclick="setActiveStyleSheet('darkblue'); return false;", title='darkblue')
-          img(src='/img/demo/color_schemes/7.png', alt='', width='30', height='30')
-      li
-        a.color(href='#', onclick="setActiveStyleSheet('blue'); return false;", title='blue')
-          img(src='/img/demo/color_schemes/8.png', alt='', width='30', height='30')
-      li
-        a.color(href='#', onclick="setActiveStyleSheet('brown'); return false;", title='brown')
-          img(src='/img/demo/color_schemes/9.png', alt='', width='30', height='30')
-      li
-        a.color(href='#', onclick="setActiveStyleSheet('lightgrey'); return false;", title='lightgrey')
-          img(src='/img/demo/color_schemes/10.png', alt='', width='30', height='30')
-    p CHOOSE YOUR COLOR SKIN
-    label
-      input#is_light.dark_switch(type='radio', name='color_skin', value='light', checked='checked')
-      |  Light
-    label
-      input#is_dark.dark_switch(type='radio', name='color_skin', value='dark')
-      |  Dark
-    hr
-    p CHOOSE YOUR LAYOUT STYLE
-    label
-      input#is_wide.boxed_switch(type='radio', name='layout_style', value='wide', checked='checked')
-      |  Wide
-    label
-      input#is_boxed.boxed_switch(type='radio', name='layout_style', value='boxed')
-      |  Boxed
-    p Patterns for Boxed Version
-    div
-      button.pointer.switcher_thumb(onclick="pattern_switch('none');")
-        img(src='/img/patterns/none.jpg', width='27', height='27', alt='')
-      button.pointer.switcher_thumb(onclick="pattern_switch('pattern2');")
-        img(src='/img/patterns/pattern2.png', width='27', height='27', alt='')
-      button.pointer.switcher_thumb(onclick="pattern_switch('pattern3');")
-        img(src='/img/patterns/pattern3.png', width='27', height='27', alt='')
-      button.pointer.switcher_thumb(onclick="pattern_switch('pattern4');")
-        img(src='/img/patterns/pattern4.png', width='27', height='27', alt='')
-      button.pointer.switcher_thumb(onclick="pattern_switch('pattern5');")
-        img(src='/img/patterns/pattern5.png', width='27', height='27', alt='')
-    div
-      button.pointer.switcher_thumb(onclick="pattern_switch('pattern6');")
-        img(src='/img/patterns/pattern6.png', width='27', height='27', alt='')
-      button.pointer.switcher_thumb(onclick="pattern_switch('pattern7');")
-        img(src='/img/patterns/pattern7.png', width='27', height='27', alt='')
-      button.pointer.switcher_thumb(onclick="pattern_switch('pattern8');")
-        img(src='/img/patterns/pattern8.png', width='27', height='27', alt='')
-      button.pointer.switcher_thumb(onclick="pattern_switch('pattern9');")
-        img(src='/img/patterns/pattern9.png', width='27', height='27', alt='')
-      button.pointer.switcher_thumb(onclick="pattern_switch('pattern10');")
-        img(src='/img/patterns/pattern10.png', width='27', height='27', alt='')
-    p Images for Boxed Version
-    button.pointer.switcher_thumb(onclick="background_switch('none');")
-      img(src='/img/boxed_background/none.jpg', width='27', height='27', alt='')
-    button.pointer.switcher_thumb(onclick="background_switch('/img/boxed_background/1.jpg');")
-      img(src='/img/boxed_background/1_thumb.jpg', width='27', height='27', alt='')
-    button.pointer.switcher_thumb(onclick="background_switch('/img/boxed_background/2.jpg');")
-      img(src='/img/boxed_background/2_thumb.jpg', width='27', height='27', alt='')
-    button.pointer.switcher_thumb(onclick="background_switch('/img/boxed_background/3.jpg');")
-      img(src='/img/boxed_background/3_thumb.jpg', width='27', height='27', alt='')
-    button.pointer.switcher_thumb(onclick="background_switch('/img/boxed_background/4.jpg');")
-      img(src='/img/boxed_background/4_thumb.jpg', width='27', height='27', alt='')
-    hr
-    .text-center
-      button.btn.btn-primary.btn-xs(onclick='resetSwitcher();') Reset Styles
-    #hideSwitcher ×
-#showSwitcher.styleSecondColor
-  i.fa.fa-angle-double-right
-//
-  ###################################################################################################
-    /STYLESWITCHER END
-  ###################################################################################################
+block styleswitcher
+  //  ###################################################################################################
+  //    STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT
+  //  ###################################################################################################
+  #switcher
+    .content-switcher
+      h4 STYLE OPTIONS
+      p 10 Predefined Color Schemes
+      ul
+        li
+          a.color(href='#', onclick="setActiveStyleSheet('orange'); return false;", title='orange')
+            img(src='/img/demo/color_schemes/1.png', alt='', width='30', height='30')
+        li
+          a.color(href='#', onclick="setActiveStyleSheet('red'); return false;", title='red')
+            img(src='/img/demo/color_schemes/2.png', alt='', width='30', height='30')
+        li
+          a.color(href='#', onclick="setActiveStyleSheet('pink'); return false;", title='pink')
+            img(src='/img/demo/color_schemes/3.png', alt='', width='30', height='30')
+        li
+          a.color(href='#', onclick="setActiveStyleSheet('yellow'); return false;", title='yellow')
+            img(src='/img/demo/color_schemes/4.png', alt='', width='30', height='30')
+        li
+          a.color(href='#', onclick="setActiveStyleSheet('darkgreen'); return false;", title='darkgreen')
+            img(src='/img/demo/color_schemes/5.png', alt='', width='30', height='30')
+        li
+          a.color(href='#', onclick="setActiveStyleSheet('green'); return false;", title='green')
+            img(src='/img/demo/color_schemes/6.png', alt='', width='30', height='30')
+        li
+          a.color(href='#', onclick="setActiveStyleSheet('darkblue'); return false;", title='darkblue')
+            img(src='/img/demo/color_schemes/7.png', alt='', width='30', height='30')
+        li
+          a.color(href='#', onclick="setActiveStyleSheet('blue'); return false;", title='blue')
+            img(src='/img/demo/color_schemes/8.png', alt='', width='30', height='30')
+        li
+          a.color(href='#', onclick="setActiveStyleSheet('brown'); return false;", title='brown')
+            img(src='/img/demo/color_schemes/9.png', alt='', width='30', height='30')
+        li
+          a.color(href='#', onclick="setActiveStyleSheet('lightgrey'); return false;", title='lightgrey')
+            img(src='/img/demo/color_schemes/10.png', alt='', width='30', height='30')
+      p CHOOSE YOUR COLOR SKIN
+      label
+        input#is_light.dark_switch(type='radio', name='color_skin', value='light', checked='checked')
+        |  Light
+      label
+        input#is_dark.dark_switch(type='radio', name='color_skin', value='dark')
+        |  Dark
+      hr
+      p CHOOSE YOUR LAYOUT STYLE
+      label
+        input#is_wide.boxed_switch(type='radio', name='layout_style', value='wide', checked='checked')
+        |  Wide
+      label
+        input#is_boxed.boxed_switch(type='radio', name='layout_style', value='boxed')
+        |  Boxed
+      p Patterns for Boxed Version
+      div
+        button.pointer.switcher_thumb(onclick="pattern_switch('none');")
+          img(src='/img/patterns/none.jpg', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="pattern_switch('pattern2');")
+          img(src='/img/patterns/pattern2.png', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="pattern_switch('pattern3');")
+          img(src='/img/patterns/pattern3.png', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="pattern_switch('pattern4');")
+          img(src='/img/patterns/pattern4.png', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="pattern_switch('pattern5');")
+          img(src='/img/patterns/pattern5.png', width='27', height='27', alt='')
+      div
+        button.pointer.switcher_thumb(onclick="pattern_switch('pattern6');")
+          img(src='/img/patterns/pattern6.png', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="pattern_switch('pattern7');")
+          img(src='/img/patterns/pattern7.png', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="pattern_switch('pattern8');")
+          img(src='/img/patterns/pattern8.png', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="pattern_switch('pattern9');")
+          img(src='/img/patterns/pattern9.png', width='27', height='27', alt='')
+        button.pointer.switcher_thumb(onclick="pattern_switch('pattern10');")
+          img(src='/img/patterns/pattern10.png', width='27', height='27', alt='')
+      p Images for Boxed Version
+      button.pointer.switcher_thumb(onclick="background_switch('none');")
+        img(src='/img/boxed_background/none.jpg', width='27', height='27', alt='')
+      button.pointer.switcher_thumb(onclick="background_switch('/img/boxed_background/1.jpg');")
+        img(src='/img/boxed_background/1_thumb.jpg', width='27', height='27', alt='')
+      button.pointer.switcher_thumb(onclick="background_switch('/img/boxed_background/2.jpg');")
+        img(src='/img/boxed_background/2_thumb.jpg', width='27', height='27', alt='')
+      button.pointer.switcher_thumb(onclick="background_switch('/img/boxed_background/3.jpg');")
+        img(src='/img/boxed_background/3_thumb.jpg', width='27', height='27', alt='')
+      button.pointer.switcher_thumb(onclick="background_switch('/img/boxed_background/4.jpg');")
+        img(src='/img/boxed_background/4_thumb.jpg', width='27', height='27', alt='')
+      hr
+      .text-center
+        button.btn.btn-primary.btn-xs(onclick='resetSwitcher();') Reset Styles
+      #hideSwitcher ×
+  #showSwitcher.styleSecondColor
+    i.fa.fa-angle-double-right
+  //
+    ###################################################################################################
+      /STYLESWITCHER END
+    ###################################################################################################
 
-block titlebar
+block titleblock
   // ******************************** PAGE TITLE AND BREADCRUMBS ********************************
   //  div(style='margin:80px 0px 0px 0px;')
   // div(style='margin:120px 0px 0px 0px;') // bg-brand1
@@ -515,29 +532,33 @@ block titlebar
     //#wrapper
     //.fullwidthbanner-container.roundedcorners
       .fullwidthbanner
-    .container-fluid
-        //.col-sm-1
-        .col-sm-6.col-sm-offset-1
-          // img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
-          h1.navbar-brand &nbsp;#{navTitle}
-          //a.hvr-float-shadow.hvr-grow-shadow.hvr-glow(href='/')
-            //h1.hvr-grow-shadow
-            img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
-            | &nbsp;&nbsp;#{navTitle}
 
-      .row.titlebar-bg
-          //.row.titlebar-bg
-          .col-sm-6.col-sm-offset-1.col-bottom
-              ul.breadcrumb.list-inline.ui-responsive-panel
-                li.hvr-grow-shadow
-                  a.hvr-glow.hvr-float-shadow(href='/')
-                    //img.hvr-icon-float-away.pull-left(src='/favicon.png', alt='Freecycle.org' height='10')
-                    | &nbsp;Freecycle&trade; Home
-                li.active
-                  //a(href='#{url}')
-                  if (navTitle)
-                    | /
-                li.active.hvr-glow.hvr-float-shadow
-                  .hvr-grow-shadow
-                    block title2
-                      | #{navTitle}
+    block titleblock-pagetitle
+      .container-fluid
+          //.col-sm-1
+          .col-sm-6.col-sm-offset-1
+            // img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
+            h1.navbar-brand &nbsp;#{navTitle}
+            //a.hvr-float-shadow.hvr-grow-shadow.hvr-glow(href='/')
+              //h1.hvr-grow-shadow
+              img.hvr-glow.hvr-float-shadow(src='/favicon.png', alt='Freecycle.org')
+              | &nbsp;&nbsp;#{navTitle}
+
+    block titleblock-breadcrumbs
+      .container-fluid
+          .row.titlebar-bg
+              //.row.titlebar-bg
+              .col-sm-6.col-sm-offset-1.col-bottom
+                  ul.breadcrumb.list-inline.ui-responsive-panel
+                    li.hvr-grow-shadow
+                      a.hvr-glow.hvr-float-shadow(href='/')
+                        //img.hvr-icon-float-away.pull-left(src='/favicon.png', alt='Freecycle.org' height='10')
+                        | &nbsp;Freecycle&trade; Home
+                    li.active
+                      //a(href='#{url}')
+                      if (navTitle)
+                        | /
+                    li.active.hvr-glow.hvr-float-shadow
+                      .hvr-grow-shadow
+                        block title
+                          | #{navTitle}
