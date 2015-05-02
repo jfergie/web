@@ -277,7 +277,7 @@ gulp.task('browser-sync', function () {
     proxy: 'localhost:3000',
 
     notify: false,
-    open: true,
+    open: false,
     // logLevel: "silent",
     logLevel: 'info',
     logConnections: true,
@@ -299,7 +299,7 @@ gulp.task('browser-sync', function () {
 
     /*    proxy: {
      target: 'http://localhost:3000',
-     middeware: function (req, res, next) {
+     middleware: function (req, res, next) {
      console.log(req.url);
      next();
      },
