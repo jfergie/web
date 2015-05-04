@@ -6,6 +6,7 @@
 
 var pkg               = require('../package.json');
 var dotenv            = require('dotenv');  // https://www.npmjs.com/package/dotenv
+var debug             = require('debug')('freecycle:config.js');      // https://github.com/visionmedia/debug
 
 /**
  * Configuration File
@@ -65,7 +66,7 @@ config.loggly.json    = true;
 config.db_name =       'freecycle';
 config.mongodb        = {};
 
-config.mongodb.url    = process.env.MONGODB_URL || 'mongodb://jfergie:Hockey1973!@dogen.mongohq.com:10010/vlabs'; // MongoHQ.com now Compose.io
+config.mongodb.url    = process.env.MONGODB_URL || 'mongodb://freecycleuser:Hockey1973!@dogen.mongohq.com:10010/vlabs'; // MongoHQ.com now Compose.io
 //                                                 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';  // MongoDB.com
 //                                                 'mongodb://jfergie:Hockey1973!@dogen.mongohq.com:10010/vlabs';
 //                                                 'mongodb:jamesfergusonx@gmail.com:Deltaecho1973!@dogen.mongohq.com:10010/vlabs'; // 'mongodb://jfergie:Hockey1973!@ds052827.mongolab.com:52827/freecycle';
@@ -73,6 +74,10 @@ config.mongodb.url    = process.env.MONGODB_URL || 'mongodb://jfergie:Hockey1973
 
 if (process.env.OPENSHIFT_MONGODB_DB_URL) {
   config.mongodb.url = process.env.OPENSHIFT_MONGODB_DB_URL + config.db_name;
+  debug('Using OPENSHIFT_MONGODB_DB_URL "' + config.mongodb.url + '"');
+}
+else {
+  debug('Using config.mongodb.url "' + config.mongodb.url + '"');
 }
 
 /**

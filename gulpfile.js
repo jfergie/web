@@ -230,7 +230,7 @@ gulp.task('nodemon', ['build'], function (cb) {
   $.nodemon({
     script: 'app.js',
     verbose: false,
-    env: { 'NODE_ENV': 'development', 'DEBUG': 'freecycle' },
+    env: { 'NODE_ENV': 'development', 'DEBUG': 'freecycle*,-socket.io-parser,-socket.*' },
     // nodeArgs: ['--debug']
     ext: 'js',
     ignore: [
@@ -243,6 +243,7 @@ gulp.task('nodemon', ['build'], function (cb) {
   })
     .on('error', console.log)
     .on('start', function () {
+      console.log('DEBUG=' + process.env.DEBUG);
       console.log('Nodemon Gulp Task Start event triggered: 3000ms Timeout set.');
       setTimeout(function () {
         if (!called) {

@@ -17,6 +17,7 @@ var GitHubStrategy    = require('passport-github').Strategy;
 var GoogleStrategy    = require('passport-google-oauth').OAuth2Strategy;
 var TwitterStrategy   = require('passport-twitter').Strategy;
 var FacebookStrategy  = require('passport-facebook').Strategy;
+var debug             = require('debug')('freecycle:passport.js');       // https://github.com/visionmedia/debug
 
 /**
  * Serialize and Deserialize the User
@@ -215,7 +216,7 @@ exports.isAuthenticated = function (req, res, next) {
 
     // Does the user have enhanced security enabled?
     if (req.user.enhancedSecurity.enabled) {
-      console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". Passport.IsAuthenticated = TRUE. Proceeding with Two Factor Authentication');
+      debug('*** AUTHENTICATION: Requesting URL "'.yellow.bold + req.url.toString().green.bold + '". Passport.IsAuthenticated = TRUE. Proceeding with Two Factor Authentication'.green.bold);
       // If we already have validated the second factor it's
       // a noop, otherwise redirect to capture the OTP.
       if (req.session.passport.secondFactor === 'validated') {
@@ -225,12 +226,12 @@ exports.isAuthenticated = function (req, res, next) {
         res.redirect('/verify-setup');
       }
     } else {
-      console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". Passport.IsAuthenticated = TRUE. (User did not require Two factor)');
+      debug('*** AUTHENTICATION: Requesting URL "'.yellow.bold + req.url.toString().green.bold + '". Passport.IsAuthenticated = TRUE. (User did not require Two factor)'.green.bold);
       // If enhanced security is disabled just continue.
       return next();
     }
   } else {
-    console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". Passport.IsAuthenticated = TRUE. (User did not require Two factor)');
+    debug('*** AUTHENTICATION: Requesting URL "' + req.url.toString().green.bold + '". Passport.IsAuthenticated = TRUE. (User did not require Two factor)'.green.bold);
     req.session.attemptedURL = req.url;  // Save URL so we can redirect to it after authentication
     res.set('X-Auth-Required', 'true');
     req.flash('error', { msg: 'You must be logged in to reach that page.' });
@@ -246,16 +247,16 @@ exports.isAuthorized = function (req, res, next) {
   var provider = req.path.split('/').slice(-1)[0];
   if (_.find(req.user.tokens, { kind: provider })) {
     // we found the provider so just continue
-    console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". Found user.token for ' + provider);
+    debug('*** AUTHENTICATION: Requesting URL "'.yellow.bold + req.url.toString().green.bold + '". Found user.token for '.green.bold + provider);
     next();
   } else {
     // we have to get authorized first
     if (provider === 'facebook' || provider === 'twitter' || provider === 'github' || provider === 'google') {
       req.flash('info', { msg: 'You must connect ' + utils.capitalize(provider) + ' first!' });
-      console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". redirecting to /account. Provider: ' + provider);
+      debug('*** AUTHENTICATION: Requesting URL "'.yellow.bold + req.url.toString().green.bold + '". redirecting to /account. Provider: '.yellow.bold + provider);
       res.redirect('/account');
     } else {
-      console.log('*** AUTHENTICATION: Requesting URL "' + req.url + '". Found user.token. Redirecting to /auth/ ' + provider + '. ');
+      debug('*** AUTHENTICATION: Requesting URL "'.yellow.bold + req.url.toString().green.bold + '". Found user.token. Redirecting to /auth/ '.yellow.bold + provider + '. ');
       res.redirect('/auth/' + provider);
     }
   }

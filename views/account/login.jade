@@ -63,12 +63,25 @@ block content
                 i.fa.fa-check
                 | &nbsp;Sign Up
 
-            p.text-muted Note: You get <strong>one click</strong> access when using one of the authentication providers above <strong>and you don't need to remember another password!</strong>
+            p.text-muted Note: You get <strong>one click</strong> access and you <strong>don't need to remember another password</strong>
+              |  if you <strong>Sign in with</strong> one of the authentication providers above.
+              |  This is the recommended way to create your Freecycle account.
+            p.text-muted If you don't have an account with one of the authentication providers above, or don't wish to use one, you can manually create an account here by clicking on the
+              em
+                |  Sign Up
+              |  button.
+
         hr
-        p.text-muted <em>I accept #{application}'s
-          a(href='/terms')  Terms of Use
-          |  and
-          a(href='/privacy')  Privacy Policy.</em>
+        p.text-muted
+          em
+            | I accept #{application}'s
+            =" "
+            a(href='/terms')
+              | Terms of Use
+            |  and
+            =" "
+            a(href='/privacy')
+              | Privacy Policy.
 
 block scripts
   script.

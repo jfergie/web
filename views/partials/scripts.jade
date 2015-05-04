@@ -70,17 +70,19 @@ block scripts
    block scripts-ready
       script.
          $(document).ready(function () {
-            block scripts-ready-runfirst
-               //
-               //  $("h1").attr("data-sr", "enter top hustle 50px over 1.5s");
-               //   $("h2").attr("data-sr", "enter top hustle 50px over 1.5s");
-               //   $("p").attr("data-sr", "enter top hustle 50px over 1.5s");
-               //   $("li").attr("data-sr", "enter bottom over 1s and move 110px wait 0.3s");
+      block scripts-ready-runfirst
+         block scripts-ready-setupscrollreveal
+            //
+            //  $("h1").attr("data-sr", "enter top hustle 50px over 1.5s");
+            //   $("h2").attr("data-sr", "enter top hustle 50px over 1.5s");
+            //   $("p").attr("data-sr", "enter top hustle 50px over 1.5s");
+            //   $("li").attr("data-sr", "enter bottom over 1s and move 110px wait 0.3s");
 
-               //-$("#greatphoto").attr("title", function (i, val) {
-               //-  return val + " - photo by Kelly Clark";
-               //-});
+            //-$("#greatphoto").attr("title", function (i, val) {
+            //-  return val + " - photo by Kelly Clark";
+            //-});
 
+            block scripts-ready-setuphover
                $("a").addClass("hvr-grow-shadow");
                $("li").addClass("hvr-float-shadow hvr-grow-shadow");
                $("p").addClass("hvr-grow-shadow hvr-float-shadow");

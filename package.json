@@ -31,7 +31,8 @@
   ],
   "scripts": {
     "start": "node app.js",
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "mocha -R spec && npm run coveralls"
   },
   "main": "app.js",
   "engines": {

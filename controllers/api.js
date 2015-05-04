@@ -504,7 +504,7 @@ module.exports.controller = function (app) {
   app.get('/api/github', passportConf.isAuthenticated, passportConf.isAuthorized, function (req, res) {
     var token = _.find(req.user.tokens, { kind: 'github' });
     var github = new Github({ token: token.accessToken });
-    var repo = github.getRepo('dstroot', 'skeleton');        // todo modify and test other repos
+    var repo = github.getRepo('jfergie', 'web');        // todo modify and test other repos
     repo.show(function (err, repo) {
       res.render('api/github', {
         navTitle: 'Github',

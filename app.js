@@ -470,10 +470,11 @@ if (app.get('env') === 'development') {
  *   are *only* enabled when in production!
  */
 
-db.on('error', function () {
-  debug('MongoDB Connection Error. Please make sure MongoDB is running.'.red.bold);
-  debug('Requested MongoDB connection on port ' + app.get('port').toString().green.bold + ' in ' + app.settings.env.green.bold + ' mode.');
-  debug('listening in ' + app.settings.env.green.bold + ' mode.');
+db.on('error', function (err) {
+  debug('MongoDB Connection Error: '.red.bold + err.toString().yellow.bold + '.'.red.bold);
+  debug('Please make sure MongoDB is running and accessible.'.yellow.bold);
+  debug('Requested MongoDB using url:' + config.mongodb.url.yellow.bold + '.');
+  debug('App connection is port ' + app.get('port').toString().green.bold + ' in ' + app.settings.env.green.bold + ' mode. ' + 'Listening in ' + app.settings.env.green.bold + ' mode.');
   process.exit(0);
 });
 
