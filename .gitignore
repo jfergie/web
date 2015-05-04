@@ -15,6 +15,7 @@
 
 # Always-ignore sub-directories
 #######################
+coverage/
 BACKUP*/
 * Copy*/
 
