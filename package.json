@@ -32,7 +32,12 @@
   "scripts": {
     "start": "node app.js",
     "test": "mocha",
-    "coverage": "mocha -R spec && npm run coveralls"
+    "test-cov": "mocha -R spec && npm run coveralls",
+    "test-coveralls": "mocha -R spec && npm run coveralls",
+    "testnew": "mocha -R spec && npm run coverage",
+    "//": "prepublish: npm prune && linify transform bin && npm run build",
+    "build": "npm run compile",
+    "compile": "npm run compile-full && npm run compile-runtime"
   },
   "main": "app.js",
   "engines": {
@@ -104,12 +109,14 @@
     "gulp-data": "^1.2.0",
     "gulp-header": "~1.2.2",
     "gulp-imagemin": "^2.2.0",
+    "gulp-istanbul": "^0.8.1",
     "gulp-jade": "^1.0.0",
     "gulp-jscs": "^1.4.0",
     "gulp-jshint": "^1.9.2",
     "gulp-less": "^3.0.0",
     "gulp-livereload": "^3.7.0",
     "gulp-load-plugins": "~0.8.0",
+    "gulp-mocha": "^2.0.1",
     "gulp-nodemon": "^1.0.5",
     "gulp-open": "^0.3.2",
     "gulp-rename": "~1.2.0",
