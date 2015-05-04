@@ -1,5 +1,7 @@
 # Freecycle 
 
+[![Join the chat at https://gitter.im/jfergie/web](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jfergie/web?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build status][build-badge]][build-url]
 [![Dependency status][dependency-badge]][dependency-url]
 [![DevDependency status][dev-dep-badge]][dev-dep-url]
