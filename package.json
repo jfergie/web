@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "1.1.0-7",
+  "version": "1.1.0-8",
   "name": "Freecycle",
   "company": "Freecycle, Inc.",
   "subdomain": "freecycle-app",
@@ -35,6 +35,8 @@
     "test-cov": "mocha -R spec && npm run coveralls",
     "test-coveralls": "mocha -R spec && npm run coveralls",
     "testnew": "mocha -R spec && npm run coverage",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "//": "prepublish: npm prune && linify transform bin && npm run build",
     "build": "npm run compile",
     "compile": "npm run compile-full && npm run compile-runtime"
@@ -98,11 +100,13 @@
   "devDependencies": {
     "browser-sync": "^2.6.4",
     "chai": "^2.0.0",
+    "coveralls": "^2.11.2",
     "del": "~1.1.0",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-changed": "^1.1.1",
     "gulp-concat": "^2.5.1",
+    "gulp-coveralls": "^0.1.4",
     "gulp-csscomb": "~3.0.3",
     "gulp-csslint": "~0.1.5",
     "gulp-csso": "^1.0.0",

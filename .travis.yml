@@ -9,7 +9,7 @@ repo_token: LuzWkYMVIUFsohBvk3z70OCP4zoI5q2Pz
 # Use faster Docker architecture on Travis.
 sudo: false
 
-script: "npm test && npm run coveralls"
+script: "npm test && npm run coveralls && gulp test"
 
 notifications:
   webhooks:
@@ -19,3 +19,5 @@ notifications:
     on_failure: always
     on_start:   never
 
+after_script:
+  - npm run coveralls

@@ -29,6 +29,7 @@ var runSequence = require('run-sequence');
 
 var istanbul = require('gulp-istanbul');
 var mocha = require('gulp-mocha');
+var coveralls = require('gulp-coveralls');
 
 /**
  * Banner
@@ -403,10 +404,13 @@ gulp.task('test', function (cb) {
     .on('finish', function () {
       gulp.src(['test/*.js'])
         .pipe(mocha())
-        .pipe(istanbul.writeReports()) // Creating the reports after tests runned
+        .pipe(istanbul.writeReports()) // Creating the reports after tests run
         .on('end', cb);
+      gulp.src('test/coverage/**/lcov.info')
+        .pipe(coveralls());
     });
 });
+
 
 // var statics = {
 //   my: 'statics',
