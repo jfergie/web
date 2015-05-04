@@ -1,6 +1,6 @@
 /**
  * Freecycle - Freecycle Beta Web Site
- * @version v1.1.0-6
+ * @version v1.1.0-7
  * @link http://1.get.gs
  * @license MIT
  */

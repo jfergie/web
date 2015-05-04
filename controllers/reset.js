@@ -5,7 +5,7 @@
  */
 
 var User          = require('../models/User');
-var debug         = require('debug')('skeleton');  // https://github.com/visionmedia/debug
+var debug         = require('debug')('freecycle');  // https://github.com/visionmedia/debug
 var config        = require('../config/config');
 var bcrypt        = require('bcrypt-nodejs');
 var nodemailer    = require('nodemailer');

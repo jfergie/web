@@ -27,7 +27,7 @@ block content
       h1 Home Page
       .row
         .col-md-7.col-md-push-5
-          img.center-block.img-responsive.animated.bounceInLeft(alt='Skeleton App', src='img/Octocat.png', width='400px')
+          img.center-block.img-responsive.animated.bounceInLeft(alt='Freecycle App', src='img/Octocat.png', width='400px')
         .col-md-4.col-md-offset-1.col-md-pull-7
           ul.fa-ul.visible-md.visible-lg
             li
@@ -72,7 +72,7 @@ block content
           //- http://github.hubspot.com/odometer/
           .github-count
             span.odometer-label
-              a.white(href='http://github.com/dstroot/skeleton', rel='external')
+              a.white(href='http://github.com/jfergie/web', rel='external')
                 i.fa.fa-github
                 | &nbsp;GitHub ★ :
             .odometer.bg-purple 0
@@ -132,7 +132,7 @@ block scripts
             starsOdometer.render()
 
             var update = function() {
-              $.ajax('https://api.github.com/repos/dstroot/skeleton?access_token=1003ff07ff454596250e0bfa6940027a77a94866', {
+              $.ajax('https://api.github.com/repos/jfergie/web?access_token=1003ff07ff454596250e0bfa6940027a77a94866', {
                 cache: true,
                 success: function(data) {
                   if (data.stargazers_count) {

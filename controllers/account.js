@@ -6,7 +6,7 @@
 
 var _             = require('lodash');
 var User          = require('../models/User');
-var debug         = require('debug')('skeleton');       // https://github.com/visionmedia/debug
+var debug         = require('debug')('freecycle');       // https://github.com/visionmedia/debug
 var utils         = require('../config/utils');
 var config        = require('../config/config');
 var passport      = require('passport');
@@ -22,7 +22,7 @@ module.exports.controller = function (app) {
 
   /**
    * GET /account*
-   * *ALL* acount routes must be authenticated first
+   * *ALL* account routes must be authenticated first
    */
 
   app.all('/account*', passportConf.isAuthenticated);
