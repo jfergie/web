@@ -35,8 +35,11 @@ var complexity = require('gulp-escomplex');
 var reporterJSON = require('gulp-escomplex-reporter-json');
 var reporterHTML = require('gulp-escomplex-reporter-html');
 
+var jscomplexity = require('jscomplexity');
+
 var debug             = require('debug')('freecycle:gulpfile.js');       // https://github.com/visionmedia/debug
 var gutil             = require('gulp-util');
+
 
 /**
  * Check command line options
@@ -149,6 +152,7 @@ var paths = {
 gulp.task('clean', function (cb) {
   del(paths.clean, cb);
 });
+
 
 /**
  * Process CSS
@@ -290,6 +294,19 @@ gulp.task('nodemon', ['build'], function (cb) {
         $.livereload.changed('/');
       }, 3000);  // wait for restart
     });
+});
+
+gulp.task('jscomplexity', function (cb) {
+  
+  jscomplexity(paths.lint, { reporter: all }, function(err, result){
+    if(err) {
+      return console.log(err);
+    }
+    console.log(result);
+  });
+  
+  // jscomplexity() returns a promise (using bluebird)
+  // jscomplexity(paths.lint, { reporter: 'all' }).then(console.log);
 });
 
 /* Reload task */
