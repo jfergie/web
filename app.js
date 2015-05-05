@@ -84,11 +84,22 @@ app.locals.moment = require('moment');
 // http://numeraljs.com/
 app.locals.numeral = require('numeral');
 
-console.log('App.js');
-debug('debug');
+console.log('process.env.NODE_ENV=' + process.env.NODE_ENV);
+console.log('app.get(env)=' + app.get('env'));
 
-console.log('app.get(env)' + app.get('env'));
-debug ('app.get(env)' + app.get('env'));
+/*
+var minimist = require('minimist');
+
+var knownOptions = {
+  string: 'env',
+  default: { env: process.env.NODE_ENV || 'production' }
+};
+
+var options = minimist(process.argv.slice(2), knownOptions);
+debug ('options.env = ' + options.env.toString());
+console.log('app.get(env)=' + app.get('env'));
+*/
+
 if (! app.get('env') )
 {
   debug('env not set to development or production');  
@@ -134,19 +145,19 @@ if (app.get('env') === 'production') {
   // NOTE: Use `enforce.HTTPS(true)` if you are behind a proxy or load
   // balancer that terminates SSL for you (e.g. Heroku, Nodejitsu).
 
-  app.use(enforce.HTTPS(true));
+  // todo reimplement: app.use(enforce.HTTPS(true));
   // This tells browsers, "hey, only use HTTPS for the next period of time".
   // This will set the Strict Transport Security header, telling browsers to
   // visit by HTTPS for the next ninety days:
   // TODO: should we actually have this *and* app.use(enforce.HTTPS(true)); above?
   //       this seems more flexible rather than a hard redirect.
 
-  var ninetyDaysInMilliseconds = 7776000000;
-  app.use(helmet.hsts({ maxAge: ninetyDaysInMilliseconds }));
+  // var ninetyDaysInMilliseconds = 7776000000;
+  // todo reimplement: app.use(helmet.hsts({ maxAge: ninetyDaysInMilliseconds }));
 
   // Turn on HTTPS/SSL cookies
-  config.session.proxy = true;
-  config.session.cookie.secure = true;
+  // todo reimplement: config.session.proxy = true;
+  // todo reimplement: config.session.cookie.secure = true;
 }
 
 // Port to listen on.

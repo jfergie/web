@@ -32,7 +32,7 @@ var mocha   = require('gulp-mocha');
 var coveralls = require('gulp-coveralls');
 
 var complexity = require('gulp-escomplex');
-var reporterJSON = require('gulp-escomplex-reporter-json');
+// var reporterJSON = require('gulp-escomplex-reporter-json');
 var reporterHTML = require('gulp-escomplex-reporter-html');
 
 var jscomplexity = require('jscomplexity');
@@ -44,6 +44,8 @@ var gutil             = require('gulp-util');
 /**
  * Check command line options
  */
+
+/*
 var minimist = require('minimist');
 
 var knownOptions = {
@@ -53,6 +55,7 @@ var knownOptions = {
 
 var options = minimist(process.argv.slice(2), knownOptions);
 debug ('options.env = ' + options.env.toString());
+*/
 
 /**
  * Banner
@@ -74,7 +77,7 @@ var banner = [
   ''
 ].join('\n');
 
-debug(banner);
+// debug(banner);
 
 /**
  * Paths
@@ -279,7 +282,6 @@ gulp.task('nodemon', ['build'], function (cb) {
   })
     .on('error', console.log)
     .on('start', function () {
-      debug('DEBUG=' + process.env.DEBUG);
       debug('Nodemon Gulp Task Start event triggered: 3000ms Timeout set.');
       setTimeout(function () {
         if (!called) {
@@ -289,7 +291,7 @@ gulp.task('nodemon', ['build'], function (cb) {
       }, 3000);  // wait for start
     })
     .on('restart', function () {
-      debug('Nodemon Gulp Task Retart event triggered: 3000ms Timeout set.');
+      debug('Nodemon Gulp Task Restart event triggered: 3000ms Timeout set.');
       setTimeout(function () {
         $.livereload.changed('/');
       }, 3000);  // wait for restart
@@ -298,7 +300,7 @@ gulp.task('nodemon', ['build'], function (cb) {
 
 gulp.task('jscomplexity', function (cb) {
   
-  jscomplexity(paths.lint, { reporter: all }, function(err, result){
+  jscomplexity(paths.lint, { reporter: 'all' }, function(err, result){
     if(err) {
       return console.log(err);
     }
@@ -450,12 +452,18 @@ gulp.task('test', function (cb) {
       gulp.src(['test/*.js'])
         .pipe(mocha())
         .pipe(istanbul.writeReports()) // Creating the reports after tests run
-        .on('end', cb);
-      gulp.src('test/coverage/**/lcov.info')
-        .pipe(coveralls());
+        .once('end', function () {
+          process.exit();
+        });          
+        //.on('end', cb);           
     });
+    exit(0);
 });
 
+gulp.task('sendcoverage', function (cb) {
+  gulp.src('test/coverage/**/lcov.info')
+    .pipe(coveralls());
+});
 
 gulp.task('complexity', function () {
   return gulp.src(paths.lint)

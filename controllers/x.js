@@ -25,9 +25,7 @@ module.exports.controller = function (app) {
     * *ALL* x routes must be authenticated first
     */
 
-  debug('DDD Testing');
   app.all('/x*', passportConf.isAuthenticated);
-  debug('DDD Testing2');
 
   /**
    * GET /x
