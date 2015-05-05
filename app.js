@@ -84,6 +84,13 @@ app.locals.moment = require('moment');
 // http://numeraljs.com/
 app.locals.numeral = require('numeral');
 
+debug ('app.get(env)' + app.get('env'));
+if (! app.get('env') )
+{
+  debug('env not set to development or production');  
+  debug ('app.get(env)' + app.get('env'));  
+}
+
 if (app.get('env') === 'development') {
 
   // Jade options: Don't minify html, debug instrumentation

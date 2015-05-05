@@ -1,13 +1,16 @@
 language: node_js
-node_js:
-  - "0.10"
-  - "0.12"
-  - "iojs"
-
-repo_token: LuzWkYMVIUFsohBvk3z70OCP4zoI5q2Pz
 
 # Use faster Docker architecture on Travis.
 sudo: false
+
+install: "npm update -g npm; npm install"
+node_js:
+  - iojs
+  - "0.12"
+  - "0.11"
+  - "0.10"
+
+repo_token: LuzWkYMVIUFsohBvk3z70OCP4zoI5q2Pz
 
 script: "npm test && npm run coveralls && gulp test"
 
@@ -21,3 +24,4 @@ notifications:
 
 after_script:
   - npm run coveralls
+

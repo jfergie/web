@@ -28,8 +28,28 @@ var terminus = require('terminus');
 var runSequence = require('run-sequence');
 
 var istanbul = require('gulp-istanbul');
-var mocha = require('gulp-mocha');
+var mocha   = require('gulp-mocha');
 var coveralls = require('gulp-coveralls');
+
+var complexity = require('gulp-escomplex');
+var reporterJSON = require('gulp-escomplex-reporter-json');
+var reporterHTML = require('gulp-escomplex-reporter-html');
+
+var debug             = require('debug')('freecycle:gulpfile.js');       // https://github.com/visionmedia/debug
+var gutil             = require('gulp-util');
+
+/**
+ * Check command line options
+ */
+var minimist = require('minimist');
+
+var knownOptions = {
+  string: 'env',
+  default: { env: process.env.NODE_ENV || 'production' }
+};
+
+var options = minimist(process.argv.slice(2), knownOptions);
+debug ('options.env = ' + options.env.toString());
 
 /**
  * Banner
@@ -38,6 +58,11 @@ var coveralls = require('gulp-coveralls');
 var pkg = require('./package.json');
 var banner = [
   '/**',
+  ' *  gulp [optional command] [options]',
+  ' *    Options: --env [development || production]',
+  ' * ',
+  ' *  Example: gulp test --env development',
+  ' * ',  
   ' * <%= pkg.name %> - <%= pkg.description %>',
   ' * @version v<%= pkg.version %>',
   ' * @link <%= pkg.homepage %>',
@@ -45,6 +70,8 @@ var banner = [
   ' */',
   ''
 ].join('\n');
+
+debug(banner);
 
 /**
  * Paths
@@ -205,11 +232,12 @@ gulp.task('jscs', function () {
   return gulp.src(paths.lint)               // Read .js files
     .pipe($.jscs())                         // jscs .js files
     .on('error', function (e) {
-      $.util.log(e.message);
+     /* $.gutil.log(e.message); */
+      debug('JSCS Error: ' + e.message);                  
       $.jscs().end();
     })
     .pipe(terminus.devnull({ objectMode: true }));
-});
+});       
 
 /**
  * Build Task
@@ -247,8 +275,8 @@ gulp.task('nodemon', ['build'], function (cb) {
   })
     .on('error', console.log)
     .on('start', function () {
-      console.log('DEBUG=' + process.env.DEBUG);
-      console.log('Nodemon Gulp Task Start event triggered: 3000ms Timeout set.');
+      debug('DEBUG=' + process.env.DEBUG);
+      debug('Nodemon Gulp Task Start event triggered: 3000ms Timeout set.');
       setTimeout(function () {
         if (!called) {
           called = true;
@@ -257,7 +285,7 @@ gulp.task('nodemon', ['build'], function (cb) {
       }, 3000);  // wait for start
     })
     .on('restart', function () {
-      console.log('Nodemon Gulp Task Retart event triggered: 3000ms Timeout set.');
+      debug('Nodemon Gulp Task Retart event triggered: 3000ms Timeout set.');
       setTimeout(function () {
         $.livereload.changed('/');
       }, 3000);  // wait for restart
@@ -273,7 +301,7 @@ gulp.task('bs-reload', function () {
 // Runs a BrowserSync proxy, will automatically open a new window
 // to turn off the auto open, set `open` to false.
 gulp.task('browser-sync', function () {
-  console.log ('Gulp task browser-sync executing.');
+  debug ('Gulp task browser-sync executing.');
 
   browserSync({
     files: ['views/**/*.jade", "less/**/*.less'],
@@ -305,11 +333,11 @@ gulp.task('browser-sync', function () {
     /*    proxy: {
      target: 'http://localhost:3000',
      middleware: function (req, res, next) {
-     console.log(req.url);
+     debug(req.url);
      next();
      },
      reqHeaders: function (config) {
-     console.log(config);
+     debug(config);
      return config;
      */
     /*        return {
@@ -398,7 +426,7 @@ gulp.task('desktop', ['mobile'], function (cb) {
 gulp.task('pagespeed', ['desktop']);
 
 gulp.task('test', function (cb) {
-  gulp.src(['lib/**/*.js', 'main.js'])
+  gulp.src(paths.lint)
     .pipe(istanbul()) // Covering files
     .pipe(istanbul.hookRequire()) // Force `require` to return covered files
     .on('finish', function () {
@@ -411,6 +439,27 @@ gulp.task('test', function (cb) {
     });
 });
 
+
+gulp.task('complexity', function () {
+  return gulp.src(paths.lint)
+  .pipe(complexity())
+  .pipe(reporterHTML())
+  /* .pipe(reporterJSON()) */
+  .pipe(gulp.dest("reports/complexity"));
+});
+
+gulp.task('mocha', function() {
+    return gulp.src(['test/*.js'], { read: false })
+    .pipe(mocha({
+      reporter: 'spec'
+    }))
+    .on('error', gutil.log);
+});
+
+
+gulp.task('watch-mocha', function() {
+    gulp.watch([paths.lint, 'test/**'], ['mocha']);
+});
 
 // var statics = {
 //   my: 'statics',

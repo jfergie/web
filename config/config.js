@@ -55,7 +55,7 @@ config.logging        = process.env.LOGGING || true;
 // Loggly configuration
 config.loggly         = {};
 config.loggly.token   = process.env.LOGGLY_TOKEN || '1148e4d0-5480-4de3-b214-086624a0ba8b';
-config.loggly.subdomain = 'vlabs';
+config.loggly.subdomain = 'freecycle';
 config.loggly.tags    = ['nodejs'];
 config.loggly.json    = true;
 

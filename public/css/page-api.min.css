@@ -1,7 +1,12 @@
 /**
+ *  gulp [optional command] [options]
+ *    Options: --env [development || production]
+ * 
+ *  Example: gulp test --env development
+ * 
  * Freecycle - Freecycle Beta Web Site
- * @version v1.1.0-7
- * @link http://1.get.gs
+ * @version v1.1.0-8
+ * @link http://jfergie.github.io/web
  * @license MIT
  */
 .built-with{font-size:4em}@media (min-width:768px){.built-with{font-size:7em}}
