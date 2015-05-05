@@ -453,7 +453,7 @@ gulp.task('test', function (cb) {
         .pipe(mocha())
         .pipe(istanbul.writeReports()) // Creating the reports after tests run
         .once('end', function () {
-          process.exit();
+          process.exit(0);
         });          
         //.on('end', cb);           
     });
